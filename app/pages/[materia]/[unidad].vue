@@ -40,43 +40,57 @@ onMounted(async () => {
 </script>
 
 <template>
-  <div class="min-h-screen bg-gray-50">
+  <div class="min-h-screen bg-gray-50 dark:bg-gray-900 transition-colors">
     <!-- Layout con CSS Grid para mejor manejo del espacio -->
     <div class="layout-grid">
       <!-- Sidebar fijo a la izquierda (solo tablets/desktop) -->
-      <Sidebar :content-element="contentElement" class="sidebar-area" />
+      <TableOfContents 
+        :content-element="contentElement" 
+        variant="sidebar" 
+        class="sidebar-area" 
+      />
 
       <!-- Área principal (Header + Contenido) -->
       <div class="main-area">
         <!-- Header -->
-        <header class="bg-white border-b border-gray-200 sticky top-0 z-[45]">
+        <header class="bg-white dark:bg-gray-800 border-b border-gray-200 dark:border-gray-700 sticky top-0 z-[45] transition-colors">
           <div class="px-4 py-4">
-            <nav class="flex items-center space-x-2 text-sm mb-2">
-              <NuxtLink to="/" class="text-blue-600 hover:text-blue-800 transition-colors">
-                Inicio
-              </NuxtLink>
-              <span class="text-gray-400">/</span>
-              <NuxtLink :to="`/${materia}`" class="text-blue-600 hover:text-blue-800 transition-colors">
-                {{ configMateria?.nombre }}
-              </NuxtLink>
-              <span class="text-gray-400">/</span>
-              <span class="text-gray-700 font-medium">{{ unidad?.title || 'Unidad' }}</span>
-            </nav>
+            <div class="flex items-center justify-between mb-2">
+              <!-- Breadcrumbs -->
+              <nav class="flex items-center space-x-2 text-sm">
+                <NuxtLink to="/" class="text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-300 transition-colors">
+                  Inicio
+                </NuxtLink>
+                <span class="text-gray-400 dark:text-gray-500">/</span>
+                <NuxtLink :to="`/${materia}`" class="text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-300 transition-colors">
+                  {{ configMateria?.nombre }}
+                </NuxtLink>
+                <span class="text-gray-400 dark:text-gray-500">/</span>
+                <span class="text-gray-700 dark:text-gray-300 font-medium">{{ unidad?.title || 'Unidad' }}</span>
+              </nav>
+
+              <!-- Theme Toggle -->
+              <ThemeToggle />
+            </div>
             
-            <h1 class="text-2xl font-bold text-gray-900">{{ configMateria?.nombre || materia }}</h1>
+            <h1 class="text-2xl font-bold text-gray-900 dark:text-gray-100 transition-colors">{{ configMateria?.nombre || materia }}</h1>
           </div>
         </header>
 
         <!-- Contenido Principal -->
         <main ref="contentRef" class="w-full px-4 md:px-8 py-8">
           <!-- TOC Acordeón (solo móvil) -->
-          <TableOfContents :content-element="contentElement" class="md:hidden mb-6" />
+          <TableOfContents 
+            :content-element="contentElement" 
+            variant="accordion" 
+            class="md:hidden mb-6" 
+          />
           
           <!-- Contenido Markdown -->
-          <div class="bg-white rounded-lg shadow-sm border border-gray-200 p-6 md:p-12 w-full">
-            <ContentRenderer v-if="unidad" :value="unidad" class="prose prose-lg max-w-none" />
+          <div class="bg-white dark:bg-gray-800 rounded-lg shadow-sm border border-gray-200 dark:border-gray-700 p-6 md:p-12 w-full transition-colors">
+            <ContentRenderer v-if="unidad" :value="unidad" class="prose prose-lg dark:prose-invert max-w-none" />
             <div v-else class="text-center py-12">
-              <p class="text-gray-500">Contenido no encontrado</p>
+              <p class="text-gray-500 dark:text-gray-400">Contenido no encontrado</p>
             </div>
           </div>
         </main>

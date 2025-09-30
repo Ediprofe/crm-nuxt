@@ -1,6 +1,53 @@
+/* ========================================
+   VARIABLES DE TEMA
+   ======================================== */
+
+:root {
+  --bg-primary: rgb(249 250 251);
+  --bg-secondary: white;
+  --bg-sidebar: white;
+  --text-primary: rgb(17 24 39);
+  --text-secondary: rgb(55 65 81);
+  --text-muted: rgb(107 114 128);
+  --border-color: rgb(229 231 235);
+  --border-hover: rgb(209 213 219);
+  --accent-color: rgb(37 99 235);
+  --accent-hover: rgb(29 78 216);
+  --heading-color: rgb(29 78 216);
+  --header-height: 93px; /* Valor inicial, se actualiza dinámicamente */
+}
+
+.dark {
+  --bg-primary: rgb(17 24 39);
+  --bg-secondary: rgb(31 41 55);
+  --bg-sidebar: rgb(31 41 55);
+  --text-primary: rgb(243 244 246);
+  --text-secondary: rgb(209 213 219);
+  --text-muted: rgb(156 163 175);
+  --border-color: rgb(55 65 81);
+  --border-hover: rgb(75 85 99);
+  --accent-color: rgb(96 165 250);
+  --accent-hover: rgb(59 130 246);
+  --heading-color: rgb(147 197 253);
+}
+
+/* ========================================
+   ESTILOS BASE CON SOPORTE DARK MODE
+   ======================================== */
+
+body {
+  background-color: var(--bg-primary);
+  color: var(--text-secondary);
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+/* ========================================
+   ESTILOS MARKDOWN (PROSE)
+   ======================================== */
+
 /* Estilos base para todo el markdown renderizado */
 .prose {
-  color: rgb(55 65 81);
+  color: var(--text-secondary);
   max-width: none;
 }
 
@@ -8,16 +55,20 @@
 .prose h1 {
   font-size: 2.5rem;
   font-weight: 700;
-  color: rgb(17 24 39);
+  color: var(--text-primary);
   margin-bottom: 2rem;
   border-bottom: 2px solid rgb(191 219 254);
   padding-bottom: 0.75rem;
 }
 
+.dark .prose h1 {
+  border-bottom-color: rgb(55 65 81);
+}
+
 .prose h2 {
   font-size: 2rem;
   font-weight: 600;
-  color: rgb(29 78 216);
+  color: var(--heading-color);
   margin-top: 3rem;
   margin-bottom: 1.5rem;
 }
@@ -25,7 +76,7 @@
 .prose h3 {
   font-size: 1.5rem;
   font-weight: 600;
-  color: rgb(55 65 81);
+  color: var(--text-secondary);
   margin-top: 2rem;
   margin-bottom: 1rem;
 }
@@ -34,12 +85,12 @@
 .prose p {
   margin-bottom: 1.5rem;
   line-height: 1.75;
-  color: rgb(55 65 81);
+  color: var(--text-secondary);
 }
 
 .prose strong {
   font-weight: 600;
-  color: rgb(17 24 39);
+  color: var(--text-primary);
 }
 
 /* Listas */
@@ -62,12 +113,12 @@
 
 /* Enlaces */
 .prose a {
-  color: rgb(37 99 235);
+  color: var(--accent-color);
   text-decoration: underline;
 }
 
 .prose a:hover {
-  color: rgb(29 64 175);
+  color: var(--accent-hover);
 }
 
 /* Tablas */
@@ -83,12 +134,16 @@
   padding: 0.75rem;
   text-align: left;
   font-weight: 600;
-  border: 1px solid rgb(229 231 235);
+  border: 1px solid var(--border-color);
+}
+
+.dark .prose th {
+  background-color: rgb(55 65 81);
 }
 
 .prose td {
   padding: 0.75rem;
-  border: 1px solid rgb(229 231 235);
+  border: 1px solid var(--border-color);
   vertical-align: top;
 }
 
@@ -96,11 +151,15 @@
   background-color: rgb(249 250 251);
 }
 
+.dark .prose tr:hover {
+  background-color: rgb(55 65 81);
+}
+
 /* Separadores */
 .prose hr {
   margin: 2rem 0;
   border: none;
-  border-top: 2px solid rgb(229 231 235);
+  border-top: 2px solid var(--border-color);
 }
 
 /* Blockquotes */
@@ -109,7 +168,11 @@
   padding-left: 1rem;
   margin: 1.5rem 0;
   font-style: italic;
-  color: rgb(75 85 99);
+  color: var(--text-muted);
+}
+
+.dark .prose blockquote {
+  border-left-color: rgb(55 65 81);
 }
 
 /* Code inline */
@@ -121,6 +184,11 @@
   color: rgb(220 38 38);
 }
 
+.dark .prose code {
+  background-color: rgb(55 65 81);
+  color: rgb(252 165 165);
+}
+
 /* Code blocks */
 .prose pre {
   background-color: rgb(31 41 55);
@@ -128,6 +196,10 @@
   border-radius: 0.5rem;
   overflow-x: auto;
   margin: 1.5rem 0;
+}
+
+.dark .prose pre {
+  background-color: rgb(17 24 39);
 }
 
 .prose pre code {
@@ -146,11 +218,6 @@ html {
 }
 
 /* Ajuste de padding para headings con IDs (para compensar header fijo) */
-/* Usamos variable CSS para altura dinámica del header */
-:root {
-  --header-height: 93px; /* Valor inicial, se actualiza dinámicamente */
-}
-
 .prose h2[id],
 .prose h3[id] {
   scroll-margin-top: var(--header-height);
