@@ -133,3 +133,4 @@ const getTitulo = (item: any): string => {
     </main>
   </div>
 </template>
+

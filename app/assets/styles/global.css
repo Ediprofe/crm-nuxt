@@ -146,9 +146,14 @@ html {
 }
 
 /* Ajuste de padding para headings con IDs (para compensar header fijo) */
+/* Usamos variable CSS para altura dinámica del header */
+:root {
+  --header-height: 93px; /* Valor inicial, se actualiza dinámicamente */
+}
+
 .prose h2[id],
 .prose h3[id] {
-  scroll-margin-top: 120px;
+  scroll-margin-top: var(--header-height);
 }
 
 /* Mejorar la transición de color en el TOC */

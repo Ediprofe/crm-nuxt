@@ -15,8 +15,16 @@ const tocItems = ref<TocItem[]>([])
 const activeId = ref<string>('')
 const isMobileMenuOpen = ref(false)
 
-// Constante para ajuste fino del scroll (altura del header + padding deseado)
-const HEADER_OFFSET = 110 // Ajuste para que el título quede visible debajo del header
+// Función para medir y actualizar la altura del header dinámicamente
+function updateHeaderHeight() {
+  const header = document.querySelector('header')
+  if (header) {
+    const headerHeight = header.offsetHeight
+    // Actualizar la variable CSS global
+    document.documentElement.style.setProperty('--header-height', `${headerHeight}px`)
+    console.log(`[TOC] Header height actualizado: ${headerHeight}px`)
+  }
+}
 
 // Función auxiliar para obtener offsetTop real (considerando todos los padres)
 function getElementOffsetTop(element: HTMLElement): number {
@@ -68,22 +76,19 @@ function extractHeadings() {
   }
 }
 
-// Scroll suave al heading - ESTRATEGIA ROBUSTA CON offsetTop
+// Scroll suave al heading - Simplificado usando hash navigation
+// El CSS scroll-margin-top hace el trabajo pesado
 function scrollToHeading(id: string) {
   const element = document.getElementById(id)
   if (!element) return
 
-  // Usar offsetTop que es más confiable (posición relativa al documento, no al viewport)
-  const elementOffsetTop = getElementOffsetTop(element)
+  // Actualizar la URL hash sin saltar
+  history.pushState(null, '', `#${id}`)
   
-  // Calcular la posición final: posición del elemento - offset del header
-  // Esto deja el título justo debajo del header sticky
-  const targetPosition = elementOffsetTop - HEADER_OFFSET
-
-  // Scroll directo a la posición calculada
-  window.scrollTo({
-    top: targetPosition,
-    behavior: 'smooth'
+  // Scroll suave - el CSS scroll-margin-top maneja el offset automáticamente
+  element.scrollIntoView({
+    behavior: 'smooth',
+    block: 'start'
   })
 
   activeId.value = id
@@ -98,8 +103,12 @@ function scrollToHeading(id: string) {
 function updateActiveHeading() {
   if (tocItems.value.length === 0) return
 
-  // Posición actual del scroll + un threshold para detectar el heading visible
-  const scrollPosition = window.scrollY + HEADER_OFFSET + 50
+  // Obtener la altura actual del header
+  const header = document.querySelector('header')
+  const headerHeight = header ? header.offsetHeight : 93
+  
+  // Posición actual del scroll + threshold pequeño para detectar el heading visible
+  const scrollPosition = window.scrollY + headerHeight + 10
 
   // Encontrar el heading más cercano visible (iterar desde el final)
   for (let i = tocItems.value.length - 1; i >= 0; i--) {
@@ -131,17 +140,26 @@ watch(() => props.contentElement, async (newVal) => {
     await nextTick()
     setTimeout(() => {
       extractHeadings()
+      updateHeaderHeight() // Actualizar altura del header cuando cambia el contenido
     }, 200)
   }
 }, { immediate: true })
 
-// Listener de scroll
+// Listeners de scroll y resize
 onMounted(() => {
+  // Actualizar altura del header al montar
+  updateHeaderHeight()
+  
+  // Escuchar scroll para actualizar el heading activo
   window.addEventListener('scroll', updateActiveHeading, { passive: true })
+  
+  // Escuchar resize para actualizar la altura del header si cambia
+  window.addEventListener('resize', updateHeaderHeight, { passive: true })
 })
 
 onUnmounted(() => {
   window.removeEventListener('scroll', updateActiveHeading)
+  window.removeEventListener('resize', updateHeaderHeight)
 })
 
 // Computar si hay contenido para mostrar

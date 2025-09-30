@@ -14,9 +14,6 @@ const props = defineProps<{
 const tocItems = ref<TocItem[]>([])
 const activeId = ref<string>('')
 
-// Constante para ajuste fino del scroll
-const HEADER_OFFSET = 110
-
 // Función auxiliar para obtener offsetTop real
 function getElementOffsetTop(element: HTMLElement): number {
   let offsetTop = 0
@@ -65,17 +62,18 @@ function extractHeadings() {
   }
 }
 
-// Scroll suave al heading
+// Scroll suave al heading - Usando scrollIntoView con CSS scroll-margin-top
 function scrollToHeading(id: string) {
   const element = document.getElementById(id)
   if (!element) return
 
-  const elementOffsetTop = getElementOffsetTop(element)
-  const targetPosition = elementOffsetTop - HEADER_OFFSET
-
-  window.scrollTo({
-    top: targetPosition,
-    behavior: 'smooth'
+  // Actualizar la URL hash
+  history.pushState(null, '', `#${id}`)
+  
+  // Scroll suave - el CSS scroll-margin-top maneja el offset automáticamente
+  element.scrollIntoView({
+    behavior: 'smooth',
+    block: 'start'
   })
 
   activeId.value = id
@@ -85,7 +83,11 @@ function scrollToHeading(id: string) {
 function updateActiveHeading() {
   if (tocItems.value.length === 0) return
 
-  const scrollPosition = window.scrollY + HEADER_OFFSET + 50
+  // Obtener la altura actual del header dinámicamente
+  const header = document.querySelector('header')
+  const headerHeight = header ? header.offsetHeight : 93
+  
+  const scrollPosition = window.scrollY + headerHeight + 10
 
   for (let i = tocItems.value.length - 1; i >= 0; i--) {
     const item = tocItems.value[i]
