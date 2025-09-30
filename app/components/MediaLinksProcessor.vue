@@ -172,13 +172,20 @@ function processMediaLinks() {
       return
     }
     
-    // REGLA 3: Videos normales y TikTok
+    // REGLA 3: TikTok = Solo ícono SIEMPRE (sin tarjeta grande)
+    if (link.type === 'tiktok') {
+      addIconToHeading(link)
+      hideOriginalLink(link.element)
+      return
+    }
+    
+    // REGLA 4: Videos normales de YouTube
     if (link.headingLevel === 1) {
       // Después de H1: solo ícono pequeño
       addIconToHeading(link)
       hideOriginalLink(link.element)
     } else if (link.headingLevel > 1) {
-      // Después de H2-H6: ícono + iframe/tarjeta
+      // Después de H2-H6: ícono + acordeón
       addIconToHeading(link)
       replaceWithEmbed(link)
     }
@@ -292,22 +299,136 @@ function replaceWithEmbed(link: MediaLink) {
   if (!paragraph) return
   
   const embedContainer = document.createElement('div')
-  embedContainer.style.cssText = 'margin: 2rem 0; border-radius: 0.75rem; overflow: hidden; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);'
+  embedContainer.style.cssText = 'margin: 2rem 0;'
   
   if (link.type === 'youtube') {
-    // Crear iframe con clase para estilos responsive
-    const iframe = document.createElement('iframe')
-    iframe.src = `https://www.youtube.com/embed/${link.videoId}`
-    iframe.title = 'YouTube video player'
-    iframe.setAttribute('frameborder', '0')
-    iframe.setAttribute('allow', 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture')
-    iframe.setAttribute('allowfullscreen', '')
-    iframe.className = 'youtube-iframe-custom'
-    iframe.style.cssText = 'width: 100%; height: 500px; border: none; display: block;'
+    // Crear estructura de acordeón para YouTube
+    const accordionId = `video-${link.videoId}-${Math.random().toString(36).substr(2, 9)}`
     
-    embedContainer.appendChild(iframe)
+    embedContainer.innerHTML = `
+      <div style="border-radius: 0.75rem; overflow: hidden; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);">
+        <!-- Botón del acordeón -->
+        <button 
+          id="${accordionId}-btn"
+          style="
+            width: 100%;
+            background: linear-gradient(135deg, #FF0000 0%, #CC0000 100%);
+            border: none;
+            border-radius: 0.75rem;
+            padding: 1.25rem;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            text-align: left;
+            transition: all 0.3s ease;
+          "
+          data-accordion-target="${accordionId}"
+        >
+          <!-- Icono de YouTube -->
+          <svg width="32" height="32" viewBox="0 0 24 24" fill="currentColor" style="flex-shrink: 0; color: white;">
+            <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+          </svg>
+          
+          <!-- Texto -->
+          <div style="flex: 1; min-width: 0;">
+            <div style="font-size: 1rem; font-weight: 600; color: white;">Ver video</div>
+          </div>
+          
+          <!-- Icono de flecha -->
+          <svg 
+            id="${accordionId}-arrow" 
+            width="20" 
+            height="20" 
+            viewBox="0 0 24 24" 
+            fill="none" 
+            stroke="currentColor" 
+            style="flex-shrink: 0; color: white; transition: transform 0.3s ease;"
+          >
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+          </svg>
+        </button>
+        
+        <!-- Contenido del acordeón (inicialmente oculto) -->
+        <div 
+          id="${accordionId}"
+          style="
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+            background: #000;
+          "
+        >
+          <div style="padding: 0;">
+            <iframe
+              src="https://www.youtube.com/embed/${link.videoId}"
+              title="YouTube video player"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen
+              style="width: 100%; height: 500px; border: none; display: block;"
+            ></iframe>
+          </div>
+        </div>
+      </div>
+    `
+    
+    // Agregar funcionalidad de acordeón después de insertar en el DOM
+    setTimeout(() => {
+      const button = document.getElementById(`${accordionId}-btn`)
+      const content = document.getElementById(accordionId)
+      const arrow = document.getElementById(`${accordionId}-arrow`)
+      
+      if (button && content && arrow) {
+        button.addEventListener('click', () => {
+          const isOpen = content.style.maxHeight && content.style.maxHeight !== '0px'
+          
+          if (isOpen) {
+            // Cerrar
+            content.style.maxHeight = '0'
+            arrow.style.transform = 'rotate(0deg)'
+            button.style.borderRadius = '0.75rem'
+          } else {
+            // Cerrar todos los demás acordeones primero
+            document.querySelectorAll('[id^="video-"]').forEach((otherContent: Element) => {
+              const otherContentEl = otherContent as HTMLElement
+              if (otherContentEl.id !== accordionId && otherContentEl.style.maxHeight && otherContentEl.style.maxHeight !== '0px') {
+                const otherAccordionId = otherContentEl.id
+                const otherButton = document.getElementById(`${otherAccordionId}-btn`) as HTMLElement
+                const otherArrow = document.getElementById(`${otherAccordionId}-arrow`) as HTMLElement
+                
+                if (otherButton && otherArrow) {
+                  otherContentEl.style.maxHeight = '0'
+                  otherArrow.style.transform = 'rotate(0deg)'
+                  otherButton.style.borderRadius = '0.75rem'
+                }
+              }
+            })
+            
+            // Abrir el acordeón actual
+            content.style.maxHeight = '550px' // 500px iframe + 50px padding
+            arrow.style.transform = 'rotate(180deg)'
+            button.style.borderRadius = '0.75rem 0.75rem 0 0'
+          }
+        })
+        
+        // Efecto hover
+        button.addEventListener('mouseenter', () => {
+          if (!content.style.maxHeight || content.style.maxHeight === '0px') {
+            button.style.transform = 'translateY(-2px)'
+            button.style.boxShadow = '0 6px 16px rgba(255, 0, 0, 0.3)'
+          }
+        })
+        
+        button.addEventListener('mouseleave', () => {
+          button.style.transform = 'translateY(0)'
+          button.style.boxShadow = 'none'
+        })
+      }
+    }, 50)
+    
   } else {
-    // Para TikTok, mostrar un enlace estilizado
+    // Para TikTok, mantener el diseño actual (ya está bien)
     embedContainer.innerHTML = `
       <div style="background: linear-gradient(135deg, #000000 0%, #1a1a1a 100%); border-radius: 0.75rem; padding: 1.25rem; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);">
         <a href="${link.url}" target="_blank" rel="noopener noreferrer" style="display: flex; align-items: center; gap: 1rem; text-decoration: none; color: white;">
@@ -316,7 +437,6 @@ function replaceWithEmbed(link: MediaLink) {
           </svg>
           <div style="flex: 1; min-width: 0;">
             <div style="font-size: 1rem; font-weight: 600; color: white;">Ver en TikTok</div>
-            <div style="font-size: 0.875rem; color: rgba(255, 255, 255, 0.6); overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">${link.url}</div>
           </div>
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" style="flex-shrink: 0; color: rgba(255, 255, 255, 0.6);">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
@@ -383,6 +503,19 @@ function replaceWithEmbed(link: MediaLink) {
   :deep(.playlist-container-responsive) {
     max-width: 100%;
     margin: 1rem 0;
+  }
+}
+
+/* Acordeón responsive */
+@media (max-width: 768px) {
+  :deep(#accordionId) iframe {
+    height: 300px !important;
+  }
+}
+
+@media (max-width: 480px) {
+  :deep(#accordionId) iframe {
+    height: 250px !important;
   }
 }
 </style>
