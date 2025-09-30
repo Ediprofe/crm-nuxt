@@ -135,3 +135,23 @@
   padding: 0;
   color: rgb(229 231 235);
 }
+
+/* ========================================
+   SMOOTH SCROLL & TOC STYLES
+   ======================================== */
+
+/* Smooth scroll para toda la página */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Ajuste de padding para headings con IDs (para compensar header fijo) */
+.prose h2[id],
+.prose h3[id] {
+  scroll-margin-top: 120px;
+}
+
+/* Mejorar la transición de color en el TOC */
+.table-of-contents a {
+  transition: all 0.2s ease-in-out;
+}
