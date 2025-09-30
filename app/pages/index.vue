@@ -11,7 +11,8 @@ const materias = Object.entries(materiasConfig).map(([slug, config]) => ({
 const colorClasses: Record<string, string> = {
   quimica: 'from-blue-500 to-blue-600 hover:from-blue-600 hover:to-blue-700',
   fisica: 'from-purple-500 to-purple-600 hover:from-purple-600 hover:to-purple-700',
-  matematicas: 'from-green-500 to-green-600 hover:from-green-600 hover:to-green-700'
+  matematicas: 'from-green-500 to-green-600 hover:from-green-600 hover:to-green-700',
+  ciencias: 'from-teal-500 to-teal-600 hover:from-teal-600 hover:to-teal-700'
 }
 </script>
 

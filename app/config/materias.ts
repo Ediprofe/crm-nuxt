@@ -13,6 +13,11 @@ export const materiasConfig = {
     nombre: 'Matemáticas',
     emoji: '📊',
     color: 'matematicas'
+  },
+  ciencias: {
+    nombre: 'Ciencias',
+    emoji: '🔬',
+    color: 'ciencias'
   }
 } as const;
 
