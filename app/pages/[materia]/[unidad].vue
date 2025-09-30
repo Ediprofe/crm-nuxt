@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { ref, onMounted, nextTick } from 'vue'
 import { materiasConfig } from '~/config/materias'
 
 const route = useRoute()
@@ -19,6 +20,23 @@ const { data: unidad } = await useAsyncData(`${materia}-${unidadSlug}`, async ()
 })
 
 const configMateria = materiasConfig[materia as keyof typeof materiasConfig]
+
+// Referencias para el procesador de enlaces multimedia
+const contentRef = ref<HTMLElement | null>(null)
+const contentElement = ref<HTMLElement | null>(null)
+
+// Después de que el contenido se renderice, capturar el elemento
+onMounted(async () => {
+  await nextTick()
+  
+  // Dar tiempo para que ContentRenderer termine de renderizar
+  setTimeout(() => {
+    if (contentRef.value) {
+      const proseElement = contentRef.value.querySelector('.prose')
+      contentElement.value = proseElement as HTMLElement
+    }
+  }, 150)
+})
 </script>
 
 <template>
@@ -27,11 +45,14 @@ const configMateria = materiasConfig[materia as keyof typeof materiasConfig]
       <h1 class="text-2xl font-bold">{{ configMateria?.nombre || materia }}</h1>
     </header>
 
-    <main class="container mx-auto px-4 py-8 max-w-4xl">
+    <main ref="contentRef" class="container mx-auto px-4 py-8 max-w-4xl">
       <ContentRenderer v-if="unidad" :value="unidad" class="prose prose-lg max-w-none" />
       <div v-else class="text-center py-12">
         <p class="text-gray-500">Contenido no encontrado</p>
       </div>
+      
+      <!-- Procesador de enlaces multimedia -->
+      <MediaLinksProcessor :content-element="contentElement" />
     </main>
   </div>
 </template>
