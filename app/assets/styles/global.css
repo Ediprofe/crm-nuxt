@@ -1,0 +1,137 @@
+/* Estilos base para todo el markdown renderizado */
+.prose {
+  color: rgb(55 65 81);
+  max-width: none;
+}
+
+/* Títulos */
+.prose h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: rgb(17 24 39);
+  margin-bottom: 2rem;
+  border-bottom: 2px solid rgb(191 219 254);
+  padding-bottom: 0.75rem;
+}
+
+.prose h2 {
+  font-size: 2rem;
+  font-weight: 600;
+  color: rgb(29 78 216);
+  margin-top: 3rem;
+  margin-bottom: 1.5rem;
+}
+
+.prose h3 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: rgb(55 65 81);
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+}
+
+/* Texto y párrafos */
+.prose p {
+  margin-bottom: 1.5rem;
+  line-height: 1.75;
+  color: rgb(55 65 81);
+}
+
+.prose strong {
+  font-weight: 600;
+  color: rgb(17 24 39);
+}
+
+/* Listas */
+.prose ul {
+  list-style-type: disc;
+  margin-left: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.prose ol {
+  list-style-type: decimal;
+  margin-left: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.prose li {
+  margin-bottom: 0.5rem;
+  line-height: 1.75;
+}
+
+/* Enlaces */
+.prose a {
+  color: rgb(37 99 235);
+  text-decoration: underline;
+}
+
+.prose a:hover {
+  color: rgb(29 64 175);
+}
+
+/* Tablas */
+.prose table {
+  width: 100%;
+  margin: 2rem 0;
+  border-collapse: collapse;
+  font-size: 0.9rem;
+}
+
+.prose th {
+  background-color: rgb(243 244 246);
+  padding: 0.75rem;
+  text-align: left;
+  font-weight: 600;
+  border: 1px solid rgb(229 231 235);
+}
+
+.prose td {
+  padding: 0.75rem;
+  border: 1px solid rgb(229 231 235);
+  vertical-align: top;
+}
+
+.prose tr:hover {
+  background-color: rgb(249 250 251);
+}
+
+/* Separadores */
+.prose hr {
+  margin: 2rem 0;
+  border: none;
+  border-top: 2px solid rgb(229 231 235);
+}
+
+/* Blockquotes */
+.prose blockquote {
+  border-left: 4px solid rgb(191 219 254);
+  padding-left: 1rem;
+  margin: 1.5rem 0;
+  font-style: italic;
+  color: rgb(75 85 99);
+}
+
+/* Code inline */
+.prose code {
+  background-color: rgb(243 244 246);
+  padding: 0.25rem 0.5rem;
+  border-radius: 0.25rem;
+  font-size: 0.875rem;
+  color: rgb(220 38 38);
+}
+
+/* Code blocks */
+.prose pre {
+  background-color: rgb(31 41 55);
+  padding: 1rem;
+  border-radius: 0.5rem;
+  overflow-x: auto;
+  margin: 1.5rem 0;
+}
+
+.prose pre code {
+  background-color: transparent;
+  padding: 0;
+  color: rgb(229 231 235);
+}
