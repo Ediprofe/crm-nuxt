@@ -1,3 +1,5 @@
+import { STORAGE_KEYS } from '~/config/constants'
+
 /**
  * Plugin para inicializar el tema antes del render
  * Evita el "flash" de tema incorrecto al cargar la página
@@ -6,7 +8,7 @@ export default defineNuxtPlugin(() => {
   // Solo ejecutar en el cliente
   if (typeof window === 'undefined') return
 
-  const STORAGE_KEY = 'ediprofe-theme'
+  const STORAGE_KEY = STORAGE_KEYS.THEME
 
   // Función para aplicar el tema inmediatamente
   const applyTheme = (isDark: boolean) => {

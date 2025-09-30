@@ -1,10 +1,11 @@
 import { ref } from 'vue'
+import { STORAGE_KEYS } from '~/config/constants'
 
 export type Theme = 'light' | 'dark'
 
 // Estado reactivo compartido globalmente (singleton)
 const isDark = ref(false) // Por defecto: tema claro
-const STORAGE_KEY = 'ediprofe-theme'
+const STORAGE_KEY = STORAGE_KEYS.THEME
 
 // Inicializar el estado basado en el DOM (el plugin ya aplicó la clase)
 if (typeof window !== 'undefined') {
