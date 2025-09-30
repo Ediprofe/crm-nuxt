@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { ref, computed, onMounted, onUnmounted, watch, nextTick } from 'vue'
+import { TIMEOUTS, DEFAULTS } from '~/config/constants'
 
 interface TocItem {
   id: string
@@ -105,10 +106,10 @@ function updateActiveHeading() {
 
   // Obtener la altura actual del header
   const header = document.querySelector('header')
-  const headerHeight = header ? header.offsetHeight : 93
+  const headerHeight = header ? header.offsetHeight : DEFAULTS.HEADER_HEIGHT
   
   // Posición actual del scroll + threshold pequeño para detectar el heading visible
-  const scrollPosition = window.scrollY + headerHeight + 10
+  const scrollPosition = window.scrollY + headerHeight + DEFAULTS.SCROLL_OFFSET
 
   // Encontrar el heading más cercano visible (iterar desde el final)
   for (let i = tocItems.value.length - 1; i >= 0; i--) {
@@ -141,7 +142,7 @@ watch(() => props.contentElement, async (newVal) => {
     setTimeout(() => {
       extractHeadings()
       updateHeaderHeight() // Actualizar altura del header cuando cambia el contenido
-    }, 200)
+    }, TIMEOUTS.DOM_READY)
   }
 }, { immediate: true })
 
@@ -226,7 +227,7 @@ const hasToc = computed(() => tocItems.value.length > 0)
 
       <div
         class="overflow-hidden transition-all duration-300"
-        :style="{ maxHeight: isMobileMenuOpen ? '500px' : '0' }"
+        :style="{ maxHeight: isMobileMenuOpen ? DEFAULTS.TOC_MAX_HEIGHT_MOBILE : '0' }"
       >
         <nav class="mt-3 bg-white dark:bg-gray-800 rounded-lg border border-gray-200 dark:border-gray-700 shadow-sm">
           <ul class="py-2">
