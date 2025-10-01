@@ -165,6 +165,12 @@ onUnmounted(() => {
 
 // Computar si hay contenido para mostrar
 const hasToc = computed(() => tocItems.value.length > 0)
+
+// Exponer datos para uso externo (ej: TocSheet en móvil)
+defineExpose({
+  tocItems,
+  activeId
+})
 </script>
 
 <template>

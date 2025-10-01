@@ -1,6 +1,10 @@
 <script setup lang="ts">
-import { ref, onMounted, nextTick } from 'vue'
+import { ref, computed, watch, onMounted, onUnmounted, nextTick } from 'vue'
 import { materiasConfig } from '~/config/materias'
+import { DEFAULTS } from '~/config/constants'
+import { useTocSheet } from '~/composables/useTocSheet'
+import type TableOfContents from '~/components/TableOfContents.vue'
+import type ContentSearch from '~/components/ContentSearch.vue'
 
 const route = useRoute()
 const materia = route.params.materia as string
@@ -25,6 +29,44 @@ const configMateria = materiasConfig[materia as keyof typeof materiasConfig]
 const contentRef = ref<HTMLElement | null>(null)
 const contentElement = ref<HTMLElement | null>(null)
 
+// Referencias a ambos componentes TableOfContents
+const tocSidebarRef = ref<InstanceType<typeof TableOfContents> | null>(null)
+const tocAccordionRef = ref<InstanceType<typeof TableOfContents> | null>(null)
+
+// Referencia al componente de búsqueda
+const searchRef = ref<InstanceType<typeof ContentSearch> | null>(null)
+
+// TOC Sheet para móvil
+const { isOpen, shouldShowFab, openSheet, closeSheet, handleScroll } = useTocSheet()
+
+// Computed para saber si la búsqueda está abierta
+const isSearchOpen = computed(() => searchRef.value?.isOpen || false)
+
+// Computed para obtener datos del TOC
+// En móvil usa accordion, en desktop usa sidebar
+const tocItems = computed(() => {
+  // Priorizar accordion (móvil) porque el sidebar está oculto en móvil
+  return tocAccordionRef.value?.tocItems || tocSidebarRef.value?.tocItems || []
+})
+const activeHeadingId = computed(() => {
+  return tocAccordionRef.value?.activeId || tocSidebarRef.value?.activeId || ''
+})
+
+// Función de navegación
+function handleNavigate(id: string) {
+  const element = document.getElementById(id)
+  if (element) {
+    const headerHeight = DEFAULTS.HEADER_HEIGHT
+    const top = element.getBoundingClientRect().top + window.scrollY - headerHeight - DEFAULTS.SEARCH_SCROLL_PADDING
+    window.scrollTo({ top, behavior: 'smooth' })
+  }
+}
+
+// Debug: Log cuando cambian los tocItems (remover después de verificar)
+watch(tocItems, (items) => {
+  console.log('📚 TOC Items:', items.length, items)
+}, { immediate: true })
+
 // Después de que el contenido se renderice, capturar el elemento
 onMounted(async () => {
   await nextTick()
@@ -36,6 +78,14 @@ onMounted(async () => {
       contentElement.value = proseElement as HTMLElement
     }
   }, 150)
+  
+  // Listener para scroll del FAB
+  window.addEventListener('scroll', handleScroll, { passive: true })
+  handleScroll() // Check inicial
+})
+
+onUnmounted(() => {
+  window.removeEventListener('scroll', handleScroll)
 })
 </script>
 
@@ -45,6 +95,7 @@ onMounted(async () => {
     <div class="layout-grid">
       <!-- Sidebar fijo a la izquierda (solo tablets/desktop) -->
       <TableOfContents 
+        ref="tocSidebarRef"
         :content-element="contentElement" 
         variant="sidebar" 
         class="sidebar-area" 
@@ -81,6 +132,7 @@ onMounted(async () => {
         <main ref="contentRef" class="w-full px-4 md:px-8 py-8">
           <!-- TOC Acordeón (solo móvil) -->
           <TableOfContents 
+            ref="tocAccordionRef"
             :content-element="contentElement" 
             variant="accordion" 
             class="md:hidden mb-6" 
@@ -101,7 +153,23 @@ onMounted(async () => {
     <MediaLinksProcessor :content-element="contentElement" />
     
     <!-- Búsqueda contextual -->
-    <ContentSearch :content-element="contentElement" />
+    <ContentSearch ref="searchRef" :content-element="contentElement" />
+    
+    <!-- FAB flotante para TOC (solo móvil) -->
+    <!-- Se oculta cuando: sheet está abierto O búsqueda está abierta -->
+    <FloatingTocButton 
+      :show="shouldShowFab && !isOpen && !isSearchOpen"
+      @click="openSheet"
+    />
+    
+    <!-- Sheet con TOC (solo móvil) -->
+    <TocSheet
+      :is-open="isOpen"
+      :toc-items="tocItems"
+      :active-id="activeHeadingId"
+      @close="closeSheet"
+      @navigate="handleNavigate"
+    />
   </div>
 </template>
 

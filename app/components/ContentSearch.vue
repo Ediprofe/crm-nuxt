@@ -63,6 +63,11 @@ function handleKeydown(event: KeyboardEvent) {
     }
   }
 }
+
+// Exponer estado para uso externo
+defineExpose({
+  isOpen
+})
 </script>
 
 <template>

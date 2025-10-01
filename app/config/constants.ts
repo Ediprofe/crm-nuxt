@@ -54,7 +54,29 @@ export const Z_INDEX = {
   SEARCH_BAR: 50,
   HEADER: 45,
   SIDEBAR: 40,
-  TOC_MOBILE: 40
+  TOC_MOBILE: 40,
+  TOC_SHEET: 55 // Sheet debe estar sobre todo
+} as const
+
+// Configuración de gestos táctiles
+export const GESTURES = {
+  LONG_PRESS_DURATION: 500, // ms - Tiempo para activar long press
+  SCROLL_THRESHOLD: 300, // px - Scroll mínimo para mostrar FAB
+  HAPTIC_FEEDBACK_DURATION: 50 // ms - Duración de vibración
+} as const
+
+// Configuración de animaciones
+export const ANIMATIONS = {
+  FAB_FADE_DURATION: 200, // ms - Fade in/out del FAB
+  SHEET_SLIDE_DURATION: 300, // ms - Slide up/down del sheet
+  BACKDROP_FADE_DURATION: 200 // ms - Fade del backdrop
+} as const
+
+// Configuración del sheet de TOC
+export const TOC_SHEET = {
+  HEIGHT: '80vh',
+  MAX_HEIGHT: '600px',
+  BACKDROP_OPACITY: 0.5
 } as const
 
 
