@@ -36,7 +36,8 @@ export const MEDIA_PATTERNS = {
 } as const
 
 export const STORAGE_KEYS = {
-  THEME: 'ediprofe-theme'
+  THEME: 'ediprofe-theme',
+  SIDEBAR_COLLAPSED: 'ediprofe-sidebar-collapsed'
 } as const
 
 // Configuración de búsqueda
@@ -77,6 +78,13 @@ export const TOC_SHEET = {
   HEIGHT: '80vh',
   MAX_HEIGHT: '600px',
   BACKDROP_OPACITY: 0.5
+} as const
+
+// Configuración del sidebar
+export const SIDEBAR = {
+  WIDTH: '280px',
+  COLLAPSED_WIDTH: '0px',
+  TRANSITION_DURATION: '300ms'
 } as const
 
 

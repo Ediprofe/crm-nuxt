@@ -1,10 +1,10 @@
 <script setup lang="ts">
 import { ref, computed, watch, onMounted, onUnmounted, nextTick } from 'vue'
 import { materiasConfig } from '~/config/materias'
-import { DEFAULTS } from '~/config/constants'
+import { DEFAULTS, TIMEOUTS, SIDEBAR } from '~/config/constants'
 import { useTocSheet } from '~/composables/useTocSheet'
+import { useSidebarCollapse } from '~/composables/useSidebarCollapse'
 import type TableOfContents from '~/components/TableOfContents.vue'
-import type ContentSearch from '~/components/ContentSearch.vue'
 
 const route = useRoute()
 const materia = route.params.materia as string
@@ -29,27 +29,124 @@ const configMateria = materiasConfig[materia as keyof typeof materiasConfig]
 const contentRef = ref<HTMLElement | null>(null)
 const contentElement = ref<HTMLElement | null>(null)
 
-// Referencias a ambos componentes TableOfContents
+// Referencia al componente TableOfContents (sidebar para desktop)
 const tocSidebarRef = ref<InstanceType<typeof TableOfContents> | null>(null)
-const tocAccordionRef = ref<InstanceType<typeof TableOfContents> | null>(null)
-
-// Referencia al componente de búsqueda
-const searchRef = ref<InstanceType<typeof ContentSearch> | null>(null)
 
 // TOC Sheet para móvil
 const { isOpen, shouldShowFab, openSheet, closeSheet, handleScroll } = useTocSheet()
 
-// Computed para saber si la búsqueda está abierta
-const isSearchOpen = computed(() => searchRef.value?.isOpen || false)
+// Sidebar collapse para desktop
+const { isCollapsed, toggleSidebar, expandSidebar } = useSidebarCollapse()
+
+// Computed para el ancho del sidebar
+const sidebarWidth = computed(() => 
+  isCollapsed.value ? SIDEBAR.COLLAPSED_WIDTH : SIDEBAR.WIDTH
+)
+
+// Estado local para headings extraídos directamente del contenido
+interface TocItem {
+  id: string
+  text: string
+  level: number
+}
+
+const extractedTocItems = ref<TocItem[]>([])
+const extractedActiveId = ref<string>('')
+
+/**
+ * Extrae headings (H2, H3) directamente del contentElement
+ * Función independiente que no depende del componente TableOfContents
+ */
+function extractHeadingsFromContent() {
+  if (!contentElement.value) {
+    extractedTocItems.value = []
+    return
+  }
+
+  const headings = contentElement.value.querySelectorAll('h2, h3')
+  const items: TocItem[] = []
+
+  headings.forEach((heading) => {
+    const tagChar = heading.tagName[1]
+    if (!tagChar) return
+    
+    const level = parseInt(tagChar, 10) // "H2" -> 2, "H3" -> 3
+    let id = heading.id
+
+    // Si el heading no tiene ID, crear uno basado en el texto
+    if (!id) {
+      id = heading.textContent?.trim().toLowerCase()
+        .replace(/[^\w\s-]/g, '')
+        .replace(/\s+/g, '-') || ''
+      heading.id = id
+    }
+
+    items.push({
+      id,
+      text: heading.textContent?.trim() || '',
+      level
+    })
+  })
+
+  extractedTocItems.value = items
+  
+  // Establecer el primero como activo por defecto
+  if (items.length > 0 && items[0]) {
+    extractedActiveId.value = items[0].id
+  }
+}
+
+/**
+ * Actualiza el heading activo basado en la posición de scroll
+ */
+function updateActiveHeading() {
+  if (extractedTocItems.value.length === 0) return
+
+  const headerHeight = DEFAULTS.HEADER_HEIGHT
+  const scrollPosition = window.scrollY + headerHeight + DEFAULTS.SCROLL_OFFSET
+
+  // Encontrar el heading más cercano visible (iterar desde el final)
+  for (let i = extractedTocItems.value.length - 1; i >= 0; i--) {
+    const item = extractedTocItems.value[i]
+    if (!item) continue
+    
+    const element = document.getElementById(item.id)
+    
+    if (element) {
+      const elementTop = element.getBoundingClientRect().top + window.scrollY
+      
+      if (scrollPosition >= elementTop) {
+        extractedActiveId.value = item.id
+        return
+      }
+    }
+  }
+
+  // Si no encontró ninguno, activar el primero
+  const firstItem = extractedTocItems.value[0]
+  if (firstItem) {
+    extractedActiveId.value = firstItem.id
+  }
+}
 
 // Computed para obtener datos del TOC
-// En móvil usa accordion, en desktop usa sidebar
+// En móvil usa headings extraídos, en desktop puede usar sidebar si existe
 const tocItems = computed(() => {
-  // Priorizar accordion (móvil) porque el sidebar está oculto en móvil
-  return tocAccordionRef.value?.tocItems || tocSidebarRef.value?.tocItems || []
+  // En móvil: usar headings extraídos directamente
+  if (extractedTocItems.value.length > 0) {
+    return extractedTocItems.value
+  }
+  // Fallback: sidebar (solo visible en desktop)
+  return tocSidebarRef.value?.tocItems || []
 })
+
 const activeHeadingId = computed(() => {
-  return tocAccordionRef.value?.activeId || tocSidebarRef.value?.activeId || ''
+  // Priorizar el estado local extraído
+  if (extractedActiveId.value) {
+    return extractedActiveId.value
+  }
+  // Fallback: sidebar
+  return tocSidebarRef.value?.activeId || ''
 })
 
 // Función de navegación
@@ -67,6 +164,16 @@ watch(tocItems, (items) => {
   console.log('📚 TOC Items:', items.length, items)
 }, { immediate: true })
 
+// Watch para extraer headings cuando contentElement esté listo
+watch(contentElement, (newElement) => {
+  if (newElement) {
+    // Pequeño delay para asegurar que el DOM esté completamente renderizado
+    setTimeout(() => {
+      extractHeadingsFromContent()
+    }, TIMEOUTS.DOM_READY)
+  }
+})
+
 // Después de que el contenido se renderice, capturar el elemento
 onMounted(async () => {
   await nextTick()
@@ -79,26 +186,45 @@ onMounted(async () => {
     }
   }, 150)
   
-  // Listener para scroll del FAB
+  // Listeners de scroll
   window.addEventListener('scroll', handleScroll, { passive: true })
-  handleScroll() // Check inicial
+  window.addEventListener('scroll', updateActiveHeading, { passive: true })
+  
+  // Checks iniciales
+  handleScroll()
+  updateActiveHeading()
 })
 
 onUnmounted(() => {
   window.removeEventListener('scroll', handleScroll)
+  window.removeEventListener('scroll', updateActiveHeading)
 })
 </script>
 
 <template>
   <div class="min-h-screen bg-gray-50 dark:bg-gray-900 transition-colors">
     <!-- Layout con CSS Grid para mejor manejo del espacio -->
-    <div class="layout-grid">
+    <div 
+      class="layout-grid"
+      :style="{ 
+        '--sidebar-width': sidebarWidth,
+        '--sidebar-transition': SIDEBAR.TRANSITION_DURATION
+      }"
+    >
       <!-- Sidebar fijo a la izquierda (solo tablets/desktop) -->
       <TableOfContents 
         ref="tocSidebarRef"
         :content-element="contentElement" 
+        :is-collapsed="isCollapsed"
         variant="sidebar" 
-        class="sidebar-area" 
+        class="sidebar-area"
+        @toggle-collapse="toggleSidebar"
+      />
+      
+      <!-- Botón flotante para expandir cuando está colapsado -->
+      <SidebarExpandButton 
+        v-if="isCollapsed"
+        @expand="expandSidebar"
       />
 
       <!-- Área principal (Header + Contenido) -->
@@ -130,14 +256,6 @@ onUnmounted(() => {
 
         <!-- Contenido Principal -->
         <main ref="contentRef" class="w-full px-4 md:px-8 py-8">
-          <!-- TOC Acordeón (solo móvil) -->
-          <TableOfContents 
-            ref="tocAccordionRef"
-            :content-element="contentElement" 
-            variant="accordion" 
-            class="md:hidden mb-6" 
-          />
-          
           <!-- Contenido Markdown -->
           <div class="bg-white dark:bg-gray-800 rounded-lg shadow-sm border border-gray-200 dark:border-gray-700 p-6 md:p-12 w-full transition-colors">
             <ContentRenderer v-if="unidad" :value="unidad" class="prose prose-lg dark:prose-invert max-w-none" />
@@ -153,12 +271,12 @@ onUnmounted(() => {
     <MediaLinksProcessor :content-element="contentElement" />
     
     <!-- Búsqueda contextual -->
-    <ContentSearch ref="searchRef" :content-element="contentElement" />
+    <ContentSearch :content-element="contentElement" />
     
     <!-- FAB flotante para TOC (solo móvil) -->
-    <!-- Se oculta cuando: sheet está abierto O búsqueda está abierta -->
+    <!-- Se oculta solo cuando el sheet está abierto -->
     <FloatingTocButton 
-      :show="shouldShowFab && !isOpen && !isSearchOpen"
+      :show="shouldShowFab && !isOpen"
       @click="openSheet"
     />
     
@@ -198,11 +316,15 @@ onUnmounted(() => {
 /* Tablets y Desktop: Sidebar fijo + Contenido flexible */
 @media (min-width: 768px) {
   .layout-grid {
-    grid-template-columns: 280px 1fr;
+    /* Grid adaptativo usando variable CSS */
+    grid-template-columns: var(--sidebar-width, 280px) 1fr;
+    transition: grid-template-columns var(--sidebar-transition, 300ms) ease;
   }
   
   .sidebar-area {
     grid-column: 1;
+    overflow: hidden;
+    transition: all var(--sidebar-transition, 300ms) ease;
   }
   
   .main-area {

@@ -163,7 +163,8 @@ function replaceWithAccordion(link: MediaLink) {
   const accordionId = `video-${link.info.id}-${Math.random().toString(36).substr(2, 9)}`
 
   const container = document.createElement('div')
-  container.className = 'my-6 max-w-3xl'
+  // ✅ Cambio: w-full para adaptarse al contenedor, max-w-5xl para un límite razonable
+  container.className = 'my-6 w-full max-w-5xl'
 
   container.innerHTML = `
     <div class="rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow">
@@ -198,32 +199,91 @@ function replaceWithAccordion(link: MediaLink) {
 
   paragraph.replaceWith(container)
 
-  // Agregar funcionalidad de acordeón
+  // Agregar funcionalidad de acordeón con ResizeObserver
   setTimeout(() => {
     const button = document.getElementById(`${accordionId}-btn`)
     const content = document.getElementById(accordionId)
     const arrow = document.getElementById(`${accordionId}-arrow`)
 
     if (button && content && arrow) {
-      button.addEventListener('click', () => {
-        const isOpen = content.style.maxHeight && content.style.maxHeight !== '0px'
-
-        if (isOpen) {
-          // Cerrar
-          content.style.maxHeight = '0'
-          arrow.style.transform = 'rotate(0deg)'
-          button.setAttribute('aria-expanded', 'false')
-          content.setAttribute('aria-hidden', 'true')
-        } else {
-          // Abrir - usar altura dinámica basada en aspect ratio
-          const width = content.offsetWidth || 800
+      let resizeObserver: ResizeObserver | null = null
+      
+      /**
+       * Calcula y actualiza la altura del contenido basándose en el aspect ratio 16:9
+       */
+      const updateContentHeight = () => {
+        if (content.style.maxHeight && content.style.maxHeight !== '0px') {
+          const width = content.offsetWidth
           const height = Math.round(width * 9 / 16) // Aspect ratio 16:9
           content.style.maxHeight = `${height}px`
-          arrow.style.transform = 'rotate(180deg)'
-          button.setAttribute('aria-expanded', 'true')
-          content.setAttribute('aria-hidden', 'false')
+        }
+      }
+      
+      /**
+       * Abre el acordeón
+       */
+      const openAccordion = () => {
+        const width = content.offsetWidth
+        const height = Math.round(width * 9 / 16)
+        content.style.maxHeight = `${height}px`
+        arrow.style.transform = 'rotate(180deg)'
+        button.setAttribute('aria-expanded', 'true')
+        content.setAttribute('aria-hidden', 'false')
+        
+        // ✅ Iniciar observación de cambios de tamaño
+        if (!resizeObserver) {
+          resizeObserver = new ResizeObserver(() => {
+            updateContentHeight()
+          })
+          resizeObserver.observe(content)
+        }
+      }
+      
+      /**
+       * Cierra el acordeón
+       */
+      const closeAccordion = () => {
+        content.style.maxHeight = '0'
+        arrow.style.transform = 'rotate(0deg)'
+        button.setAttribute('aria-expanded', 'false')
+        content.setAttribute('aria-hidden', 'true')
+        
+        // ✅ Detener observación cuando está cerrado (optimización)
+        if (resizeObserver) {
+          resizeObserver.disconnect()
+          resizeObserver = null
+        }
+      }
+      
+      // Event listener para toggle
+      button.addEventListener('click', () => {
+        const isOpen = content.style.maxHeight && content.style.maxHeight !== '0px'
+        
+        if (isOpen) {
+          closeAccordion()
+        } else {
+          openAccordion()
         }
       })
+      
+      // ✅ Cleanup cuando el elemento se elimina del DOM
+      const mutationObserver = new MutationObserver((mutations) => {
+        mutations.forEach((mutation) => {
+          mutation.removedNodes.forEach((node) => {
+            if (node === container || node.contains(container)) {
+              if (resizeObserver) {
+                resizeObserver.disconnect()
+                resizeObserver = null
+              }
+              mutationObserver.disconnect()
+            }
+          })
+        })
+      })
+      
+      if (container.parentElement) {
+        mutationObserver.observe(container.parentElement, { childList: true })
+      }
     }
   }, 50)
 }

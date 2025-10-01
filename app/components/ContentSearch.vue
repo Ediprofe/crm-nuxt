@@ -63,11 +63,6 @@ function handleKeydown(event: KeyboardEvent) {
     }
   }
 }
-
-// Exponer estado para uso externo
-defineExpose({
-  isOpen
-})
 </script>
 
 <template>
@@ -95,7 +90,7 @@ defineExpose({
     <Transition name="slide-up">
       <div
         v-if="isOpen"
-        class="fixed bottom-6 left-4 right-4
+        class="fixed bottom-6 left-20 right-4
                md:left-6 md:right-6
                lg:left-auto lg:right-6 lg:w-[500px]"
         :style="{ zIndex: Z_INDEX.SEARCH_BAR }"

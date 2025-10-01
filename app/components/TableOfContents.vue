@@ -11,6 +11,11 @@ interface TocItem {
 const props = defineProps<{
   contentElement: HTMLElement | null
   variant?: 'sidebar' | 'accordion' // Controla la presentación
+  isCollapsed?: boolean // Estado de colapso (solo sidebar)
+}>()
+
+const emit = defineEmits<{
+  toggleCollapse: []
 }>()
 
 const tocItems = ref<TocItem[]>([])
@@ -178,7 +183,21 @@ defineExpose({
   <aside v-if="hasToc && variant === 'sidebar'" class="sidebar bg-white dark:bg-gray-800 border-r border-gray-200 dark:border-gray-700">
     <div class="sidebar-content">
       <div class="sidebar-header border-blue-500 dark:border-blue-600">
-        <h3 class="sidebar-title text-gray-900 dark:text-gray-100">Tabla de contenidos</h3>
+        <div class="flex items-center justify-between">
+          <h3 class="sidebar-title text-gray-900 dark:text-gray-100">Tabla de contenidos</h3>
+          
+          <!-- Botón para colapsar sidebar -->
+          <button
+            @click="emit('toggleCollapse')"
+            class="p-1.5 rounded-md text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors"
+            aria-label="Colapsar tabla de contenidos"
+            title="Colapsar sidebar"
+          >
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 19l-7-7 7-7m8 14l-7-7 7-7" />
+            </svg>
+          </button>
+        </div>
       </div>
       
       <nav class="sidebar-nav">
