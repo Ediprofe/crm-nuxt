@@ -38,4 +38,22 @@ export const STORAGE_KEYS = {
   THEME: 'ediprofe-theme'
 } as const
 
+// Configuración de búsqueda
+export const SEARCH_CONFIG = {
+  MIN_QUERY_LENGTH: 2,
+  DEBOUNCE_DELAY: 300,
+  MAX_CONTEXT_LENGTH: 100,
+  HIGHLIGHT_CLASS: 'bg-yellow-200 dark:bg-yellow-900 rounded px-1',
+  ACTIVE_HIGHLIGHT_CLASS: 'bg-yellow-400 dark:bg-yellow-600 rounded px-1 ring-2 ring-yellow-500'
+} as const
+
+// Z-index para elementos flotantes
+export const Z_INDEX = {
+  SEARCH_BUTTON: 50,
+  SEARCH_BAR: 50,
+  HEADER: 45,
+  SIDEBAR: 40,
+  TOC_MOBILE: 40
+} as const
+
 

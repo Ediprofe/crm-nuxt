@@ -99,6 +99,9 @@ onMounted(async () => {
 
     <!-- Procesador de enlaces multimedia -->
     <MediaLinksProcessor :content-element="contentElement" />
+    
+    <!-- Búsqueda contextual -->
+    <ContentSearch :content-element="contentElement" />
   </div>
 </template>
 
