@@ -124,7 +124,7 @@ function handleKeydown(event: KeyboardEvent) {
               spellcheck="false"
             />
             
-            <!-- Botón clear -->
+            <!-- Botón adaptativo: clear (con texto) o close (sin texto) -->
             <button
               v-if="hasQuery"
               @click="resetSearch"
@@ -134,9 +134,27 @@ function handleKeydown(event: KeyboardEvent) {
                      hover:bg-gray-100 dark:hover:bg-gray-700
                      transition-colors"
               aria-label="Limpiar búsqueda"
+              title="Limpiar texto"
             >
               <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+              </svg>
+            </button>
+            
+            <!-- Botón cerrar barra (solo visible cuando no hay texto) -->
+            <button
+              v-else
+              @click="closeSearch"
+              class="absolute right-2 p-1 rounded-full
+                     text-gray-400 hover:text-gray-600
+                     dark:text-gray-500 dark:hover:text-gray-300
+                     hover:bg-gray-100 dark:hover:bg-gray-700
+                     transition-colors"
+              aria-label="Cerrar búsqueda"
+              title="Cerrar barra de búsqueda"
+            >
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
               </svg>
             </button>
           </div>

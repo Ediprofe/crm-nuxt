@@ -130,30 +130,73 @@ function replaceWithPlaylistCard(link: MediaLink) {
   const paragraph = link.element.closest('p')
   if (!paragraph) return
 
-  const card = document.createElement('div')
-  card.className = 'inline-block bg-gradient-to-r from-red-500 to-red-600 dark:from-red-600 dark:to-red-700 rounded-xl p-4 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1 max-w-sm'
+  const container = document.createElement('div')
+  // ✅ Responsive: mismo patrón que acordeones
+  container.className = 'my-4 w-full max-w-full md:max-w-3xl lg:max-w-4xl xl:max-w-5xl'
 
-  const linkElement = document.createElement('a')
-  linkElement.href = link.url
-  linkElement.target = '_blank'
-  linkElement.rel = 'noopener noreferrer'
-  linkElement.className = 'flex items-center gap-4 text-white no-underline'
-
-  linkElement.innerHTML = `
-    <svg class="w-12 h-12 flex-shrink-0" viewBox="0 0 24 24" fill="currentColor">
-      <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
-    </svg>
-    <div class="flex-1 min-w-0">
-      <div class="font-bold text-lg">Lista de reproducción</div>
-      <div class="text-sm opacity-90 truncate">YouTube</div>
-    </div>
-    <svg class="w-6 h-6 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
-    </svg>
+  container.innerHTML = `
+    <a
+      href="${link.url}"
+      target="_blank"
+      rel="noopener noreferrer"
+      class="block group"
+    >
+      <div class="rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 border-2 border-transparent hover:border-blue-500 dark:hover:border-blue-400">
+        <!-- Header con gradiente optimizado para mejor contraste -->
+        <div class="bg-gradient-to-r from-blue-700 to-blue-800 dark:from-blue-500 dark:to-blue-600 px-4 py-3 sm:px-5 sm:py-4">
+          <div class="flex items-center gap-3 sm:gap-4">
+            <!-- Ícono YouTube con badge "playlist" -->
+            <div class="relative flex-shrink-0">
+              <svg class="w-10 h-10 sm:w-12 sm:h-12 text-white" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+              </svg>
+              <!-- Badge de playlist -->
+              <div class="absolute -bottom-1 -right-1 bg-white dark:bg-gray-800 rounded-full p-0.5">
+                <svg class="w-3 h-3 sm:w-4 sm:h-4 text-blue-600 dark:text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 10h16M4 14h16M4 18h16" />
+                </svg>
+              </div>
+            </div>
+            
+            <!-- Texto -->
+            <div class="flex-1 min-w-0">
+              <h3 class="text-white font-bold text-base sm:text-lg leading-tight">
+                Lista de reproducción
+              </h3>
+              <p class="text-blue-50 dark:text-blue-200 text-xs sm:text-sm mt-0.5">
+                Colección de videos · YouTube
+              </p>
+            </div>
+            
+            <!-- Flecha con animación -->
+            <svg class="w-5 h-5 sm:w-6 sm:h-6 text-white flex-shrink-0 transform group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6" />
+            </svg>
+          </div>
+        </div>
+        
+        <!-- Footer informativo -->
+        <div class="bg-white dark:bg-gray-800 px-4 py-2.5 sm:px-5 border-t border-gray-200 dark:border-gray-700">
+          <div class="flex items-center justify-between text-xs sm:text-sm">
+            <div class="flex items-center gap-2 text-gray-700 dark:text-gray-400">
+              <svg class="w-4 h-4 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z" />
+              </svg>
+              <span>Ver todos los videos</span>
+            </div>
+            <div class="flex items-center gap-1 text-blue-600 dark:text-blue-400 font-medium group-hover:gap-2 transition-all">
+              <span class="hidden sm:inline">Abrir</span>
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+              </svg>
+            </div>
+          </div>
+        </div>
+      </div>
+    </a>
   `
 
-  card.appendChild(linkElement)
-  paragraph.replaceWith(card)
+  paragraph.replaceWith(container)
 }
 
 function replaceWithAccordion(link: MediaLink) {
@@ -163,8 +206,12 @@ function replaceWithAccordion(link: MediaLink) {
   const accordionId = `video-${link.info.id}-${Math.random().toString(36).substr(2, 9)}`
 
   const container = document.createElement('div')
-  // ✅ Cambio: w-full para adaptarse al contenedor, max-w-5xl para un límite razonable
-  container.className = 'my-6 w-full max-w-5xl'
+  // ✅ Responsive: sin límite en móvil, gradualmente más grande en pantallas mayores
+  // Móvil: 100% del contenedor
+  // Tablet: máximo 768px
+  // Desktop: máximo 896px
+  // Desktop XL: máximo 1024px
+  container.className = 'my-6 w-full max-w-full md:max-w-3xl lg:max-w-4xl xl:max-w-5xl'
 
   container.innerHTML = `
     <div class="rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow">
