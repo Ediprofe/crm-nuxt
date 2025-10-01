@@ -1,5 +1,5 @@
 ---
-title: Cálculos químicos
+title: Tabla periódica y configuración electrónica
 description: Estequiometría y cálculos con moles
 ---
 
