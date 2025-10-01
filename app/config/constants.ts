@@ -61,9 +61,7 @@ export const Z_INDEX = {
 
 // Configuración de gestos táctiles
 export const GESTURES = {
-  LONG_PRESS_DURATION: 500, // ms - Tiempo para activar long press
-  SCROLL_THRESHOLD: 300, // px - Scroll mínimo para mostrar FAB
-  HAPTIC_FEEDBACK_DURATION: 50 // ms - Duración de vibración
+  SCROLL_THRESHOLD: 300 // px - Scroll mínimo para mostrar FAB TOC en móvil
 } as const
 
 // Configuración de animaciones

@@ -1,6 +1,5 @@
 import { ref, watch } from 'vue'
-
-const STORAGE_KEY = 'ediprofe-sidebar-collapsed'
+import { STORAGE_KEYS } from '~/config/constants'
 
 /**
  * Composable para manejar el estado de colapso del sidebar
@@ -17,7 +16,7 @@ export function useSidebarCollapse() {
   function initializeFromStorage() {
     if (typeof window === 'undefined') return
     
-    const stored = localStorage.getItem(STORAGE_KEY)
+    const stored = localStorage.getItem(STORAGE_KEYS.SIDEBAR_COLLAPSED)
     if (stored !== null) {
       isCollapsed.value = stored === 'true'
     }
@@ -47,7 +46,7 @@ export function useSidebarCollapse() {
   // Watch para persistir cambios en localStorage
   watch(isCollapsed, (newValue) => {
     if (typeof window !== 'undefined') {
-      localStorage.setItem(STORAGE_KEY, String(newValue))
+      localStorage.setItem(STORAGE_KEYS.SIDEBAR_COLLAPSED, String(newValue))
     }
   })
   
