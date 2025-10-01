@@ -145,3 +145,5 @@ window.resetTheme()
 ```
 
 Después de esto, el tema claro será el predeterminado, pero tu preferencia se guardará cuando cambies manualmente con el toggle.
+
+

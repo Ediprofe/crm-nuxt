@@ -302,3 +302,5 @@ nuxt-app/app/
 - ✅ Es **testeable** (funciones puras separadas)
 
 **Siguiente paso:** Aplicar misma refactorización a TableOfContents.vue (Fase 3)
+
+

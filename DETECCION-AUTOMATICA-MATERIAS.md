@@ -309,3 +309,5 @@ echo "# La Célula" > content/biologia/01-celula.md
 **Próximo paso:** Implementar detección automática cuando agregues más materias
 
 **Beneficio:** Crear `content/nueva-materia/` y ya aparece en la página principal
+
+

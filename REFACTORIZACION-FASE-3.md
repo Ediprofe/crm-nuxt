@@ -264,3 +264,5 @@ describe('media utils', () => {
 - [ ] Opcional: Agregar más validaciones
 
 **Estado: 🟢 Proyecto refactorizado exitosamente**
+
+
