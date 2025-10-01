@@ -225,13 +225,13 @@ export function highlightMatches(
 /**
  * Scroll suave al elemento activo
  */
-export function scrollToHighlight(container: HTMLElement, index: number, headerHeight: number = 93): void {
+export function scrollToHighlight(container: HTMLElement, index: number, headerHeight: number = 93, scrollPadding: number = 20): void {
   const mark = container.querySelector(`mark[data-search-index="${index}"]`)
   
   if (mark) {
     const rect = mark.getBoundingClientRect()
     const scrollTop = window.scrollY || window.pageYOffset
-    const targetY = rect.top + scrollTop - headerHeight - 20 // 20px extra padding
+    const targetY = rect.top + scrollTop - headerHeight - scrollPadding
     
     window.scrollTo({
       top: targetY,

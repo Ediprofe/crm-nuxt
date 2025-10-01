@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { ref, computed } from 'vue'
 import { useContentSearch } from '~/composables/useContentSearch'
-import { Z_INDEX } from '~/config/constants'
+import { Z_INDEX, TIMEOUTS } from '~/config/constants'
 
 // Props
 const props = defineProps<{
@@ -37,7 +37,7 @@ function openSearch() {
   isOpen.value = true
   setTimeout(() => {
     inputRef.value?.focus()
-  }, 100)
+  }, TIMEOUTS.MEDIA_PROCESSING)
 }
 
 /**

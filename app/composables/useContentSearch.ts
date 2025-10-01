@@ -6,7 +6,7 @@ import {
   scrollToHighlight,
   type SearchMatch 
 } from '~/utils/search'
-import { SEARCH_CONFIG, DEFAULTS } from '~/config/constants'
+import { SEARCH_CONFIG, DEFAULTS, TIMEOUTS } from '~/config/constants'
 
 export function useContentSearch(contentElement: Ref<HTMLElement | null>) {
   // Estado
@@ -57,8 +57,8 @@ export function useContentSearch(contentElement: Ref<HTMLElement | null>) {
     // Scroll a la primera coincidencia
     if (count > 0) {
       setTimeout(() => {
-        scrollToHighlight(contentElement.value!, 0, DEFAULTS.HEADER_HEIGHT)
-      }, 100)
+        scrollToHighlight(contentElement.value!, 0, DEFAULTS.HEADER_HEIGHT, DEFAULTS.SEARCH_SCROLL_PADDING)
+      }, TIMEOUTS.MEDIA_PROCESSING)
     }
     
     isSearching.value = false
@@ -122,7 +122,7 @@ export function useContentSearch(contentElement: Ref<HTMLElement | null>) {
     currentIndex.value = newIndex
     
     // Scroll al nuevo activo
-    scrollToHighlight(contentElement.value, newIndex, DEFAULTS.HEADER_HEIGHT)
+    scrollToHighlight(contentElement.value, newIndex, DEFAULTS.HEADER_HEIGHT, DEFAULTS.SEARCH_SCROLL_PADDING)
   }
   
   /**

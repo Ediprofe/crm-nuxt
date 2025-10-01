@@ -11,7 +11,8 @@ export const TIMEOUTS = {
 export const DEFAULTS = {
   HEADER_HEIGHT: 93, // px - Altura por defecto del header si no se puede medir
   SCROLL_OFFSET: 10, // px - Offset adicional para detección de heading activo
-  TOC_MAX_HEIGHT_MOBILE: '500px' // Altura máxima del acordeón móvil
+  TOC_MAX_HEIGHT_MOBILE: '500px', // Altura máxima del acordeón móvil
+  SEARCH_SCROLL_PADDING: 20 // px - Padding adicional al hacer scroll a resultados de búsqueda
 } as const
 
 export const BREAKPOINTS = {
