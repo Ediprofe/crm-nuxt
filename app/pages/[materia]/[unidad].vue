@@ -197,8 +197,17 @@ onUnmounted(() => {
 </script>
 
 <template>
-  <div class="min-h-screen transition-colors" style="background-color: var(--bg-primary);">
-    <!-- Layout con CSS Grid para mejor manejo del espacio -->
+  <div class="page-wrapper">
+    <!-- Header fijo FUERA del grid -->
+    <PageHeader
+      :breadcrumbs="[
+        { label: 'Inicio', to: '/' },
+        { label: configMateria?.nombre || materia, to: `/${materia}` },
+        { label: unidad?.title || 'Unidad' }
+      ]"
+    />
+
+    <!-- Layout con sidebar y contenido -->
     <div 
       class="layout-grid"
       :style="{ 
@@ -222,44 +231,15 @@ onUnmounted(() => {
         @expand="expandSidebar"
       />
 
-      <!-- Área principal (Header + Contenido) -->
-      <div class="main-area">
-        <!-- Header -->
-        <header class="sticky top-0 z-[45] transition-all border-b" style="background-color: var(--bg-card); border-color: var(--border-color);">
-          <div class="px-4 py-4">
-            <div class="flex items-center justify-between mb-2">
-              <!-- Breadcrumbs -->
-              <nav class="flex items-center space-x-2 text-sm">
-                <NuxtLink to="/" class="transition-colors font-medium hover:underline" style="color: var(--accent-primary);">
-                  Inicio
-                </NuxtLink>
-                <span style="color: var(--text-muted);">/</span>
-                <NuxtLink :to="`/${materia}`" class="transition-colors font-medium hover:underline" style="color: var(--accent-primary);">
-                  {{ configMateria?.nombre }}
-                </NuxtLink>
-                <span style="color: var(--text-muted);">/</span>
-                <span class="font-medium" style="color: var(--text-secondary);">{{ unidad?.title || 'Unidad' }}</span>
-              </nav>
-
-              <!-- Theme Toggle -->
-              <ThemeToggle />
-            </div>
-            
-            <h1 class="text-2xl font-bold transition-colors" style="color: var(--text-primary);">{{ configMateria?.nombre || materia }}</h1>
+      <!-- Contenido Principal -->
+      <main ref="contentRef" class="content-main">
+        <div class="content-card">
+          <ContentRenderer v-if="unidad" :value="unidad" class="prose prose-lg dark:prose-invert max-w-none" />
+          <div v-else class="text-center py-12">
+            <p style="color: var(--text-muted);">Contenido no encontrado</p>
           </div>
-        </header>
-
-        <!-- Contenido Principal -->
-        <main ref="contentRef" class="w-full px-4 md:px-8 py-8">
-          <!-- Contenido Markdown -->
-          <div class="rounded-xl shadow-sm border p-6 md:p-12 w-full transition-all" style="background-color: var(--bg-card); border-color: var(--border-color);">
-            <ContentRenderer v-if="unidad" :value="unidad" class="prose prose-lg dark:prose-invert max-w-none" />
-            <div v-else class="text-center py-12">
-              <p style="color: var(--text-muted);">Contenido no encontrado</p>
-            </div>
-          </div>
-        </main>
-      </div>
+        </div>
+      </main>
     </div>
 
     <!-- Procesador de enlaces multimedia -->
@@ -287,13 +267,17 @@ onUnmounted(() => {
 </template>
 
 <style scoped>
-/* Layout con CSS Grid - Responsive y flexible */
-.layout-grid {
-  display: grid;
+.page-wrapper {
   min-height: 100vh;
+  background-color: var(--bg-primary);
+  transition: background-color 0.2s ease;
 }
 
-/* Móvil: Una sola columna (sin sidebar) */
+.layout-grid {
+  display: grid;
+  min-height: calc(100vh - 56px);
+}
+
 @media (max-width: 767px) {
   .layout-grid {
     grid-template-columns: 1fr;
@@ -303,28 +287,72 @@ onUnmounted(() => {
     display: none;
   }
   
-  .main-area {
+  .content-main {
     grid-column: 1;
   }
 }
 
-/* Tablets y Desktop: Sidebar fijo + Contenido flexible */
 @media (min-width: 768px) {
   .layout-grid {
-    /* Grid adaptativo usando variable CSS */
     grid-template-columns: var(--sidebar-width, 280px) 1fr;
     transition: grid-template-columns var(--sidebar-transition, 300ms) ease;
   }
   
   .sidebar-area {
     grid-column: 1;
-    overflow: hidden;
+    position: sticky;
+    top: 56px;
+    height: calc(100vh - 56px);
+    overflow-y: auto;
+    overflow-x: hidden;
     transition: all var(--sidebar-transition, 300ms) ease;
   }
   
-  .main-area {
+  .content-main {
     grid-column: 2;
-    min-width: 0; /* Importante para que el contenido no se desborde */
+    min-width: 0;
+    overflow: hidden;
   }
 }
+
+.content-main {
+  width: 100%;
+  padding: 2rem 1rem;
+}
+
+@media (min-width: 768px) {
+  .content-main {
+    padding: 2rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .content-main {
+    padding: 2rem 3rem;
+  }
+}
+
+.content-card {
+  border-radius: 0.75rem;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px -1px rgba(0, 0, 0, 0.1);
+  border: 1px solid;
+  border-color: var(--border-color);
+  background-color: var(--bg-card);
+  padding: 1.5rem;
+  width: 100%;
+  transition: all 0.3s ease;
+}
+
+@media (min-width: 768px) {
+  .content-card {
+    padding: 2.5rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .content-card {
+    padding: 3rem;
+  }
+}
+
 </style>

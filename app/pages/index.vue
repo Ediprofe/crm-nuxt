@@ -10,18 +10,13 @@ const materias = Object.entries(materiasConfig).map(([slug, config]) => ({
 
 <template>
   <div class="min-h-screen transition-colors" style="background-color: var(--bg-primary);">
-    <!-- Header -->
-    <header class="shadow-sm transition-all" style="background-color: var(--bg-card);">
-      <div class="container mx-auto px-4 py-6">
-        <div class="flex items-center justify-between">
-          <div>
-            <h1 class="text-3xl md:text-4xl font-bold transition-colors" style="color: var(--text-primary);">EdiProfe.com</h1>
-            <p class="mt-1 text-base md:text-lg transition-colors" style="color: var(--text-secondary);">Plataforma educativa interactiva</p>
-          </div>
-          <ThemeToggle />
-        </div>
-      </div>
-    </header>
+    <!-- Header reutilizable -->
+    <PageHeader>
+      <template #content>
+        <h1 class="home-header-title">Ediprofe.com</h1>
+        <span class="home-header-subtitle">Ciencias y Matemáticas online</span>
+      </template>
+    </PageHeader>
 
     <!-- Hero Section -->
     <section class="hero-section">
@@ -99,13 +94,49 @@ const materias = Object.entries(materiasConfig).map(([slug, config]) => ({
     <!-- Footer -->
     <footer class="mt-20 transition-all border-t" style="background-color: var(--bg-card); border-color: var(--border-color);">
       <div class="container mx-auto px-4 py-6 text-center transition-colors" style="color: var(--text-muted);">
-        <p>&copy; 2025 EdiProfe.com - Plataforma Educativa</p>
+        <p>&copy; 2025 Ediprofe.com</p>
       </div>
     </footer>
   </div>
 </template>
 
 <style scoped>
+/* Estilos específicos del home */
+.home-header-title {
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: var(--text-primary);
+  letter-spacing: -0.02em;
+  transition: color 0.2s ease;
+  white-space: nowrap;
+}
+
+@media (min-width: 768px) {
+  .home-header-title {
+    font-size: 1.5rem;
+  }
+}
+
+.home-header-subtitle {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--text-muted);
+  transition: color 0.2s ease;
+  white-space: nowrap;
+}
+
+@media (min-width: 768px) {
+  .home-header-subtitle {
+    font-size: 0.9375rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .home-header-subtitle {
+    font-size: 0.8125rem;
+  }
+}
+
 /* Hero Section */
 .hero-section {
   position: relative;

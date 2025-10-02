@@ -47,39 +47,13 @@ const getTitulo = (item: ContentItem): string => {
 
 <template>
   <div class="min-h-screen transition-colors" style="background-color: var(--bg-primary);">
-    <!-- Header con breadcrumb -->
-    <header class="border-b transition-all" style="background-color: var(--bg-card); border-color: var(--border-color);">
-      <div class="container mx-auto px-4 py-6">
-        <!-- Breadcrumb -->
-        <nav class="mb-4 flex items-center justify-between">
-          <ol class="flex items-center space-x-2 text-sm">
-            <li>
-              <NuxtLink to="/" class="transition-colors font-medium hover:underline" style="color: var(--accent-primary);">
-                Inicio
-              </NuxtLink>
-            </li>
-            <li style="color: var(--text-muted);">/</li>
-            <li class="font-medium transition-colors" style="color: var(--text-secondary);">
-              {{ configMateria?.nombre }}
-            </li>
-          </ol>
-          
-          <!-- Theme Toggle -->
-          <ThemeToggle />
-        </nav>
-
-        <!-- Título de la materia -->
-        <div class="flex items-center gap-4">
-          <span class="text-5xl">{{ configMateria?.emoji }}</span>
-          <div>
-            <h1 class="text-4xl font-bold transition-colors" style="color: var(--heading-h1-color);">{{ configMateria?.nombre }}</h1>
-            <p class="mt-1 transition-colors" style="color: var(--text-secondary);">
-              {{ unidades?.length || 0 }} {{ unidades?.length === 1 ? 'unidad disponible' : 'unidades disponibles' }}
-            </p>
-          </div>
-        </div>
-      </div>
-    </header>
+    <!-- Header reutilizable con breadcrumbs -->
+    <PageHeader
+      :breadcrumbs="[
+        { label: 'Inicio', to: '/' },
+        { label: configMateria?.nombre || materia, emoji: configMateria?.emoji }
+      ]"
+    />
 
     <!-- Main Content -->
     <main class="container mx-auto px-4 py-8 max-w-4xl">

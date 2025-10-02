@@ -5,11 +5,12 @@
 export const TIMEOUTS = {
   DOM_READY: 200, // ms - Espera para que el DOM esté completamente renderizado
   MEDIA_PROCESSING: 100, // ms - Espera para procesar enlaces multimedia
-  HEADER_UPDATE: 150 // ms - Debounce para actualización de header height
+  HEADER_UPDATE: 150, // ms - Debounce para actualización de header height
+  FOCUS_DELAY: 100 // ms - Espera para enfocar inputs tras animaciones
 } as const
 
 export const DEFAULTS = {
-  HEADER_HEIGHT: 93, // px - Altura por defecto del header si no se puede medir
+  HEADER_HEIGHT: 56, // px - Altura compacta del header
   SCROLL_OFFSET: 10, // px - Offset adicional para detección de heading activo
   TOC_MAX_HEIGHT_MOBILE: '500px', // Altura máxima del acordeón móvil
   SEARCH_SCROLL_PADDING: 20 // px - Padding adicional al hacer scroll a resultados de búsqueda

@@ -37,7 +37,7 @@ function openSearch() {
   isOpen.value = true
   setTimeout(() => {
     inputRef.value?.focus()
-  }, TIMEOUTS.MEDIA_PROCESSING)
+  }, TIMEOUTS.FOCUS_DELAY)
 }
 
 /**

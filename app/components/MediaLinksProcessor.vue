@@ -131,8 +131,7 @@ function replaceWithPlaylistCard(link: MediaLink) {
   if (!paragraph) return
 
   const container = document.createElement('div')
-  // ✅ Responsive: mismo patrón que acordeones
-  container.className = 'my-4 w-full max-w-full md:max-w-3xl lg:max-w-4xl xl:max-w-5xl'
+  container.className = 'my-4 w-full'
 
   container.innerHTML = `
     <a
@@ -356,12 +355,7 @@ function replaceWithAccordion(link: MediaLink) {
   const accordionId = `video-${link.info.id}-${Math.random().toString(36).substr(2, 9)}`
 
   const container = document.createElement('div')
-  // ✅ Responsive: sin límite en móvil, gradualmente más grande en pantallas mayores
-  // Móvil: 100% del contenedor
-  // Tablet: máximo 768px
-  // Desktop: máximo 896px
-  // Desktop XL: máximo 1024px
-  container.className = 'my-6 w-full max-w-full md:max-w-3xl lg:max-w-4xl xl:max-w-5xl'
+  container.className = 'my-6 w-full'
 
   container.innerHTML = `
     <div class="video-accordion">
