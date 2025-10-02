@@ -43,10 +43,39 @@ const getTitulo = (item: ContentItem): string => {
   // Intentar obtener el título del contenido, si no, usar el nombre del archivo
   return item.title || getSlugFromPath(item.path || '').replace(/-/g, ' ')
 }
+
+// SEO Configuration
+const seoTitle = `${configMateria?.nombre || materia} - EdiProfe`
+const seoDescription = `Explora todas las unidades de ${configMateria?.nombre || materia}. ${unidades?.value?.length || 0} lecciones con videos explicativos, material didáctico y recursos descargables.`
+const seoKeywords = [configMateria?.nombre.toLowerCase() || materia, 'lecciones', 'educación', 'STEM', 'aprendizaje']
+
+const structuredData = {
+  '@context': 'https://schema.org',
+  '@type': 'Course',
+  'name': `Curso de ${configMateria?.nombre}`,
+  'description': seoDescription,
+  'provider': {
+    '@type': 'EducationalOrganization',
+    'name': 'EdiProfe',
+    'url': 'https://ediprofe.com'
+  },
+  'numberOfLessons': unidades?.value?.length || 0,
+  'educationalLevel': 'Secundaria',
+  'teaches': configMateria?.nombre
+}
 </script>
 
 <template>
   <div class="min-h-screen transition-colors" style="background-color: var(--bg-primary);">
+    <!-- SEO Meta Tags -->
+    <SEO
+      :title="seoTitle"
+      :description="seoDescription"
+      :keywords="seoKeywords"
+      type="educational"
+      :structured-data="structuredData"
+    />
+
     <!-- Header reutilizable con breadcrumbs -->
     <PageHeader
       :breadcrumbs="[

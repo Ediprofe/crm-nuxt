@@ -26,6 +26,39 @@ const { data: unidad } = await useAsyncData(`${materia}-${unidadSlug}`, async ()
 
 const configMateria = materiasConfig[materia as keyof typeof materiasConfig]
 
+// SEO Configuration
+const seoTitle = computed(() => `${unidad.value?.title || 'Unidad'} - ${configMateria?.nombre} - EdiProfe`)
+const seoDescription = computed(() => 
+  unidad.value?.description || 
+  `Aprende sobre ${unidad.value?.title || 'esta unidad'} en ${configMateria?.nombre}. Material educativo con videos, explicaciones y recursos descargables.`
+)
+const seoKeywords = computed(() => [
+  configMateria?.nombre.toLowerCase() || materia,
+  unidad.value?.title?.toLowerCase() || '',
+  'lección',
+  'educación',
+  'STEM'
+].filter(Boolean))
+
+const structuredData = computed(() => ({
+  '@context': 'https://schema.org',
+  '@type': 'LearningResource',
+  'name': unidad.value?.title || 'Unidad',
+  'description': seoDescription.value,
+  'educationalLevel': 'Secundaria',
+  'learningResourceType': 'Lesson',
+  'isPartOf': {
+    '@type': 'Course',
+    'name': `Curso de ${configMateria?.nombre}`,
+    'provider': {
+      '@type': 'EducationalOrganization',
+      'name': 'EdiProfe',
+      'url': 'https://ediprofe.com'
+    }
+  },
+  'teaches': unidad.value?.title
+}))
+
 // Referencias para el procesador de enlaces multimedia
 const contentRef = ref<HTMLElement | null>(null)
 const contentElement = ref<HTMLElement | null>(null)
@@ -154,10 +187,12 @@ function handleNavigate(id: string) {
   }
 }
 
-// Debug: Log cuando cambian los tocItems (remover después de verificar)
-watch(tocItems, (items) => {
-  console.log('📚 TOC Items:', items.length, items)
-}, { immediate: true })
+// Watch para verificar cambios en TOC items (solo en desarrollo)
+if (import.meta.dev) {
+  watch(tocItems, (items) => {
+    console.log('📚 TOC Items:', items.length, items)
+  }, { immediate: true })
+}
 
 // Watch para extraer headings cuando contentElement esté listo
 watch(contentElement, (newElement) => {
@@ -198,6 +233,15 @@ onUnmounted(() => {
 
 <template>
   <div class="page-wrapper">
+    <!-- SEO Meta Tags -->
+    <SEO
+      :title="seoTitle"
+      :description="seoDescription"
+      :keywords="seoKeywords"
+      type="article"
+      :structured-data="structuredData"
+    />
+
     <!-- Header fijo FUERA del grid -->
     <PageHeader
       :breadcrumbs="[

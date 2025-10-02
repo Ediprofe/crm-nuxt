@@ -6,10 +6,41 @@ const materias = Object.entries(materiasConfig).map(([slug, config]) => ({
   slug: slug as MateriaSlug,
   ...config
 }))
+
+// SEO Configuration
+const seoTitle = 'EdiProfe - Aprende Química, Física y Matemáticas'
+const seoDescription = 'Explora lecciones estructuradas de ciencias y matemáticas con videos explicativos, material didáctico y recursos descargables. Aprende conceptos complejos de forma simple y progresiva.'
+const seoKeywords = ['química', 'física', 'matemáticas', 'ciencias', 'educación', 'STEM', 'lecciones', 'aprendizaje', 'videos educativos']
+
+const structuredData = {
+  '@context': 'https://schema.org',
+  '@type': 'EducationalOrganization',
+  'name': 'EdiProfe',
+  'description': 'Plataforma educativa para aprender Química, Física y Matemáticas',
+  'url': 'https://ediprofe.com',
+  'sameAs': [
+    // Agregar redes sociales cuando estén disponibles
+  ],
+  'offers': {
+    '@type': 'Offer',
+    'price': '0',
+    'priceCurrency': 'USD',
+    'description': 'Contenido educativo gratuito'
+  }
+}
 </script>
 
 <template>
   <div class="min-h-screen transition-colors" style="background-color: var(--bg-primary);">
+    <!-- SEO Meta Tags -->
+    <SEO
+      :title="seoTitle"
+      :description="seoDescription"
+      :keywords="seoKeywords"
+      type="website"
+      :structured-data="structuredData"
+    />
+
     <!-- Header reutilizable -->
     <PageHeader>
       <template #content>
