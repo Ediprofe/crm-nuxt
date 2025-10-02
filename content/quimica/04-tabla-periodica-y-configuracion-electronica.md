@@ -24,7 +24,7 @@ La tabla periódica es una herramienta fundamental que organiza los diferentes e
 Ideas clave:
 
 - **Organización:** La tabla se recorre de izquierda a derecha y de arriba hacia abajo, siguiendo el orden del número atómico (Z).
-- **Localización:** Los elementos se ubican por su **Grupo** (columna vertical, del 1 al 18) y su **periodo** (fila horizontal, del 1 al 7).
+- **Localización:** Los elementos se ubican por su **grupo** (columna vertical, del 1 al 18) y su **periodo** (fila horizontal, del 1 al 7).
 - **Clasificación:** Se divide en tres categorías principales: **metales** (ubicados a la izquierda, excepto el H), **no metales** (ubicados a la derecha, más el H), y **metaloides** (con propiedades intermedias que dividen a los dos grupos).
 - **Tamaño atómico (radio atómico):** La posición en la tabla predice el tamaño; los átomos son generalmente **más grandes** cuando se ubican **más abajo** o **más a la izquierda**.
 
@@ -38,12 +38,12 @@ Un repaso sobre estructura atómica es fundamental antes de estudiar conceptos c
 
 Ideas clave:
 
-- **Partículas Subatómicas y localización:**
+- **Partículas subatómicas y localización:**
     - En el núcleo se encuentran los **protones** (con carga positiva) y los **neutrones** (con carga cero). Por habitar el núcleo, a protones y neutrones se les suele llamar **nucleones**
     - Los **electrones** (peso despreciable) se encuentran rodeando el núcleo en la periferia.
-- **Masa Atómica:** Prácticamente toda la masa del átomo se localiza en el núcleo (protones y neutrones). La masa atómica es, en términos prácticos, la **suma de protones y neutrones**.
-- **Número Atómico (Z):** Es igual al **número de protones**. El número atómico es lo que **identifica** de manera única a cada elemento (por ejemplo, Z=4 pertenece al elemento Berilio).
-- **Carga Eléctrica:** Un átomo es **neutro** cuando la cantidad de protones es **igual** a la cantidad de electrones. Si las cantidades no son iguales, se habla de un ion.
+- **Masa atómica:** Prácticamente toda la masa del átomo se localiza en el núcleo (protones y neutrones). La masa atómica es, en términos prácticos, la **suma de protones y neutrones**.
+- **Número atómico (Z):** Es igual al **número de protones**. El número atómico es lo que **identifica** de manera única a cada elemento (por ejemplo, Z=4 pertenece al elemento Berilio).
+- **Carga eléctrica:** Un átomo es **neutro** cuando la cantidad de protones es **igual** a la cantidad de electrones. Si las cantidades no son iguales, se habla de un ion.
 
 ## Metales y no metales
 
@@ -217,7 +217,7 @@ La configuración electrónica de **iones** se rige por el mismo principio de di
 
 Ideas clave:
 
-1. Determinación de la Cantidad de Electrones
+1. Determinación de la cantidad de electrones
 
 - **Iones positivos (cationes):** Si un ion tiene un signo positivo (por ejemplo, $Na^+$ o $Ca^{2+}$), esto indica que **perdió electrones**.
     - Para determinar la cantidad de electrones, se resta el valor de la carga positiva al número atómico (Z).
@@ -228,7 +228,7 @@ Ideas clave:
     - *Ejemplo:* El ion Azufre ($S^{2-}$, $Z=16$) ganó dos electrones, por lo tanto, tiene $18$ electrones ($16 + 2 = 18$).
     - *Ejemplo:* El ion nitrógeno ($N^{3-}$, $Z=7$) ganó tres electrones, por lo tanto, tiene $10$ electrones ($7 + 3 = 10$).
 
-2. Distribución y Estabilidad
+2. Distribución y estabilidad
 
 - **Procedimiento:** Una vez determinado el nuevo número de electrones, la configuración electrónica se lleva a cabo siguiendo el orden creciente de energía (Principio de Afbau).
 - **Configuración del ion sodio ($Na^{+}$):** Con $10$ electrones, su configuración es $1s^2 2s^2 2p^6$. En el último nivel (nivel 2), suma $2 + 6 = 8$ electrones.
