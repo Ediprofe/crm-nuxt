@@ -79,7 +79,9 @@ El volumen es también una propiedad de la materia y se define como el **espacio
 
 ◦ **Erlenmeyer**
 
-◦ **Baker** *(Nota: El tubo de ensayo y el gotero se utilizan más para almacenar muestras o dispensar líquido de a poco, y no son propiamente instrumentos para medir volumen, especialmente el tubo de ensayo mostrado).*
+◦ **Baker** 
+
+*(Nota: El tubo de ensayo y el gotero se utilizan más para almacenar muestras o dispensar líquido de a poco, y no son propiamente instrumentos para medir volumen, especialmente el tubo de ensayo mostrado).*
 
 - **Unidades de Medición:** Las unidades que se usan para medir el volumen (el espacio ocupado por un cuerpo) incluyen:
 
