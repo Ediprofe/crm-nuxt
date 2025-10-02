@@ -195,7 +195,7 @@ https://youtu.be/tDBfaewlmFs?si=gASvLQ82b8l-WidU
 
 https://vt.tiktok.com/ZSBp7Grrr/
 
-El estudio de la materia incluye la clasificación de sus **propiedades**, las cuales son las **características o atributos de las sustancias** que ayudanEl estudio de la materia incluye la clasificación de sus **propiedades**, las cuales son las **características o atributos de las sustancias** que ayudan a describirlas. Estas propiedades se dividen en dos categorías principales: **Propiedades Cualitativas** y **Propiedades Cuantitativas**.
+El estudio de la materia incluye la clasificación de sus **propiedades**, las cuales son las **características o atributos de las sustancias** que ayudan a describirlas. Estas propiedades se dividen en dos categorías principales: **Propiedades Cualitativas** y **Propiedades Cuantitativas**.
 
 ### Propiedades cualitativas
 
