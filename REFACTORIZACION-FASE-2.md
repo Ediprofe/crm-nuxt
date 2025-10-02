@@ -304,3 +304,4 @@ nuxt-app/app/
 **Siguiente paso:** Aplicar misma refactorización a TableOfContents.vue (Fase 3)
 
 
+

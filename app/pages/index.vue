@@ -86,20 +86,21 @@ const structuredData = {
     </section>
 
     <!-- Main Content -->
-    <main class="container mx-auto px-4 py-12 md:py-16">
+    <main class="container-main">
       <!-- Sección de materias -->
-      <div class="mb-10">
-        <h2 class="text-2xl md:text-3xl font-bold mb-3 transition-colors" style="color: var(--heading-color);">Materias Disponibles</h2>
-        <p class="text-base md:text-lg transition-colors" style="color: var(--text-secondary);">Selecciona una materia para comenzar a estudiar</p>
+      <div class="section-spacing">
+        <UiHeading level="2" class="mb-3">Materias Disponibles</UiHeading>
+        <p class="text-body">Selecciona una materia para comenzar a estudiar</p>
       </div>
 
-      <!-- Grid de Materias -->
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-        <NuxtLink
+      <!-- Grid de Materias - Usando UiCard -->
+      <div class="grid-auto-fit">
+        <UiCard
           v-for="materia in materias"
           :key="materia.slug"
           :to="`/${materia.slug}`"
-          class="materia-card group"
+          hoverable
+          class="group"
         >
           <!-- Emoji grande -->
           <div class="text-6xl mb-4 transform transition-transform group-hover:scale-110">
@@ -118,13 +119,13 @@ const structuredData = {
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
             </svg>
           </div>
-        </NuxtLink>
+        </UiCard>
       </div>
     </main>
 
     <!-- Footer -->
-    <footer class="mt-20 transition-all border-t" style="background-color: var(--bg-card); border-color: var(--border-color);">
-      <div class="container mx-auto px-4 py-6 text-center transition-colors" style="color: var(--text-muted);">
+    <footer class="mt-20 border-t surface-card divider">
+      <div class="container mx-auto px-4 py-6 text-center text-muted">
         <p>&copy; 2025 Ediprofe.com</p>
       </div>
     </footer>
