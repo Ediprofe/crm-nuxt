@@ -128,10 +128,10 @@ A continuación, se muestra una tabla comparativa de densidades de diferentes ma
 
 | Sustancia | Densidad (g/mL) | Observación y Flotación | Fuente |
 | --- | --- | --- | --- |
-| **Piedra** | 2.5 | Es la más densa; más maciza que el agua. Va al fondo porque el agua es menos densa. |  |
-| **Agua** | 1.0 | Es menos densa que la piedra, por lo que flota sobre ella. |  |
-| **Aceite de Cocina** | 0.92 | Es menos denso que el agua. Flota sobre el agua. |  |
-| **Pelota Playera** | 0.4 | Muy poco densa (tiene poca masa en $1 \text{ mL}$). Flota en el agua. |  |
+| **Piedra** | 2,5 | Es la más densa; más maciza que el agua. Va al fondo porque el agua es menos densa. |  |
+| **Agua** | 1,0 | Es menos densa que la piedra, por lo que flota sobre ella. |  |
+| **Aceite de Cocina** | 0,92 | Es menos denso que el agua. Flota sobre el agua. |  |
+| **Pelota Playera** | 0,4 | Muy poco densa (tiene poca masa en $1 \text{ mL}$). Flota en el agua. |  |
 
 ## Temperatura
 
@@ -176,7 +176,7 @@ La conductividad eléctrica es una **propiedad de la materia** que nos dice **qu
 Ideas clave:
 
 - **Definición:** La conductividad describe qué tan bien o qué tan mal una sustancia es capaz de conducir la electricidad.
-- **Instrumento y unidades:** La conductividad se mide con un instrumento conocido como **conductímetro** y sus unidades son los **microsim por centímetro**.
+- **Instrumento y unidades:** La conductividad se mide con un instrumento conocido como **conductímetro** y sus unidades son los **microsiemens por centímetro**.
 - **El cobre (conductor por excelencia):**
     - El **cobre** es un **excelente conductor de electricidad** y es el conductor de electricidad **por excelencia**.
     - El cobre conduce muchísimo más la electricidad que otros materiales.
@@ -214,10 +214,10 @@ Las propiedades cuantitativas son aquellas que describen los cuerpos con una **c
 - **Descripción:** Estas propiedades siempre están acompañadas de un **número y una unidad de medida**.
 - **Ejemplos:** Las siguientes propiedades que ya hemos discutido en la conversación son clasificadas como cuantitativas:
     - **Masa:** Describe la cantidad de material con una cantidad numérica (ejemplo: $2300 \text{ g}$).
-    - **Volumen:** Describe el espacio ocupado con una cantidad numérica (ejemplo: $1.5 \text{ L}$).
+    - **Volumen:** Describe el espacio ocupado con una cantidad numérica (ejemplo: $1,5 \text{ L}$).
     - **Densidad:** Describe la relación masa/volumen con un número y unidad de medida (ejemplo: $1 \frac{\text{g}}{\text{mL}}$).
-    - **Temperatura:** Se describe con un numerito y una unidad de medida (ejemplo: $36.3 ^\circ \text{C}$).
-    - **Conductividad eléctrica:** Se describe con un número y una unidad de medida (ejemplo: $50,000$ microsim por centímetro).
+    - **Temperatura:** Se describe con un numerito y una unidad de medida (ejemplo: $36,3 ^\circ \text{C}$).
+    - **Conductividad eléctrica:** Se describe con un número y una unidad de medida (ejemplo: $50000$ microsiemens por centímetro).
 
 ## Propiedades intensivas y extensivas
 
