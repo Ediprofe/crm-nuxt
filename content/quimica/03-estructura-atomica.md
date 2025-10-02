@@ -29,10 +29,10 @@ El estudio de la estructura atómica establece que los átomos se dividen en dos
 
 Las partículas subatómicas se distribuyen entre estas dos zonas:
 
-- **Zona interna (núcleo):** Las partículas subatómicas que habitan el núcleo son los **neutrones** y los **protones**.
+- **Zona interna (núcleo):** las partículas subatómicas que habitan el núcleo son los **neutrones** y los **protones**.
     - Los **neutrones** tienen una carga eléctrica **neutra** o cero.
     - Los **protones** tienen una carga eléctrica **positiva**, representada con un signo más.
-- **Zona externa (periferia):** Las partículas subatómicas que rodean al núcleo en la periferia se llaman **electrones** y tienen una carga **negativa**.
+- **Zona externa (periferia):** las partículas subatómicas que rodean al núcleo en la periferia se llaman **electrones** y tienen una carga **negativa**.
 
 **Número atómico ($Z$)**
 
@@ -85,10 +85,10 @@ A continuación, se completa la tabla utilizando la relación de que el número 
 
 **Explicaciones de los elementos en la tabla:**
 
-- **Átomo 1 (nitrógeno):** Si el número de protones es 7, el número atómico ($Z$) también es 7. El elemento que tiene $Z=7$ es el nitrógeno.
-- **Átomo 2 (titanio):** Un átomo con 22 protones tiene $Z=22$. El elemento con $Z=22$ es el titanio.
-- **Átomo 3 (radio):** Si se sabe que el elemento es radio, consultando la tabla periódica, se determina que su número atómico es 88. Por lo tanto, también tiene 88 protones.
-- **Átomo 4 (plomo):** Si el número atómico es 82, el número de protones también es 82. El elemento con $Z=82$ es el plomo.
+- **Átomo 1 (nitrógeno):** si el número de protones es 7, el número atómico ($Z$) también es 7. El elemento que tiene $Z=7$ es el nitrógeno.
+- **Átomo 2 (titanio):** un átomo con 22 protones tiene $Z=22$. El elemento con $Z=22$ es el titanio.
+- **Átomo 3 (radio):** si se sabe que el elemento es radio, consultando la tabla periódica, se determina que su número atómico es 88. Por lo tanto, también tiene 88 protones.
+- **Átomo 4 (plomo):** si el número atómico es 82, el número de protones también es 82. El elemento con $Z=82$ es el plomo.
 
 ## Átomos neutros e iones
 
@@ -102,8 +102,8 @@ La clasificación de los átomos en neutros o iones se basa en la comparación d
 
 Los átomos se consideran **neutros** cuando cumplen la condición de tener una **igual cantidad de protones que de electrones**.
 
-- **Protones y ubicación:** Los protones tienen carga eléctrica **positiva** y se encuentran en el **núcleo**.
-- **Electrones y ubicación:** Los electrones tienen carga eléctrica **negativa** y se encuentran en la **periferia**, rodeando al núcleo.
+- **Protones y ubicación:** los protones tienen carga eléctrica **positiva** y se encuentran en el **núcleo**.
+- **Electrones y ubicación:** los electrones tienen carga eléctrica **negativa** y se encuentran en la **periferia**, rodeando al núcleo.
 
 **Carga de los átomos neutros:**
 
@@ -123,8 +123,8 @@ $$\text{Carga} = \text{Número de protones} - \text{Número de electrones} = 0$$
 
 Los **iones** son aquellos átomos que tienen una **cantidad de protones diferente a la cantidad de electrones**.
 
-- **Carga de los iones:** Los iones **no tienen una carga cero**; su carga es diferente de cero. Esta carga puede ser **positiva o negativa**.
-- **Cálculo e interpretación de la carga:** La carga se sigue calculando restando el número de protones menos el número de electrones.
+- **Carga de los iones:** los iones **no tienen una carga cero**; su carga es diferente de cero. Esta carga puede ser **positiva o negativa**.
+- **Cálculo e interpretación de la carga:** la carga se sigue calculando restando el número de protones menos el número de electrones.
     - Si hay **más protones** que electrones, la carga será **positiva**.
     - Si hay **más electrones** que protones, la carga será **negativa**.
 
@@ -140,11 +140,11 @@ Los iones se clasifican en dos tipos principales:
 **Ejemplos de Iones:**
 
 1. **Catión (carga positiva):**
-    - Si un átomo de litio tiene tres protones y dos electrones, hay más protones que electrones.
+    - si un átomo de litio tiene tres protones y dos electrones, hay más protones que electrones.
     - La carga es $\text{Carga} = 3 - 2 = +1$ (o $1+$), lo que indica que tiene una carga positiva de más (un protón de más).
     - Los cationes pierden electrones. Por ejemplo, si un átomo pierde un electrón, queda con más protones que electrones.
 2. **Anión (carga negativa):**
-    - Si un átomo tiene nueve protones y diez electrones, hay más electrones.
+    - si un átomo tiene nueve protones y diez electrones, hay más electrones.
     - La carga es $\text{Carga} = 9 - 10 = -1$, lo que indica que hay una carga negativa de más (un electrón de más).
     - Los aniones ganan electrones, lo que resulta en más cargas negativas.
 
@@ -264,8 +264,8 @@ Todos los átomos de hidrógeno tienen un protón en su núcleo, por lo que su n
 
 | Isótopo | Protones | Neutrones | Número Másico ($A$) | Notación | Abundancia en la naturaleza |
 | --- | --- | --- | --- | --- | --- |
-| **Protio** | 1 | 0 | $1+0=1$ | $^{1}_{1}\mathrm{H}$ | $99,999%$ |
-| **Deuterio** | 1 | 1 | $1+1=2$ | $^{2}_{1}\mathrm{H}$ | $0,01%$ |
+| **Protio** | 1 | 0 | $1+0=1$ | $^{1}_{1}\mathrm{H}$ | $99{,}999\%$ |
+| **Deuterio** | 1 | 1 | $1+1=2$ | $^{2}_{1}\mathrm{H}$ | $0{,}01\%$ |
 - El **protio** es el isótopo más abundante, constituyendo prácticamente todo el hidrógeno que existe en la naturaleza.
 - El **deuterio** no es tan abundante en la naturaleza.
 
@@ -274,12 +274,12 @@ Todos los átomos de hidrógeno tienen un protón en su núcleo, por lo que su n
 Los átomos de carbono tienen seis protones en su núcleo.
 
 - **Carbono 12:**
-    - Tiene 6 protones y 6 neutrones.
+    - tiene 6 protones y 6 neutrones.
     - Su número másico es $6 + 6 = 12$.
     - Se anota con el número atómico (6) abajo a la izquierda y el número másico (12) arriba a la izquierda.
     - Este isótopo es **muy abundante** en la naturaleza.
 - **Carbono 13:**
-    - Tiene 6 protones y 7 neutrones.
+    - tiene 6 protones y 7 neutrones.
     - Su número másico es $6 + 7 = 13$.
     - Se anota con el mismo número atómico (6) pero diferente número másico (13).
     - Es **mucho menos abundante** que el carbono 12 en la naturaleza.

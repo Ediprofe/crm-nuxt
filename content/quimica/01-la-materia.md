@@ -27,12 +27,12 @@ Las fases de la materia son básicamente tres: **sólido, líquido y gas**.
 
 Los cambios entre estas fases tienen nombres específicos:
 
-- **Fusión:** Es el cambio de fase de **sólido a líquido**. Por ejemplo, el agua que se saca del congelador y se vuelve líquida experimenta este cambio.
-- **Solidificación:** Es el cambio de fase de **líquido a sólido**.
-- **Ebullición:** Es el cambio de fase de **líquido a gas**.
-- **Condensación:** Es el cambio de fase de **gas a líquido**.
-- **Sublimación:** Es el cambio de fase de **sólido a gas**.
-- **Sublimación Inversa:** Es el cambio de fase de **gas a sólido**
+- **Fusión:** es el cambio de fase de **sólido a líquido**. Por ejemplo, el agua que se saca del congelador y se vuelve líquida experimenta este cambio.
+- **Solidificación:** es el cambio de fase de **líquido a sólido**.
+- **Ebullición:** es el cambio de fase de **líquido a gas**.
+- **Condensación:** es el cambio de fase de **gas a líquido**.
+- **Sublimación:** es el cambio de fase de **sólido a gas**.
+- **Sublimación inversa:** es el cambio de fase de **gas a sólido**
 
 ## Masa y volumen
 
@@ -48,9 +48,9 @@ Aquí se detalla la información sobre masa y volumen:
 
 La masa es una propiedad de la materia que describe la **cantidad de material que posee un cuerpo**.
 
-- **Descripción:** La masa se utiliza para describir la cantidad de materia de un objeto. Por ejemplo, si una piedra tiene una masa de 2500 gramos, esta medida describe la cantidad de materia que posee esa piedra.
-- **Medición:** La masa se mide utilizando una **balanza**.
-- **Unidades de Medición:** La masa puede medirse en varias unidades, entre ellas:
+- **Descripción:** la masa se utiliza para describir la cantidad de materia de un objeto. Por ejemplo, si una piedra tiene una masa de 2500 gramos, esta medida describe la cantidad de materia que posee esa piedra.
+- **Medición:** la masa se mide utilizando una **balanza**.
+- **Unidades de medición:** la masa puede medirse en varias unidades, entre ellas:
 
 ◦ **Gramos** (g)
 
@@ -66,8 +66,8 @@ La masa es una propiedad de la materia que describe la **cantidad de material qu
 
 El volumen es también una propiedad de la materia y se define como el **espacio ocupado por un cuerpo**.
 
-- **Concepto:** Al escuchar la palabra volumen, se debe pensar en el **espacio ocupado** o en el **tamaño**. Por ejemplo, el agua dentro de un frasco puede ocupar un volumen de 1,5 litros.
-- **Medición (Instrumentos):** El volumen se puede medir con diversos instrumentos:
+- **Concepto:** al escuchar la palabra volumen, se debe pensar en el **espacio ocupado** o en el **tamaño**. Por ejemplo, el agua dentro de un frasco puede ocupar un volumen de 1,5 litros.
+- **Medición (instrumentos):** el volumen se puede medir con diversos instrumentos:
 
 ◦ Un **vaso medidor** (como un termo medidor)
 
@@ -83,7 +83,7 @@ El volumen es también una propiedad de la materia y se define como el **espacio
 
 *(Nota: El tubo de ensayo y el gotero se utilizan más para almacenar muestras o dispensar líquido de a poco, y no son propiamente instrumentos para medir volumen, especialmente el tubo de ensayo mostrado).*
 
-**Unidades de Medición:** Las unidades que se usan para medir el volumen (el espacio ocupado por un cuerpo) incluyen:
+**Unidades de medición:** las unidades que se usan para medir el volumen (el espacio ocupado por un cuerpo) incluyen:
 
 ◦ **Litros** (L)
 
@@ -143,9 +143,9 @@ La temperatura es una **propiedad de la materia** que sirve para describir **qu�
 
 Ideas clave:
 
-- **Definición general:** La temperatura nos dice qué tan caliente o frío está un cuerpo.
-- **Instrumento de medición:** El instrumento utilizado para medir la temperatura se llama **termómetro**.
-- **Unidades de medición:** Algunas unidades para la temperatura son los **grados Celsius**, los **grados Fahrenheit**, los **Kelvin** y los **Rankine**.
+- **Definición general:** la temperatura nos dice qué tan caliente o frío está un cuerpo.
+- **Instrumento de medición:** el instrumento utilizado para medir la temperatura se llama **termómetro**.
+- **Unidades de medición:** algunas unidades para la temperatura son los **grados Celsius**, los **grados Fahrenheit**, los **Kelvin** y los **Rankine**.
     - Como ejemplo, $40^\circ \text{C}$ equivalen a $104^\circ \text{F}$, $313 \text{ K}$, o $564 \text{ Ranking}$.
 
 ### Temperaturas específicas de la materia
@@ -153,13 +153,13 @@ Ideas clave:
 Tanto la temperatura de fusión como la de ebullición **dependen del material** y cada sustancia maneja una temperatura diferente.
 
 - **Temperatura de fusión:**
-    - Es la temperatura a la cual un cuerpo **pasa de la fase sólida a la fase líquida**.
+    - es la temperatura a la cual un cuerpo **pasa de la fase sólida a la fase líquida**.
     - **Ejemplos de valores:**
         - La temperatura de fusión del **agua** es de $\mathbf{0^\circ \text{C}}$.
         - La temperatura de fusión del **hierro** es de $\mathbf{1535^\circ \text{C}}$.
     - El hierro tiene más temperatura de fusión que el agua, lo que implica que se necesita **mucha más energía (calor) para volver líquido el hierro**.
 - **Temperatura de ebullición:**
-    - Es la temperatura a la cual un cuerpo **pasa de la fase líquida a la fase gaseosa**.
+    - es la temperatura a la cual un cuerpo **pasa de la fase líquida a la fase gaseosa**.
     - **Ejemplos de valores:**
         - La temperatura de ebullición del **agua** es de $\mathbf{100^\circ \text{C}}$.
         - La temperatura de ebullición del **alcohol** es más baja, $\mathbf{78^\circ \text{C}}$.
@@ -175,19 +175,19 @@ La conductividad eléctrica es una **propiedad de la materia** que nos dice **qu
 
 Ideas clave:
 
-- **Definición:** La conductividad describe qué tan bien o qué tan mal una sustancia es capaz de conducir la electricidad.
-- **Instrumento y unidades:** La conductividad se mide con un instrumento conocido como **conductímetro** y sus unidades son los **microsiemens por centímetro**.
+- **Definición:** la conductividad describe qué tan bien o qué tan mal una sustancia es capaz de conducir la electricidad.
+- **Instrumento y unidades:** la conductividad se mide con un instrumento conocido como **conductímetro** y sus unidades son los **microsiemens por centímetro**.
 - **El cobre (conductor por excelencia):**
-    - El **cobre** es un **excelente conductor de electricidad** y es el conductor de electricidad **por excelencia**.
+    - el **cobre** es un **excelente conductor de electricidad** y es el conductor de electricidad **por excelencia**.
     - El cobre conduce muchísimo más la electricidad que otros materiales.
 - **El agua y la salinidad:**
-    - El **agua** es un conductor de electricidad. Aunque no es tan buen conductor como el cobre, se le puede considerar un **regular excelente conductor de electricidad**, y es suficiente para representar un peligro al entrar en contacto con aparatos electrónicos.
-    - El **agua de mar** conduce mejor la electricidad que el **agua potable**.
-    - La razón de la mayor conductividad del agua de mar es la presencia de **sal**, que es un compuesto formado por sodio ($\text{Na}$) y cloro ($\text{Cl}$).
-- **Comparación de Conductividad (microsiemspor centímetro):**
-    - El agua potable maneja una medida de aproximadamente **200 microsiems por centímetro**.
-    - El agua de mar maneja una medida de **50,000 microsiems por centímetro**.
-    - El cobre tiene una medida de **580,000 millones de microsiems por cada centímetro**, lo que demuestra que conduce muchísimo más que el agua de mar y el agua potable.
+    - el **agua** es un conductor de electricidad. Aunque no es tan buen conductor como el cobre, se le puede considerar un **regular excelente conductor de electricidad**, y es suficiente para representar un peligro al entrar en contacto con aparatos electrónicos.
+    - el **agua de mar** conduce mejor la electricidad que el **agua potable**.
+    - la razón de la mayor conductividad del agua de mar es la presencia de **sal**, que es un compuesto formado por sodio ($\text{Na}$) y cloro ($\text{Cl}$).
+- **Comparación de conductividad (microsiems por centímetro):**
+    - el agua potable maneja una medida de aproximadamente **200 microsiems por centímetro**.
+    - el agua de mar maneja una medida de **50,000 microsiems por centímetro**.
+    - el cobre tiene una medida de **580,000 millones de microsiems por cada centímetro**, lo que demuestra que conduce muchísimo más que el agua de mar y el agua potable.
 
 ## Propiedades cualitativas y cuantitativas
 
@@ -201,23 +201,23 @@ El estudio de la materia incluye la clasificación de sus **propiedades**, las c
 
 Las propiedades cualitativas son aquellas que describen los cuerpos o los materiales a través de una **cualidad**.
 
-- **Descripción:** Se describen los cuerpos con una cualidad, lo que significa que **no hay un dato numérico ni unidad de medida**.
+- **Descripción:** se describen los cuerpos con una cualidad, lo que significa que **no hay un dato numérico ni unidad de medida**.
 - **Ejemplos:**
-    - **Sabor:** Al describir la leche como "dulce".
-    - **Color:** Al describir la leche como "blanco".
-    - **Textura:** Al describir la leche como "cremosa".
+    - **Sabor:** al describir la leche como "dulce".
+    - **Color:** al describir la leche como "blanco".
+    - **Textura:** al describir la leche como "cremosa".
 
 ### Propiedades cuantitativas
 
 Las propiedades cuantitativas son aquellas que describen los cuerpos con una **cantidad**.
 
-- **Descripción:** Estas propiedades siempre están acompañadas de un **número y una unidad de medida**.
-- **Ejemplos:** Las siguientes propiedades que ya hemos discutido en la conversación son clasificadas como cuantitativas:
-    - **Masa:** Describe la cantidad de material con una cantidad numérica (ejemplo: $2300 \text{ g}$).
-    - **Volumen:** Describe el espacio ocupado con una cantidad numérica (ejemplo: $1,5 \text{ L}$).
-    - **Densidad:** Describe la relación masa/volumen con un número y unidad de medida (ejemplo: $1 \frac{\text{g}}{\text{mL}}$).
-    - **Temperatura:** Se describe con un numerito y una unidad de medida (ejemplo: $36,3 ^\circ \text{C}$).
-    - **Conductividad eléctrica:** Se describe con un número y una unidad de medida (ejemplo: $50000$ microsiemens por centímetro).
+- **Descripción:** estas propiedades siempre están acompañadas de un **número y una unidad de medida**.
+- **Ejemplos:** las siguientes propiedades que ya hemos discutido en la conversación son clasificadas como cuantitativas:
+    - **Masa:** describe la cantidad de material con una cantidad numérica (ejemplo: $2300 \text{ g}$).
+    - **Volumen:** describe el espacio ocupado con una cantidad numérica (ejemplo: $1,5 \text{ L}$).
+    - **Densidad:** describe la relación masa/volumen con un número y unidad de medida (ejemplo: $1 \frac{\text{g}}{\text{mL}}$).
+    - **Temperatura:** se describe con un numerito y una unidad de medida (ejemplo: $36,3 ^\circ \text{C}$).
+    - **Conductividad eléctrica:** se describe con un número y una unidad de medida (ejemplo: $50000$ microsiemens por centímetro).
 
 ## Propiedades intensivas y extensivas
 
@@ -233,16 +233,16 @@ La clasificación de las propiedades de la materia también se puede realizar se
 
 Las propiedades extensivas son aquellas que **dependen de la cantidad de material**. Si hay poco material, la medida es una, y si hay más material, la medida cambia o aumenta.
 
-- **masa:** Es una propiedad **extensiva** porque depende de la cantidad de material. Si se tiene poco material (ejemplo: $50 \text{ mg}$), la medida de la masa es diferente a si se tiene mucho material, donde la masa cambia y aumenta.
-- **volumen:** Es una propiedad **extensiva** porque depende de la cantidad de materia. Si se tiene un frasco pequeño con poco material ($500 \text{ mL}$), el volumen es menor que en un frasco más grande con más material ($1000 \text{ mL}$), lo que significa que la medida cambia.
+- **masa:** es una propiedad **extensiva** porque depende de la cantidad de material. Si se tiene poco material (ejemplo: $50 \text{ mg}$), la medida de la masa es diferente a si se tiene mucho material, donde la masa cambia y aumenta.
+- **volumen:** es una propiedad **extensiva** porque depende de la cantidad de materia. Si se tiene un frasco pequeño con poco material ($500 \text{ mL}$), el volumen es menor que en un frasco más grande con más material ($1000 \text{ mL}$), lo que significa que la medida cambia.
 
 **Propiedades intensivas**
 
 Las propiedades intensivas son aquellas que **no dependen de la cantidad de material** que haya en el cuerpo. La medida es la misma, independientemente del tamaño del material.
 
-- **temperatura:** Es una propiedad **intensiva**. La temperatura **no va a cambiar** si se tiene un frasco pequeño de agua o un frasco grande de agua; no depende de cuánto material se tenga.
-- **conductividad eléctrica:** Es una propiedad **intensiva**. La medida de conductividad eléctrica será la **misma** en un frasco pequeño de agua que en uno grande, independientemente de si hay mucho o poco material.
-- **densidad:** Es una propiedad **intensiva**. La densidad **no depende del tamaño** de ese frasco donde se tiene el agua.
+- **temperatura:** es una propiedad **intensiva**. La temperatura **no va a cambiar** si se tiene un frasco pequeño de agua o un frasco grande de agua; no depende de cuánto material se tenga.
+- **conductividad eléctrica:** es una propiedad **intensiva**. La medida de conductividad eléctrica será la **misma** en un frasco pequeño de agua que en uno grande, independientemente de si hay mucho o poco material.
+- **densidad:** es una propiedad **intensiva**. La densidad **no depende del tamaño** de ese frasco donde se tiene el agua.
 
 ◦ La densidad es cuánta masa hay en cierto volumen. Por ejemplo, en el agua, la densidad de $1 \frac{\text{g}}{\text{mL}}$ es la misma en un frasco pequeño que en uno grande, ya que en ambos casos, cada $1 \text{ mL}$ de agua tendrá $1 \text{ g}$ de agua.
 
@@ -313,10 +313,10 @@ La materia se puede clasificar inicialmente como **uniforme** o **no uniforme**.
 
 Las sustancias puras siempre muestran una **sola fórmula**. Se dividen en dos tipos:
 
-1. **elementos:** Son sustancias puras que tienen átomos de **un solo tipo de átomo** o de un solo elemento.
+1. **elementos:** son sustancias puras que tienen átomos de **un solo tipo de átomo** o de un solo elemento.
     - Ejemplos incluyen $\text{H}_2$, $\text{O}_2$, $\text{C}$ (carbono), $\text{Na}$ (sodio), $\text{Fe}$ (hierro) y $\text{N}_2$ (nitrógeno).
     - Los elementos son aquellos que se encuentran en la **tabla periódica**.
-2. **compuestos:** Son sustancias puras que, a pesar de tener una **única fórmula**, están hechas de **átomos de más de un elemento**.
+2. **compuestos:** son sustancias puras que, a pesar de tener una **única fórmula**, están hechas de **átomos de más de un elemento**.
     - Ejemplos incluyen el agua ($\text{H}_2\text{O}$), que combina átomos de hidrógeno ($\text{H}$) y oxígeno ($\text{O}$), o $\text{NaCl}$ (sal de cocina), que combina sodio ($\text{Na}$) y cloro ($\text{Cl}$).
 
 En general, en las reacciones químicas, las sustancias que intervienen son sustancias puras (elementos o compuestos).
@@ -332,8 +332,8 @@ Las mezclas se caracterizan por tener **dos o más fórmulas** o dos o más comp
 
 Las mezclas se clasifican en dos tipos principales:
 
-1. **homogéneas:** No se distinguen sus componentes a simple vista. El aire y el agua salada bien mezclada son ejemplos de mezclas homogéneas.
-2. **heterogéneas:** Sí se pueden observar o distinguir sus componentes a simple vista. Ejemplos de mezclas heterogéneas son el agua y el aceite (no son miscibles, el aceite queda arriba y el agua abajo) y el agua y la arena (la arena no es soluble y se puede distinguir del agua).
+1. **homogéneas:** no se distinguen sus componentes a simple vista. El aire y el agua salada bien mezclada son ejemplos de mezclas homogéneas.
+2. **heterogéneas:** sí se pueden observar o distinguir sus componentes a simple vista. Ejemplos de mezclas heterogéneas son el agua y el aceite (no son miscibles, el aceite queda arriba y el agua abajo) y el agua y la arena (la arena no es soluble y se puede distinguir del agua).
 
 ### Procesos de mezcla y separación
 
@@ -361,12 +361,12 @@ La materia puede ser clasificada como **uniforme** o **no uniforme**. Esta clasi
 Las sustancias puras tienen composición uniforme y un solo componente. Este único componente puede ser un elemento o un compuesto.
 
 1. **Elementos:**
-    - Son sustancias puras que tienen átomos de **un solo tipo de átomo** o de un solo elemento.
+    - son sustancias puras que tienen átomos de **un solo tipo de átomo** o de un solo elemento.
     - Aunque el átomo puede unirse de a dos (como $\text{H}_2$ o $\text{O}_2$ o $\text{N}_2$), sigue siendo un solo tipo de átomo o un solo elemento.
     - Los elementos se encuentran en la **tabla periódica**.
     - Ejemplos incluyen $\text{C}$ (carbono), $\text{Na}$ (sodio), $\text{Fe}$ (hierro), $\text{H}_2$, $\text{O}_2$ y $\text{N}_2$.
 2. **Compuestos:**
-    - Son sustancias puras que, aunque tienen una **única fórmula**, están formadas por la unión de **átomos de más de un elemento**.
+    - son sustancias puras que, aunque tienen una **única fórmula**, están formadas por la unión de **átomos de más de un elemento**.
     - Ejemplos: el agua ($\text{H}_2\text{O}$), que combina átomos de hidrógeno ($\text{H}$) y oxígeno ($\text{O}$), o la sal de cocina ($\text{NaCl}$), que combina sodio ($\text{Na}$) y cloro ($\text{Cl}$).
     - Las sustancias que intervienen en las reacciones químicas son elementos y compuestos, que en general clasifican como sustancias puras.
 
@@ -378,8 +378,8 @@ Las mezclas se caracterizan por tener dos o más componentes o dos o más fórmu
 
 Las mezclas se clasifican en dos tipos principales:
 
-1. **homogéneas:** No se distinguen sus componentes a simple vista. Ejemplos de esto son el aire y el agua salada que esté bien mezclada.
-2. **heterogéneas:** Sí se pueden distinguir sus componentes a simple vista. Ejemplos son el agua y el aceite (los cuales no son miscibles, quedando el aceite arriba y el agua abajo), y el agua y la arena (ya que la arena no es soluble y se puede distinguir del agua).
+1. **homogéneas:** no se distinguen sus componentes a simple vista. Ejemplos de esto son el aire y el agua salada que esté bien mezclada.
+2. **heterogéneas:** sí se pueden distinguir sus componentes a simple vista. Ejemplos son el agua y el aceite (los cuales no son miscibles, quedando el aceite arriba y el agua abajo), y el agua y la arena (ya que la arena no es soluble y se puede distinguir del agua).
 
 ### Procesos de formación y separación
 

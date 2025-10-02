@@ -30,8 +30,8 @@ A diferencia de las sustancias puras, que se caracterizan por tener un **solo co
 
 Las mezclas pueden ser de dos tipos:
 
-1. **homogéneas:** Aquellas donde **no se distinguen sus componentes a simple vista**, como ocurre con el aire o el agua salada que esté bien mezclada.
-2. **heterogéneas:** Aquellas donde **sí se pueden observar o distinguir sus componentes a simple vista**, como la mezcla de agua y aceite, o el agua y la arena.
+1. **homogéneas:** aquellas donde **no se distinguen sus componentes a simple vista**, como ocurre con el aire o el agua salada que esté bien mezclada.
+2. **heterogéneas:** aquellas donde **sí se pueden observar o distinguir sus componentes a simple vista**, como la mezcla de agua y aceite, o el agua y la arena.
 
 En todo caso, no importa si la mezcla es homogénea o heterogénea, sus componentes se pueden separar.
 
@@ -115,9 +115,9 @@ La **destilación** es un método de separación utilizado para separar **líqui
 
 La destilación saca provecho de la **diferencia en el punto de ebullición** de los líquidos miscibles para separarlos.
 
-1. **Aplicación de calor:** Se aplica calor a la mezcla.
-2. **Evaporación del componente más volátil:** Puesto que el alcohol tiene un punto de ebullición de $78,5 ^\circ \text{C}$ y el agua de $100 ^\circ \text{C}$, si se aplica una temperatura superior a los $78,5 ^\circ \text{C}$ (por ejemplo, $85 ^\circ \text{C}$), el **alcohol** se vuelve un **gas** y se empieza a escapar. Esta temperatura, sin embargo, no es suficiente para que el agua se vuelva un gas, por lo que el **agua queda en el recipiente** inicial.
-3. **Refrigeración y recuperación:** El alcohol, que se escapa en forma de gas, es dirigido por un trayecto donde se **refrigera** y se vuelve a enfriar. Al enfriarse (hasta menos de $78,5 ^\circ \text{C}$), el alcohol vuelve a ser un **líquido** y se recupera en su forma líquida en un recipiente diferente.
+1. **Aplicación de calor:** se aplica calor a la mezcla.
+2. **Evaporación del componente más volátil:** puesto que el alcohol tiene un punto de ebullición de $78,5 ^\circ \text{C}$ y el agua de $100 ^\circ \text{C}$, si se aplica una temperatura superior a los $78,5 ^\circ \text{C}$ (por ejemplo, $85 ^\circ \text{C}$), el **alcohol** se vuelve un **gas** y se empieza a escapar. Esta temperatura, sin embargo, no es suficiente para que el agua se vuelva un gas, por lo que el **agua queda en el recipiente** inicial.
+3. **Refrigeración y recuperación:** el alcohol, que se escapa en forma de gas, es dirigido por un trayecto donde se **refrigera** y se vuelve a enfriar. Al enfriarse (hasta menos de $78,5 ^\circ \text{C}$), el alcohol vuelve a ser un **líquido** y se recupera en su forma líquida en un recipiente diferente.
 
 De esta manera, el alcohol se recupera de forma líquida, y el agua queda en el recipiente original, quedando los dos líquidos (agua y alcohol) separados y recuperados.
 
@@ -139,8 +139,8 @@ La cromatografía saca provecho de la **diferencia en la afinidad con una fase m
 
 El proceso involucra dos fases:
 
-1. **Fase fija:** Es el material que sostiene la mezcla, como el **papel** en la cromatografía en papel.
-2. **Fase móvil:** Es un líquido (que puede ser, por ejemplo, **alcohol**) que arrastra los componentes de la mezcla a través de la fase fija.
+1. **Fase fija:** es el material que sostiene la mezcla, como el **papel** en la cromatografía en papel.
+2. **Fase móvil:** es un líquido (que puede ser, por ejemplo, **alcohol**) que arrastra los componentes de la mezcla a través de la fase fija.
 
 **Proceso de arrastre**
 
