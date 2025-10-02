@@ -83,7 +83,7 @@ function processMediaLinks() {
       return
     }
 
-    // Regla 2: Google Drive - solo ícono
+    // Regla 2: Google Drive - solo ícono mejorado
     if (link.info.type === 'drive') {
       addIconToHeading(link)
       hideOriginalLink(link.element)
@@ -141,50 +141,52 @@ function replaceWithPlaylistCard(link: MediaLink) {
       rel="noopener noreferrer"
       class="block group"
     >
-      <div class="rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 border-2 border-transparent hover:border-blue-500 dark:hover:border-blue-400">
-        <!-- Header con gradiente optimizado para mejor contraste -->
-        <div class="bg-gradient-to-r from-blue-700 to-blue-800 dark:from-blue-500 dark:to-blue-600 px-4 py-3 sm:px-5 sm:py-4">
+      <div class="playlist-card">
+        <!-- Contenido de la tarjeta -->
+        <div class="playlist-card-content">
           <div class="flex items-center gap-3 sm:gap-4">
-            <!-- Ícono YouTube con badge "playlist" -->
+            <!-- Ícono YouTube minimalista -->
             <div class="relative flex-shrink-0">
-              <svg class="w-10 h-10 sm:w-12 sm:h-12 text-white" viewBox="0 0 24 24" fill="currentColor">
+              <div class="playlist-icon-wrapper">
+                <svg class="w-8 h-8 sm:w-10 sm:h-10" viewBox="0 0 24 24" fill="currentColor">
                 <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
               </svg>
+              </div>
               <!-- Badge de playlist -->
-              <div class="absolute -bottom-1 -right-1 bg-white dark:bg-gray-800 rounded-full p-0.5">
-                <svg class="w-3 h-3 sm:w-4 sm:h-4 text-blue-600 dark:text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 10h16M4 14h16M4 18h16" />
+              <div class="playlist-badge">
+                <svg class="w-3 h-3 sm:w-3.5 sm:h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M4 6h16M4 10h16M4 14h16M4 18h16" />
                 </svg>
               </div>
             </div>
             
             <!-- Texto -->
             <div class="flex-1 min-w-0">
-              <h3 class="text-white font-bold text-base sm:text-lg leading-tight">
+              <h3 class="playlist-title">
                 Lista de reproducción
               </h3>
-              <p class="text-blue-50 dark:text-blue-200 text-xs sm:text-sm mt-0.5">
+              <p class="playlist-subtitle">
                 Colección de videos · YouTube
               </p>
             </div>
             
             <!-- Flecha con animación -->
-            <svg class="w-5 h-5 sm:w-6 sm:h-6 text-white flex-shrink-0 transform group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <svg class="playlist-arrow" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6" />
             </svg>
           </div>
         </div>
         
         <!-- Footer informativo -->
-        <div class="bg-white dark:bg-gray-800 px-4 py-2.5 sm:px-5 border-t border-gray-200 dark:border-gray-700">
+        <div class="playlist-footer">
           <div class="flex items-center justify-between text-xs sm:text-sm">
-            <div class="flex items-center gap-2 text-gray-700 dark:text-gray-400">
+            <div class="playlist-footer-info">
               <svg class="w-4 h-4 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z" />
               </svg>
               <span>Ver todos los videos</span>
             </div>
-            <div class="flex items-center gap-1 text-blue-600 dark:text-blue-400 font-medium group-hover:gap-2 transition-all">
+            <div class="playlist-footer-action">
               <span class="hidden sm:inline">Abrir</span>
               <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
@@ -194,6 +196,154 @@ function replaceWithPlaylistCard(link: MediaLink) {
         </div>
       </div>
     </a>
+    
+    <style>
+      .playlist-card {
+        border-radius: 0.75rem;
+        overflow: hidden;
+        box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px -1px rgba(0, 0, 0, 0.1);
+        border: 1px solid;
+        border-color: var(--border-color);
+        background-color: var(--bg-card);
+        transition: all 0.3s ease;
+      }
+      
+      .playlist-card:hover {
+        box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -4px rgba(0, 0, 0, 0.1);
+        border-color: var(--accent-primary);
+        transform: translateY(-2px);
+      }
+      
+      .playlist-card-content {
+        padding: 1rem 1.25rem;
+        background-color: var(--bg-card);
+        transition: background-color 0.2s ease;
+      }
+      
+      @media (min-width: 640px) {
+        .playlist-card-content {
+          padding: 1.25rem 1.5rem;
+        }
+      }
+      
+      .playlist-icon-wrapper {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 3rem;
+        height: 3rem;
+        border-radius: 0.5rem;
+        background-color: var(--bg-secondary);
+        color: var(--text-muted);
+        transition: all 0.3s ease;
+      }
+      
+      @media (min-width: 640px) {
+        .playlist-icon-wrapper {
+          width: 3.5rem;
+          height: 3.5rem;
+        }
+      }
+      
+      .playlist-card:hover .playlist-icon-wrapper {
+        background-color: var(--accent-primary);
+        color: white;
+      }
+      
+      .playlist-badge {
+        position: absolute;
+        bottom: -0.25rem;
+        right: -0.25rem;
+        background-color: var(--bg-card);
+        border-radius: 9999px;
+        padding: 0.125rem;
+        color: var(--accent-primary);
+        border: 2px solid var(--bg-card);
+      }
+      
+      .playlist-title {
+        font-weight: 600;
+        font-size: 1rem;
+        line-height: 1.25;
+        color: var(--text-primary);
+        transition: color 0.2s ease;
+      }
+      
+      @media (min-width: 640px) {
+        .playlist-title {
+          font-size: 1.125rem;
+        }
+      }
+      
+      .playlist-subtitle {
+        font-size: 0.75rem;
+        margin-top: 0.125rem;
+        color: var(--text-muted);
+        transition: color 0.2s ease;
+      }
+      
+      @media (min-width: 640px) {
+        .playlist-subtitle {
+          font-size: 0.875rem;
+        }
+      }
+      
+      .playlist-arrow {
+        width: 1.25rem;
+        height: 1.25rem;
+        flex-shrink: 0;
+        color: var(--text-muted);
+        transform: translateX(0);
+        transition: all 0.3s ease;
+      }
+      
+      @media (min-width: 640px) {
+        .playlist-arrow {
+          width: 1.5rem;
+          height: 1.5rem;
+        }
+      }
+      
+      .playlist-card:hover .playlist-arrow {
+        color: var(--accent-primary);
+        transform: translateX(0.25rem);
+      }
+      
+      .playlist-footer {
+        background-color: var(--bg-secondary);
+        padding: 0.625rem 1.25rem;
+        border-top: 1px solid;
+        border-color: var(--border-color);
+        transition: all 0.2s ease;
+      }
+      
+      @media (min-width: 640px) {
+        .playlist-footer {
+          padding: 0.625rem 1.5rem;
+        }
+      }
+      
+      .playlist-footer-info {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        color: var(--text-secondary);
+      }
+      
+      .playlist-footer-action {
+        display: flex;
+        align-items: center;
+        gap: 0.25rem;
+        color: var(--text-muted);
+        font-weight: 500;
+        transition: all 0.3s ease;
+      }
+      
+      .playlist-card:hover .playlist-footer-action {
+        color: var(--accent-primary);
+        gap: 0.5rem;
+      }
+    </style>
   `
 
   paragraph.replaceWith(container)
@@ -214,22 +364,24 @@ function replaceWithAccordion(link: MediaLink) {
   container.className = 'my-6 w-full max-w-full md:max-w-3xl lg:max-w-4xl xl:max-w-5xl'
 
   container.innerHTML = `
-    <div class="rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow">
+    <div class="video-accordion">
       <button
         id="${accordionId}-btn"
-        class="w-full bg-gradient-to-r from-red-500 to-red-600 dark:from-red-600 dark:to-red-700 hover:from-red-600 hover:to-red-700 dark:hover:from-red-700 dark:hover:to-red-800 text-white px-4 py-3 flex items-center gap-3 transition-all duration-300"
+        class="video-accordion-button"
         aria-label="Ver video de YouTube"
         aria-expanded="false"
       >
-        <svg class="w-6 h-6 flex-shrink-0" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+        <div class="video-icon-wrapper">
+          <svg class="w-5 h-5 sm:w-6 sm:h-6" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
           <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
         </svg>
-        <span class="flex-1 text-left font-semibold">Ver video</span>
-        <svg id="${accordionId}-arrow" class="w-5 h-5 flex-shrink-0 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+        </div>
+        <span class="video-accordion-text">Ver video</span>
+        <svg id="${accordionId}-arrow" class="video-accordion-arrow" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
         </svg>
       </button>
-      <div id="${accordionId}" class="max-h-0 overflow-hidden transition-all duration-300 bg-black" aria-hidden="true">
+      <div id="${accordionId}" class="video-accordion-content" aria-hidden="true">
         <div class="aspect-video">
           <iframe
             src="https://www.youtube.com/embed/${link.info.id}"
@@ -242,6 +394,87 @@ function replaceWithAccordion(link: MediaLink) {
         </div>
       </div>
     </div>
+    
+    <style>
+      .video-accordion {
+        border-radius: 0.75rem;
+        overflow: hidden;
+        box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px -1px rgba(0, 0, 0, 0.1);
+        border: 1px solid;
+        border-color: var(--border-color);
+        background-color: var(--bg-card);
+        transition: all 0.3s ease;
+      }
+      
+      .video-accordion:hover {
+        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
+      }
+      
+      .video-accordion-button {
+        width: 100%;
+        padding: 0.875rem 1rem;
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+        transition: all 0.3s ease;
+        background-color: var(--bg-card);
+        color: var(--text-primary);
+        border: none;
+        cursor: pointer;
+      }
+      
+      .video-accordion-button:hover {
+        background-color: var(--bg-secondary);
+      }
+      
+      .video-icon-wrapper {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 2.5rem;
+        height: 2.5rem;
+        border-radius: 0.5rem;
+        background-color: var(--bg-secondary);
+        color: var(--text-muted);
+        flex-shrink: 0;
+        transition: all 0.3s ease;
+      }
+      
+      @media (min-width: 640px) {
+        .video-icon-wrapper {
+          width: 3rem;
+          height: 3rem;
+        }
+      }
+      
+      .video-accordion:hover .video-icon-wrapper {
+        background-color: var(--accent-primary);
+        color: white;
+      }
+      
+      .video-accordion-text {
+        flex: 1;
+        text-align: left;
+        font-weight: 600;
+        font-size: 0.9375rem;
+        color: var(--text-primary);
+      }
+      
+      .video-accordion-arrow {
+        width: 1.25rem;
+        height: 1.25rem;
+        flex-shrink: 0;
+        transition: transform 0.3s ease;
+        color: var(--text-muted);
+      }
+      
+      .video-accordion-content {
+        max-height: 0;
+        overflow: hidden;
+        transition: all 0.3s ease;
+        background-color: rgb(0 0 0);
+      }
+    </style>
   `
 
   paragraph.replaceWith(container)

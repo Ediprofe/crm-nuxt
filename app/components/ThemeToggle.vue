@@ -52,27 +52,18 @@ const { isDark, toggleTheme } = useTheme()
   width: 2.5rem;
   height: 2.5rem;
   border-radius: 0.5rem;
-  border: 1px solid rgb(229 231 235);
-  background: white;
-  color: rgb(75 85 99);
+  border: 1px solid;
+  border-color: var(--border-color);
+  background-color: var(--bg-card);
+  color: var(--accent-primary);
   transition: all 0.2s ease;
   cursor: pointer;
 }
 
-.dark .theme-toggle {
-  background: rgb(31 41 55);
-  border-color: rgb(55 65 81);
-  color: rgb(229 231 235);
-}
-
 .theme-toggle:hover {
-  background: rgb(243 244 246);
-  border-color: rgb(209 213 219);
-}
-
-.dark .theme-toggle:hover {
-  background: rgb(55 65 81);
-  border-color: rgb(75 85 99);
+  background-color: var(--bg-secondary);
+  border-color: var(--border-hover);
+  transform: scale(1.05);
 }
 
 .theme-icon {

@@ -11,11 +11,13 @@ const emit = defineEmits<{
     <button
       @click="emit('expand')"
       class="fixed top-24 left-0 p-3 rounded-r-lg
-             bg-blue-600 hover:bg-blue-700 dark:bg-blue-500 dark:hover:bg-blue-600
              text-white shadow-lg hover:shadow-xl
              transition-all duration-200 hover:pr-4
-             hidden md:flex items-center justify-center"
-      :style="{ zIndex: Z_INDEX.SIDEBAR }"
+             hidden md:flex items-center justify-center expand-button"
+      :style="{ 
+        zIndex: Z_INDEX.SIDEBAR,
+        backgroundColor: 'var(--accent-primary)'
+      }"
       aria-label="Expandir tabla de contenidos"
       title="Mostrar tabla de contenidos (Sidebar)"
     >
@@ -27,6 +29,10 @@ const emit = defineEmits<{
 </template>
 
 <style scoped>
+.expand-button:hover {
+  background-color: var(--accent-primary-hover) !important;
+}
+
 .fade-slide-enter-active,
 .fade-slide-leave-active {
   transition: all 0.3s ease;

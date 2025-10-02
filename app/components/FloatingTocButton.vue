@@ -20,12 +20,14 @@ function handleClick() {
       v-if="show"
       @click="handleClick"
       class="fixed bottom-6 left-6 w-14 h-14 rounded-full
-             bg-blue-600 hover:bg-blue-700 dark:bg-blue-500 dark:hover:bg-blue-600
              text-white shadow-lg hover:shadow-xl hover:scale-110
              flex items-center justify-center
              transition-all duration-200 active:scale-95
-             md:hidden"
-      :style="{ zIndex: Z_INDEX.TOC_MOBILE }"
+             md:hidden fab-button"
+      :style="{ 
+        zIndex: Z_INDEX.TOC_MOBILE,
+        backgroundColor: 'var(--accent-primary)'
+      }"
       aria-label="Ver tabla de contenidos"
     >
       <!-- Ícono de lista -->
@@ -37,6 +39,10 @@ function handleClick() {
 </template>
 
 <style scoped>
+.fab-button:hover {
+  background-color: var(--accent-primary-hover) !important;
+}
+
 .fab-fade-enter-active,
 .fab-fade-leave-active {
   transition: opacity 0.2s ease, transform 0.2s ease;

@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { materiasConfig, type MateriaSlug } from '~/config/materias'
+import type { ContentItem } from '~/types/content'
 
 const route = useRoute()
 const materia = route.params.materia as MateriaSlug
@@ -14,15 +15,15 @@ if (!configMateria) {
 
 // Obtener todas las unidades de esta materia usando queryCollection
 const { data: unidades } = await useAsyncData(`${materia}-index`, async () => {
-  const items = await queryCollection('content').all()
+  const items = await queryCollection('content').all() as ContentItem[]
   
   // Filtrar solo los items de esta materia
-  const materiasItems = items.filter((item: any) => 
+  const materiasItems = items.filter((item: ContentItem) => 
     item.path?.includes(`/${materia}/`)
   )
   
   // Ordenar por path (que incluye el prefijo numérico)
-  return materiasItems.sort((a: any, b: any) => {
+  return materiasItems.sort((a: ContentItem, b: ContentItem) => {
     const pathA = a.path || ''
     const pathB = b.path || ''
     return pathA.localeCompare(pathB)
@@ -38,27 +39,27 @@ const getSlugFromPath = (path: string): string => {
 }
 
 // Función para obtener el título de la unidad
-const getTitulo = (item: any): string => {
+const getTitulo = (item: ContentItem): string => {
   // Intentar obtener el título del contenido, si no, usar el nombre del archivo
   return item.title || getSlugFromPath(item.path || '').replace(/-/g, ' ')
 }
 </script>
 
 <template>
-  <div class="min-h-screen bg-gray-50 dark:bg-gray-900 transition-colors">
+  <div class="min-h-screen transition-colors" style="background-color: var(--bg-primary);">
     <!-- Header con breadcrumb -->
-    <header class="bg-white dark:bg-gray-800 border-b border-gray-200 dark:border-gray-700 transition-colors">
+    <header class="border-b transition-all" style="background-color: var(--bg-card); border-color: var(--border-color);">
       <div class="container mx-auto px-4 py-6">
         <!-- Breadcrumb -->
         <nav class="mb-4 flex items-center justify-between">
           <ol class="flex items-center space-x-2 text-sm">
             <li>
-              <NuxtLink to="/" class="text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-300 transition-colors">
+              <NuxtLink to="/" class="transition-colors font-medium hover:underline" style="color: var(--accent-primary);">
                 Inicio
               </NuxtLink>
             </li>
-            <li class="text-gray-400 dark:text-gray-500">/</li>
-            <li class="text-gray-700 dark:text-gray-300 font-medium">
+            <li style="color: var(--text-muted);">/</li>
+            <li class="font-medium transition-colors" style="color: var(--text-secondary);">
               {{ configMateria?.nombre }}
             </li>
           </ol>
@@ -71,8 +72,8 @@ const getTitulo = (item: any): string => {
         <div class="flex items-center gap-4">
           <span class="text-5xl">{{ configMateria?.emoji }}</span>
           <div>
-            <h1 class="text-4xl font-bold text-gray-900 dark:text-gray-100 transition-colors">{{ configMateria?.nombre }}</h1>
-            <p class="mt-1 text-gray-600 dark:text-gray-400 transition-colors">
+            <h1 class="text-4xl font-bold transition-colors" style="color: var(--heading-h1-color);">{{ configMateria?.nombre }}</h1>
+            <p class="mt-1 transition-colors" style="color: var(--text-secondary);">
               {{ unidades?.length || 0 }} {{ unidades?.length === 1 ? 'unidad disponible' : 'unidades disponibles' }}
             </p>
           </div>
@@ -88,29 +89,29 @@ const getTitulo = (item: any): string => {
           v-for="(unidad, index) in unidades"
           :key="unidad.path"
           :to="`/${materia}/${getSlugFromPath(unidad.path)}`"
-          class="block bg-white dark:bg-gray-800 rounded-lg shadow-sm hover:shadow-md transition-all duration-200 border border-gray-200 dark:border-gray-700 hover:border-blue-300 dark:hover:border-blue-500"
+          class="unidad-card group"
         >
           <div class="p-6">
             <div class="flex items-start justify-between">
               <div class="flex-1">
                 <!-- Número de unidad -->
                 <div class="flex items-center gap-3 mb-2">
-                  <span class="flex items-center justify-center w-8 h-8 rounded-full bg-blue-100 dark:bg-blue-900/30 text-blue-700 dark:text-blue-400 font-bold text-sm transition-colors">
+                  <span class="unidad-badge">
                     {{ index + 1 }}
                   </span>
-                  <h2 class="text-xl font-semibold text-gray-900 dark:text-gray-100 capitalize transition-colors">
+                  <h2 class="unidad-title capitalize">
                     {{ getTitulo(unidad) }}
                   </h2>
                 </div>
                 
                 <!-- Descripción (si existe) -->
-                <p v-if="unidad.description" class="text-gray-600 dark:text-gray-400 ml-11 mt-1 transition-colors">
+                <p v-if="unidad.description" class="ml-11 mt-1 transition-colors" style="color: var(--text-secondary);">
                   {{ unidad.description }}
                 </p>
               </div>
 
               <!-- Arrow indicator -->
-              <svg class="w-6 h-6 text-gray-400 dark:text-gray-500 flex-shrink-0 ml-4 transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <svg class="unidad-arrow" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
               </svg>
             </div>
@@ -121,11 +122,11 @@ const getTitulo = (item: any): string => {
       <!-- Estado vacío -->
       <div v-else class="text-center py-12">
         <div class="text-6xl mb-4">📚</div>
-        <h3 class="text-xl font-semibold text-gray-700 dark:text-gray-300 mb-2 transition-colors">No hay unidades disponibles</h3>
-        <p class="text-gray-500 dark:text-gray-400 mb-6 transition-colors">Aún no se han agregado unidades para esta materia.</p>
+        <h3 class="text-xl font-semibold mb-2 transition-colors" style="color: var(--text-primary);">No hay unidades disponibles</h3>
+        <p class="mb-6 transition-colors" style="color: var(--text-muted);">Aún no se han agregado unidades para esta materia.</p>
         <NuxtLink 
           to="/" 
-          class="inline-flex items-center px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors"
+          class="empty-state-button"
         >
           <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18" />
@@ -136,4 +137,86 @@ const getTitulo = (item: any): string => {
     </main>
   </div>
 </template>
+
+<style scoped>
+/* Unidad Cards */
+.unidad-card {
+  display: block;
+  border-radius: 0.75rem;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px -1px rgba(0, 0, 0, 0.1);
+  transition: all 0.2s ease;
+  border: 1px solid;
+  border-color: var(--border-color);
+  background-color: var(--bg-card);
+}
+
+.unidad-card:hover {
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
+  border-color: var(--accent-primary);
+  transform: translateX(4px);
+}
+
+.unidad-badge {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 9999px;
+  background-color: var(--bg-secondary);
+  color: var(--text-muted);
+  font-weight: 700;
+  font-size: 0.875rem;
+  transition: all 0.2s ease;
+  border: 1px solid var(--border-color);
+}
+
+.unidad-card:hover .unidad-badge {
+  background-color: var(--accent-primary);
+  color: white;
+  border-color: var(--accent-primary);
+}
+
+.unidad-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  transition: color 0.2s ease;
+}
+
+.unidad-card:hover .unidad-title {
+  color: var(--accent-primary);
+}
+
+.unidad-arrow {
+  width: 1.5rem;
+  height: 1.5rem;
+  flex-shrink: 0;
+  margin-left: 1rem;
+  color: var(--text-muted);
+  transition: all 0.2s ease;
+}
+
+.unidad-card:hover .unidad-arrow {
+  color: var(--accent-primary);
+  transform: translateX(0.25rem);
+}
+
+/* Empty State Button */
+.empty-state-button {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.5rem 1rem;
+  background-color: var(--accent-primary);
+  color: white;
+  border-radius: 0.5rem;
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+.empty-state-button:hover {
+  background-color: var(--accent-primary-hover);
+  transform: translateX(-4px);
+}
+</style>
 

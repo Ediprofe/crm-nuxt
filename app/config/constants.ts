@@ -85,4 +85,10 @@ export const SIDEBAR = {
   TRANSITION_DURATION: '300ms'
 } as const
 
+// Constantes para variables CSS
+export const CSS_VARIABLES = {
+  SIDEBAR_WIDTH: '--sidebar-width',
+  SIDEBAR_TRANSITION: '--sidebar-transition',
+  HEADER_HEIGHT: '--header-height'
+} as const
 

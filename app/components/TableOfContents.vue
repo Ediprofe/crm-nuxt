@@ -1,12 +1,7 @@
 <script setup lang="ts">
 import { ref, computed, onMounted, onUnmounted, watch, nextTick } from 'vue'
 import { TIMEOUTS, DEFAULTS } from '~/config/constants'
-
-interface TocItem {
-  id: string
-  text: string
-  level: number // 2 para H2, 3 para H3
-}
+import type { TocItem } from '~/types/content'
 
 const props = defineProps<{
   contentElement: HTMLElement | null
@@ -180,16 +175,17 @@ defineExpose({
 
 <template>
   <!-- VARIANTE SIDEBAR: Desktop/Tablet lateral fijo -->
-  <aside v-if="hasToc && variant === 'sidebar'" class="sidebar bg-white dark:bg-gray-800 border-r border-gray-200 dark:border-gray-700">
+  <aside v-if="hasToc && variant === 'sidebar'" class="sidebar transition-colors border-r" style="background-color: var(--bg-sidebar); border-color: var(--border-color);">
     <div class="sidebar-content">
-      <div class="sidebar-header border-blue-500 dark:border-blue-600">
+      <div class="sidebar-header" style="border-color: var(--accent-primary);">
         <div class="flex items-center justify-between">
-          <h3 class="sidebar-title text-gray-900 dark:text-gray-100">Tabla de contenidos</h3>
+          <h3 class="sidebar-title transition-colors" style="color: var(--text-primary);">Tabla de contenidos</h3>
           
           <!-- Botón para colapsar sidebar -->
           <button
             @click="emit('toggleCollapse')"
-            class="p-1.5 rounded-md text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors"
+            class="p-1.5 rounded-md transition-all hover-btn"
+            style="color: var(--text-muted);"
             aria-label="Colapsar tabla de contenidos"
             title="Colapsar sidebar"
           >
@@ -210,13 +206,20 @@ defineExpose({
             <a
               @click.prevent="scrollToHeading(item.id)"
               href="#"
-              class="sidebar-link text-gray-700 dark:text-gray-300"
+              class="sidebar-link transition-all"
               :class="[
                 item.level === 3 ? 'sidebar-link-sub' : '',
-                activeId === item.id 
-                  ? 'sidebar-link-active bg-blue-50 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300 !border-l-blue-600 dark:!border-l-blue-400' 
-                  : 'hover:bg-gray-100 dark:hover:bg-gray-700 border-l-transparent'
+                activeId === item.id ? 'sidebar-link-active' : ''
               ]"
+              :style="activeId === item.id ? {
+                backgroundColor: 'var(--bg-secondary)',
+                color: 'var(--accent-primary)',
+                borderLeftColor: 'var(--accent-primary)',
+                fontWeight: '600'
+              } : {
+                color: 'var(--text-secondary)',
+                borderLeftColor: 'transparent'
+              }"
             >
               {{ item.text }}
             </a>
@@ -291,7 +294,6 @@ defineExpose({
   height: 100vh;
   overflow-y: auto;
   padding: 1.5rem;
-  transition: background-color 0.2s ease, border-color 0.2s ease;
 }
 
 .sidebar-content {
@@ -303,7 +305,8 @@ defineExpose({
 .sidebar-header {
   margin-bottom: 1.5rem;
   padding-bottom: 1rem;
-  border-bottom: 2px solid rgb(59 130 246);
+  border-bottom: 2px solid;
+  transition: border-color 0.2s ease;
 }
 
 .sidebar-title {
@@ -311,6 +314,11 @@ defineExpose({
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.05em;
+}
+
+.hover-btn:hover {
+  background-color: var(--bg-secondary);
+  color: var(--text-primary);
 }
 
 .sidebar-nav {
@@ -324,17 +332,17 @@ defineExpose({
 }
 
 .sidebar-nav::-webkit-scrollbar-track {
-  background: rgb(243 244 246);
+  background: var(--bg-secondary);
   border-radius: 3px;
 }
 
 .sidebar-nav::-webkit-scrollbar-thumb {
-  background: rgb(209 213 219);
+  background: var(--border-color);
   border-radius: 3px;
 }
 
 .sidebar-nav::-webkit-scrollbar-thumb:hover {
-  background: rgb(156 163 175);
+  background: var(--border-hover);
 }
 
 .sidebar-list {
@@ -352,13 +360,13 @@ defineExpose({
   padding: 0.625rem 0.75rem;
   font-size: 0.875rem;
   text-decoration: none;
-  border-radius: 0.375rem;
-  transition: all 0.2s ease;
-  border-left: 3px solid transparent;
+  border-radius: 0.5rem;
+  border-left: 3px solid;
+  cursor: pointer;
 }
 
-.sidebar-link-active {
-  font-weight: 600;
+.sidebar-link:hover:not(.sidebar-link-active) {
+  background-color: var(--bg-secondary);
 }
 
 .sidebar-link-sub {

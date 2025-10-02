@@ -5,6 +5,7 @@ import { DEFAULTS, TIMEOUTS, SIDEBAR } from '~/config/constants'
 import { useTocSheet } from '~/composables/useTocSheet'
 import { useSidebarCollapse } from '~/composables/useSidebarCollapse'
 import type TableOfContents from '~/components/TableOfContents.vue'
+import type { ContentItem, TocItem } from '~/types/content'
 
 const route = useRoute()
 const materia = route.params.materia as string
@@ -13,10 +14,10 @@ const unidadSlug = route.params.unidad as string
 // Buscar el contenido usando queryCollection (API de @nuxt/content v3.7+)
 const { data: unidad } = await useAsyncData(`${materia}-${unidadSlug}`, async () => {
   // Obtener todos los archivos de la colección "content"
-  const items = await queryCollection('content').all()
+  const items = await queryCollection('content').all() as ContentItem[]
   
   // Filtrar por materia y slug
-  const found = items.find((item: any) => 
+  const found = items.find((item: ContentItem) => 
     item.path?.includes(`/${materia}/`) && item.path?.includes(unidadSlug)
   )
   
@@ -44,12 +45,6 @@ const sidebarWidth = computed(() =>
 )
 
 // Estado local para headings extraídos directamente del contenido
-interface TocItem {
-  id: string
-  text: string
-  level: number
-}
-
 const extractedTocItems = ref<TocItem[]>([])
 const extractedActiveId = ref<string>('')
 
@@ -202,7 +197,7 @@ onUnmounted(() => {
 </script>
 
 <template>
-  <div class="min-h-screen bg-gray-50 dark:bg-gray-900 transition-colors">
+  <div class="min-h-screen transition-colors" style="background-color: var(--bg-primary);">
     <!-- Layout con CSS Grid para mejor manejo del espacio -->
     <div 
       class="layout-grid"
@@ -230,37 +225,37 @@ onUnmounted(() => {
       <!-- Área principal (Header + Contenido) -->
       <div class="main-area">
         <!-- Header -->
-        <header class="bg-white dark:bg-gray-800 border-b border-gray-200 dark:border-gray-700 sticky top-0 z-[45] transition-colors">
+        <header class="sticky top-0 z-[45] transition-all border-b" style="background-color: var(--bg-card); border-color: var(--border-color);">
           <div class="px-4 py-4">
             <div class="flex items-center justify-between mb-2">
               <!-- Breadcrumbs -->
               <nav class="flex items-center space-x-2 text-sm">
-                <NuxtLink to="/" class="text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-300 transition-colors">
+                <NuxtLink to="/" class="transition-colors font-medium hover:underline" style="color: var(--accent-primary);">
                   Inicio
                 </NuxtLink>
-                <span class="text-gray-400 dark:text-gray-500">/</span>
-                <NuxtLink :to="`/${materia}`" class="text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-300 transition-colors">
+                <span style="color: var(--text-muted);">/</span>
+                <NuxtLink :to="`/${materia}`" class="transition-colors font-medium hover:underline" style="color: var(--accent-primary);">
                   {{ configMateria?.nombre }}
                 </NuxtLink>
-                <span class="text-gray-400 dark:text-gray-500">/</span>
-                <span class="text-gray-700 dark:text-gray-300 font-medium">{{ unidad?.title || 'Unidad' }}</span>
+                <span style="color: var(--text-muted);">/</span>
+                <span class="font-medium" style="color: var(--text-secondary);">{{ unidad?.title || 'Unidad' }}</span>
               </nav>
 
               <!-- Theme Toggle -->
               <ThemeToggle />
             </div>
             
-            <h1 class="text-2xl font-bold text-gray-900 dark:text-gray-100 transition-colors">{{ configMateria?.nombre || materia }}</h1>
+            <h1 class="text-2xl font-bold transition-colors" style="color: var(--text-primary);">{{ configMateria?.nombre || materia }}</h1>
           </div>
         </header>
 
         <!-- Contenido Principal -->
         <main ref="contentRef" class="w-full px-4 md:px-8 py-8">
           <!-- Contenido Markdown -->
-          <div class="bg-white dark:bg-gray-800 rounded-lg shadow-sm border border-gray-200 dark:border-gray-700 p-6 md:p-12 w-full transition-colors">
+          <div class="rounded-xl shadow-sm border p-6 md:p-12 w-full transition-all" style="background-color: var(--bg-card); border-color: var(--border-color);">
             <ContentRenderer v-if="unidad" :value="unidad" class="prose prose-lg dark:prose-invert max-w-none" />
             <div v-else class="text-center py-12">
-              <p class="text-gray-500 dark:text-gray-400">Contenido no encontrado</p>
+              <p style="color: var(--text-muted);">Contenido no encontrado</p>
             </div>
           </div>
         </main>
