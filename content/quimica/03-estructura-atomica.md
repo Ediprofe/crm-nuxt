@@ -29,10 +29,10 @@ El estudio de la estructura atómica establece que los átomos se dividen en dos
 
 Las partículas subatómicas se distribuyen entre estas dos zonas:
 
-- **Zona interna (Núcleo):** Las partículas subatómicas que habitan el núcleo son los **neutrones** y los **protones**.
+- **Zona interna (núcleo):** Las partículas subatómicas que habitan el núcleo son los **neutrones** y los **protones**.
     - Los **neutrones** tienen una carga eléctrica **neutra** o cero.
     - Los **protones** tienen una carga eléctrica **positiva**, representada con un signo más.
-- **Zona externa (Periferia):** Las partículas subatómicas que rodean al núcleo en la periferia se llaman **electrones** y tienen una carga **negativa**.
+- **Zona externa (periferia):** Las partículas subatómicas que rodean al núcleo en la periferia se llaman **electrones** y tienen una carga **negativa**.
 
 **Número atómico ($Z$)**
 
@@ -85,10 +85,10 @@ A continuación, se completa la tabla utilizando la relación de que el número 
 
 **Explicaciones de los elementos en la tabla:**
 
-- **Átomo 1 (Nitrógeno):** Si el número de protones es 7, el número atómico ($Z$) también es 7. El elemento que tiene $Z=7$ es el nitrógeno.
-- **Átomo 2 (Titanio):** Un átomo con 22 protones tiene $Z=22$. El elemento con $Z=22$ es el titanio.
-- **Átomo 3 (Radio):** Si se sabe que el elemento es radio, consultando la tabla periódica, se determina que su número atómico es 88. Por lo tanto, también tiene 88 protones.
-- **Átomo 4 (Plomo):** Si el número atómico es 82, el número de protones también es 82. El elemento con $Z=82$ es el plomo.
+- **Átomo 1 (nitrógeno):** Si el número de protones es 7, el número atómico ($Z$) también es 7. El elemento que tiene $Z=7$ es el nitrógeno.
+- **Átomo 2 (titanio):** Un átomo con 22 protones tiene $Z=22$. El elemento con $Z=22$ es el titanio.
+- **Átomo 3 (radio):** Si se sabe que el elemento es radio, consultando la tabla periódica, se determina que su número atómico es 88. Por lo tanto, también tiene 88 protones.
+- **Átomo 4 (plomo):** Si el número atómico es 82, el número de protones también es 82. El elemento con $Z=82$ es el plomo.
 
 ## Átomos neutros e iones
 
@@ -128,7 +128,7 @@ Los **iones** son aquellos átomos que tienen una **cantidad de protones diferen
     - Si hay **más protones** que electrones, la carga será **positiva**.
     - Si hay **más electrones** que protones, la carga será **negativa**.
 
-### Clasificación de iones (Cationes y Aniones)
+### Clasificación de iones (cationes y aniones)
 
 Los iones se clasifican en dos tipos principales:
 
@@ -139,16 +139,16 @@ Los iones se clasifican en dos tipos principales:
 
 **Ejemplos de Iones:**
 
-1. **Catión (Carga Positiva):**
+1. **Catión (carga positiva):**
     - Si un átomo de litio tiene tres protones y dos electrones, hay más protones que electrones.
     - La carga es $\text{Carga} = 3 - 2 = +1$ (o $1+$), lo que indica que tiene una carga positiva de más (un protón de más).
     - Los cationes pierden electrones. Por ejemplo, si un átomo pierde un electrón, queda con más protones que electrones.
-2. **Anión (Carga Negativa):**
+2. **Anión (carga negativa):**
     - Si un átomo tiene nueve protones y diez electrones, hay más electrones.
     - La carga es $\text{Carga} = 9 - 10 = -1$, lo que indica que hay una carga negativa de más (un electrón de más).
     - Los aniones ganan electrones, lo que resulta en más cargas negativas.
 
-**Nota sobre Ganancia o Pérdida de Protones:**
+**Nota sobre ganancia o pérdida de protones:**
 
 Cuando se describe la formación de iones, se menciona que los cationes pierden electrones y los aniones ganan electrones. Esto se debe a que las reacciones que involucran la ganancia o pérdida de **protones** (que están en el núcleo) son **reacciones nucleares**. Estas reacciones requieren y liberan muchísima energía y no son comunes en la experiencia cotidiana, a diferencia de la ganancia o pérdida de electrones, que es un proceso más habitual.
 
