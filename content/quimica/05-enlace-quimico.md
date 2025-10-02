@@ -203,9 +203,9 @@ La clasificación de los enlaces se basa en valores clave en la escala: $0,4$ y 
 
 | Diferencia de electronegatividad ($\Delta \text{EN}$) | Tipo de enlace | Características | Ejemplo de Cálculo |
 | --- | --- | --- | --- |
-| **Desde $0$ hasta $0,4$** | **Covalente no polar** | Los átomos comparten los electrones de forma **muy pareja**. La diferencia es cero o muy cerca de cero. Los electrones **no buscan para ningún polo**. Es un compartimiento de electrones. | $\text{H}_2$: $\Delta \text{EN} = 2,20 - 2,20 = 0$. $\text{CH}$: $\Delta \text{EN} = 2,55 - 2,20 = 0,35$. |
-| **Entre $0,4$ y hasta $1,7$** | **Covalente polar** | Hay **más diferencia** de electronegatividad. Un átomo atrae con **más fuerza** el par de electrones. El par de electrones está **más cerca del polo** del átomo más electronegativo. Es un compartimiento de electrones. | Nitrógeno ($\text{EN} = 3,04$) con Hidrógeno ($\text{EN} = 2,20$): $\Delta \text{EN} = 3,04 - 2,20 = 0,84$. |
-| **Mayor de $1,7$** | **Iónico** | Existe **mucha diferencia** de electronegatividad. En lugar de compartimiento, ocurre un **robo de electrones**. Un átomo está atrayendo fuertemente los electrones y se los roba al otro. | $\text{NaCl}$: |
+| **Desde $0$ hasta $0,4$** | **Covalente no polar** | Los átomos comparten los electrones de forma **muy pareja**. La diferencia es cero o muy cerca de cero. Los electrones **no buscan para ningún polo**. Es un compartimiento de electrones. | $\text{H}_2$: $\Delta \text{EN} = 2,20 - 2,20 = 0$. |
+| **Entre $0,4$ y hasta $1,7$** | **Covalente polar** | Hay **más diferencia** de electronegatividad. Un átomo atrae con **más fuerza** el par de electrones. El par de electrones está **más cerca del polo** del átomo más electronegativo. Es un compartimiento de electrones. | $\text{NH}_3$: $\Delta \text{EN} = 3,04 - 2,20 = 0,84$. |
+| **Mayor de $1,7$** | **Iónico** | Existe **mucha diferencia** de electronegatividad. En lugar de compartimiento, ocurre un **robo de electrones**. Un átomo está atrayendo fuertemente los electrones y se los roba al otro. | $\text{NaCl}$: $\Delta \text{EN} = 3,16 - 0,93 = 2,23$. |
 
 ## Tipos de enlace químico - comparativo
 
