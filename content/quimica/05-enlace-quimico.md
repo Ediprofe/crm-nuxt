@@ -201,7 +201,7 @@ El **enlace metálico no se incluye** en esta escala de electronegatividad. Esto
 
 La clasificación de los enlaces se basa en valores clave en la escala: $0,4$ y $1,7$.
 
-| Diferencia de electronegatividad ($\Delta \text{EN}$) | Tipo de enlace | Características | Ejemplo de Cálculo |
+| Diferencia de electronegatividad ($\Delta \text{EN}$) | Tipo de enlace | Características | Ejemplo de cálculo |
 | --- | --- | --- | --- |
 | **Desde $0$ hasta $0,4$** | **Covalente no polar** | Los átomos comparten los electrones de forma **muy pareja**. La diferencia es cero o muy cerca de cero. Los electrones **no buscan para ningún polo**. Es un compartimiento de electrones. | $\text{H}_2$: $\Delta \text{EN} = 2,20 - 2,20 = 0$. |
 | **Entre $0,4$ y hasta $1,7$** | **Covalente polar** | Hay **más diferencia** de electronegatividad. Un átomo atrae con **más fuerza** el par de electrones. El par de electrones está **más cerca del polo** del átomo más electronegativo. Es un compartimiento de electrones. | $\text{NH}_3$: $\Delta \text{EN} = 3,04 - 2,20 = 0,84$. |
