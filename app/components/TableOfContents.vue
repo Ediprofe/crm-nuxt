@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { ref, computed, onMounted, onUnmounted, watch, nextTick } from 'vue'
 import { TIMEOUTS, DEFAULTS } from '~/config/constants'
+import { extractCleanHeadingText } from '~/utils/search'
 import type { TocItem } from '~/types/content'
 
 const props = defineProps<{
@@ -54,9 +55,12 @@ function extractHeadings() {
     const level = parseInt(tagChar, 10) // "H2" -> 2
     let id = heading.id
 
-    // Si el heading no tiene ID, crear uno basado en el texto
+    // Extraer texto limpio manejando LaTeX/KaTeX
+    const cleanText = extractCleanHeadingText(heading as HTMLElement)
+
+    // Si el heading no tiene ID, crear uno basado en el texto limpio
     if (!id) {
-      id = heading.textContent?.trim().toLowerCase()
+      id = cleanText.toLowerCase()
         .replace(/[^\w\s-]/g, '')
         .replace(/\s+/g, '-') || ''
       heading.id = id
@@ -64,7 +68,7 @@ function extractHeadings() {
 
     items.push({
       id,
-      text: heading.textContent?.trim() || '',
+      text: cleanText,
       level
     })
   })

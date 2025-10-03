@@ -23,6 +23,76 @@ export function escapeRegex(text: string): string {
 }
 
 /**
+ * Extrae texto limpio de un heading, manejando contenido LaTeX renderizado por KaTeX
+ * @param heading - Elemento HTML del heading (h2, h3, etc.)
+ * @returns Texto limpio sin código LaTeX crudo, preservando notación matemática legible
+ * @example
+ * // Heading con LaTeX: <h2>Nitrógeno ($\text{N}_2$)</h2>
+ * extractCleanHeadingText(h2Element)
+ * // Retorna: "Nitrógeno (N₂)" o "Nitrógeno (N2)" dependiendo del contenido KaTeX
+ * 
+ * @remarks
+ * Esta función maneja tres casos:
+ * 1. Texto plano: devuelve el texto tal cual
+ * 2. KaTeX inline: extrae el contenido matemático legible de los elementos .katex
+ * 3. Texto mixto: combina texto plano con notación matemática
+ * 
+ * La función busca elementos con la clase 'katex' que son generados por KaTeX al
+ * renderizar LaTeX, y extrae su contenido de forma inteligente, evitando duplicación
+ * y código LaTeX sin procesar.
+ */
+export function extractCleanHeadingText(heading: HTMLElement): string {
+  if (!heading) return ''
+  
+  // Clonar el elemento para no modificar el DOM original
+  const clone = heading.cloneNode(true) as HTMLElement
+  
+  // Buscar todos los elementos KaTeX renderizados
+  const katexElements = clone.querySelectorAll('.katex')
+  
+  katexElements.forEach(katexEl => {
+    // KaTeX genera dos representaciones: MathML (para accesibilidad) y HTML
+    // Intentamos extraer el texto más legible
+    
+    // Opción 1: Buscar la anotación de texto alternativo si existe
+    const annotation = katexEl.querySelector('annotation[encoding="application/x-tex"]')
+    if (annotation?.textContent) {
+      // Limpiar el código LaTeX para hacerlo más legible
+      let cleanLatex = annotation.textContent
+        .replace(/\\text\{([^}]+)\}/g, '$1')  // \text{N} -> N
+        .replace(/\\mathrm\{([^}]+)\}/g, '$1') // \mathrm{N} -> N
+        .replace(/[_^]\{([^}]+)\}/g, '$1')     // _{2} o ^{2} -> 2
+        .replace(/[_^](\w)/g, '$1')             // _2 o ^2 -> 2
+        .replace(/\\/g, '')                     // Eliminar backslashes restantes
+        .replace(/[\{\}]/g, '')                 // Eliminar llaves
+        .trim()
+      
+      katexEl.replaceWith(document.createTextNode(cleanLatex))
+      return
+    }
+    
+    // Opción 2: Usar el textContent del elemento .katex-html si existe
+    const katexHtml = katexEl.querySelector('.katex-html')
+    if (katexHtml?.textContent) {
+      // El textContent de katex-html ya está bastante limpio
+      katexEl.replaceWith(document.createTextNode(katexHtml.textContent.trim()))
+      return
+    }
+    
+    // Opción 3: Usar el textContent del elemento completo como fallback
+    const fallbackText = katexEl.textContent?.trim() || ''
+    if (fallbackText) {
+      // Limpiar duplicaciones comunes (KaTeX a veces duplica el contenido)
+      const cleaned = fallbackText.split('\n')[0]?.trim() || fallbackText
+      katexEl.replaceWith(document.createTextNode(cleaned))
+    }
+  })
+  
+  // Retornar el texto limpio, eliminando espacios múltiples
+  return clone.textContent?.trim().replace(/\s+/g, ' ') || ''
+}
+
+/**
  * Encuentra el heading más cercano (H2 o H3) antes del elemento dado
  * @param element - Elemento HTML desde donde buscar
  * @returns Texto del heading más cercano o null si no se encuentra
@@ -39,7 +109,7 @@ export function findNearestHeading(element: HTMLElement): string | null {
     
     while (sibling) {
       if (sibling.tagName === 'H2' || sibling.tagName === 'H3') {
-        return sibling.textContent?.trim() || null
+        return extractCleanHeadingText(sibling)
       }
       sibling = sibling.previousElementSibling as HTMLElement | null
     }
@@ -49,7 +119,7 @@ export function findNearestHeading(element: HTMLElement): string | null {
     
     // Si encontramos un H2/H3 padre, retornarlo
     if (current && (current.tagName === 'H2' || current.tagName === 'H3')) {
-      return current.textContent?.trim() || null
+      return extractCleanHeadingText(current)
     }
   }
   

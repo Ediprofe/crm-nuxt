@@ -4,6 +4,7 @@ import { materiasConfig } from '~/config/materias'
 import { DEFAULTS, TIMEOUTS, SIDEBAR } from '~/config/constants'
 import { useTocSheet } from '~/composables/useTocSheet'
 import { useSidebarCollapse } from '~/composables/useSidebarCollapse'
+import { extractCleanHeadingText } from '~/utils/search'
 import type TableOfContents from '~/components/TableOfContents.vue'
 import type { ContentItem, TocItem } from '~/types/content'
 
@@ -101,9 +102,12 @@ function extractHeadingsFromContent() {
     const level = parseInt(tagChar, 10) // "H2" -> 2, "H3" -> 3
     let id = heading.id
 
-    // Si el heading no tiene ID, crear uno basado en el texto
+    // Extraer texto limpio manejando LaTeX/KaTeX
+    const cleanText = extractCleanHeadingText(heading as HTMLElement)
+
+    // Si el heading no tiene ID, crear uno basado en el texto limpio
     if (!id) {
-      id = heading.textContent?.trim().toLowerCase()
+      id = cleanText.toLowerCase()
         .replace(/[^\w\s-]/g, '')
         .replace(/\s+/g, '-') || ''
       heading.id = id
@@ -111,7 +115,7 @@ function extractHeadingsFromContent() {
 
     items.push({
       id,
-      text: heading.textContent?.trim() || '',
+      text: cleanText,
       level
     })
   })
