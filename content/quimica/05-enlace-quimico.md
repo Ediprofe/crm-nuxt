@@ -219,7 +219,7 @@ A continuación, se presenta un repaso y comparación detallada de estos tres ti
 
 ---
 
-### 1. Enlace Iónico
+### Enlace Iónico
 
 El enlace iónico se caracteriza por el **robo de electrones**.
 
@@ -240,7 +240,7 @@ El enlace iónico se caracteriza por el **robo de electrones**.
  - **Solubilidad en agua:** **Alta** (ej. la sal de cocina se disuelve muy bien en agua).
  - **Conductividad eléctrica:** **Alta** (ej. el agua salada conduce más la electricidad que el agua pura).
 
-### 2. Enlace covalente
+### Enlace covalente
 
 El enlace covalente se forma por **compartimento de electrones**.
 
@@ -264,7 +264,7 @@ Los enlaces covalentes se dan cuando la $\Delta \text{EN}$ está entre $0$ y $1,
 - **Solubilidad en agua:** **Poco solubles en agua** (ej. el azúcar es menos soluble en agua que la sal).
 - **Conductividad eléctrica:** Tienen en general una **baja conductividad**.
 
-### 3. Enlace metálico
+### Enlace metálico
 
 El enlace metálico se produce entre **metales** y se da por el **compartimiento de muchos electrones**.
 
@@ -294,6 +294,29 @@ Teniendo en cuenta las propiedades presentadas según su tipo de enlace, complet
 | Ca y F | | | |
 | F y F | | | |
 | O y F | | | |
+
+### ✏️ Practica
+
+La siguiente tabla presenta información sobre los elementos A, D, X y Z:
+
+| Elemento | Electrones de valencia | Electronegatividad |
+|----------|------------------------|-------------------|
+| A | 1 | 0,79 |
+| D | 2 | 0,95 |
+| X | 6 | 3,50 |
+| Z | 7 | 3,04 |
+
+**1. Identifique el tipo de enlace químico presente en los siguientes compuestos:**
+
+**A.** AZ.
+
+**B.** DX.
+
+**C.** $\text{X}_2$.
+
+**D.** $\text{A}_2$.
+
+**E.** $\text{Z}_2\text{X}$.
 
 ---
 
