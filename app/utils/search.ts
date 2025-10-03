@@ -2,6 +2,8 @@
  * Utilidades para búsqueda de texto en contenido HTML
  */
 
+import { removePencilEmoji } from './practice-detection'
+
 export interface SearchMatch {
   element: HTMLElement
   text: string
@@ -89,7 +91,23 @@ export function extractCleanHeadingText(heading: HTMLElement): string {
   })
   
   // Retornar el texto limpio, eliminando espacios múltiples
-  return clone.textContent?.trim().replace(/\s+/g, ' ') || ''
+  let cleanText = clone.textContent?.trim().replace(/\s+/g, ' ') || ''
+  
+  // Remover emojis de práctica/lápiz usando la utilidad centralizada
+  // DRY: Single Source of Truth para limpieza de emojis
+  const originalText = cleanText
+  cleanText = removePencilEmoji(cleanText)
+  
+  // Debug: Verificar si la limpieza está funcionando
+  if (originalText !== cleanText) {
+    console.log('[extractCleanHeadingText] Emoji removido:', {
+      original: originalText,
+      cleaned: cleanText,
+      hasEmoji: originalText.includes('✏')
+    })
+  }
+  
+  return cleanText
 }
 
 /**

@@ -1,6 +1,6 @@
 ---
 title: Enlace químico
-description: Enlae químico y sus tipos.
+description: El enlace químico y sus tipos.
 ---
 
 # Enlace químico
@@ -83,8 +83,6 @@ De esta forma, los átomos quedan enlazados a través de este robo o transferenc
 https://youtu.be/Ybe7NJocdPc?si=Dv9j6uKxZqib5bw4
 
 https://vt.tiktok.com/ZSSaX5t9h/
-
-El **enlace covalente** es un tipo de enlace químico que se distingue por el **compartimiento de electrones.**
 
 El **enlace covalente** es un tipo de enlace químico que se distingue por el **compartimiento de electrones**.
 
@@ -207,6 +205,29 @@ La clasificación de los enlaces se basa en valores clave en la escala: $0,4$ y 
 | **Entre $0,4$ y hasta $1,7$** | **Covalente polar** | Hay **más diferencia** de electronegatividad. Un átomo atrae con **más fuerza** el par de electrones. El par de electrones está **más cerca del polo** del átomo más electronegativo. Es un compartimiento de electrones. | $\text{NH}_3$: $\Delta \text{EN} = 3,04 - 2,20 = 0,84$. |
 | **Mayor de $1,7$** | **Iónico** | Existe **mucha diferencia** de electronegatividad. En lugar de compartimiento, ocurre un **robo de electrones**. Un átomo está atrayendo fuertemente los electrones y se los roba al otro. | $\text{NaCl}$: $\Delta \text{EN} = 3,16 - 0,93 = 2,23$. |
 
+### ✏️ Practica
+
+La siguiente tabla presenta información sobre los elementos A, D, X y Z:
+
+| Elemento | Electrones de valencia | Electronegatividad |
+|----------|------------------------|-------------------|
+| A | 1 | 0,82 |
+| D | 2 | 0,98 |
+| X | 6 | 3,44 |
+| Z | 7 | 3,16 |
+
+**Complete la siguiente tabla calculando la diferencia de electronegatividad y determinando el tipo de enlace químico formado:**
+
+| Compuesto | Diferencia de electronegatividad ($\Delta \text{EN}$) | Tipo de enlace químico |
+|-----------|-------------------------------------------------------|------------------------|
+| AZ | | |
+| DX | | |
+| $\text{X}_2$ | | |
+| $\text{A}_2$ | | |
+| $\text{Z}_2\text{X}$ | | |
+
+**Recordatorio:** Umbrales de clasificación: 0–0,4 (covalente no polar), 0,4–1,7 (covalente polar), >1,7 (iónico).
+
 ## Tipos de enlace químico - comparativo
 
 https://youtu.be/qV4P3PJCiFE?si=2j9ZfCI5YMWzhzOm
@@ -215,74 +236,19 @@ https://vt.tiktok.com/ZSSaXxCXs/
 
 El enlace químico es la **unión entre átomos para formar sustancias nuevas**, funcionando como el "pegamento" que mantiene unidos a los diferentes átomos. Los tipos principales de enlace químico son el **iónico**, el **covalente** y el **metálico**.
 
-A continuación, se presenta un repaso y comparación detallada de estos tres tipos de enlace:
+A continuación, se presenta una tabla comparativa de los tres tipos de enlace:
 
----
-
-### Enlace Iónico
-
-El enlace iónico se caracteriza por el **robo de electrones**.
-
-| Aspecto | Descripción y Mecanismo |
-| --- | --- |
-| **Participantes** | Generalmente, se da entre un **metal y un no metal**. |
-| **Mecanismo** | Se produce una **transferencia de electrones** de un átomo a otro. El metal **cede o pierde electrones** (convirtiéndose en **catión**, carga positiva) y el no metal **recibe o gana electrones** (convirtiéndose en **anión**, carga negativa). |
-| **Regla** | Los átomos se enlazan para **completar ocho electrones** en la última capa (regla del octeto). |
-| **Electronegatividad ($\Delta \text{EN}$)** | La diferencia de electronegatividad es **mayor a 1,7**. Esta gran diferencia indica un **robo de electrones**, en lugar de un compartimiento. Ejemplo: $\text{NaCl}$ tiene $\Delta \text{EN} = 2,23$. |
-
-**Propiedades de las sustancias iónicas**:
-
-- **Estado a condición ambiente:** Típicamente **sólidos cristalinos**, como la sal de cocina ($\text{NaCl}$).
-**Propiedades de las sustancias iónicas**:
-
-- **Estado a condición ambiente:** Típicamente **sólidos cristalinos**, como la sal de cocina ($\text{NaCl}$).
- - **Punto de fusión/ebullición:** **Altos**; se necesita mucha temperatura para fundirlos o volverlos gas.
- - **Solubilidad en agua:** **Alta** (ej. la sal de cocina se disuelve muy bien en agua).
- - **Conductividad eléctrica:** **Alta** (ej. el agua salada conduce más la electricidad que el agua pura).
-
-### Enlace covalente
-
-El enlace covalente se forma por **compartimento de electrones**.
-
-| Aspecto | Descripción y Mecanismo |
-| --- | --- |
-| **Participantes** | Generalmente, se da entre un **no metal con otro no metal**. |
-| **Mecanismo** | Los átomos comparten sus **electrones de valencia** para cumplir la regla del octeto (ocho electrones en la última capa). |
-| **Excepción** | El **hidrógeno** es una excepción, ya que busca cumplir la **regla del dueto** (dos electrones). |
-| **Enlace covalente dativo/coordinado** | Tipo especial donde el **par de electrones compartidos es aportado por uno solo de los átomos** del enlace. |
-- *Clasificación según la diferencia de electronegatividad ($\Delta \text{EN}$):*
-
-Los enlaces covalentes se dan cuando la $\Delta \text{EN}$ está entre $0$ y $1,7$:
-
-1. **Covalente no polar:** $\Delta \text{EN}$ **desde $0$ hasta $0,4$**. Los átomos comparten los electrones de forma **muy pareja** (ej. $\text{H}_2$, donde $\Delta \text{EN} = 0$). Los electrones no buscan ningún polo.
-2. **Covalente polar:** $\Delta \text{EN}$ **entre $0,4$ y hasta $1,7$**. Existe más diferencia, y un átomo atrae el par de electrones con **más fuerza**, quedando el par más cerca de un polo (el átomo más electronegativo).
-
-**Propiedades de las sustancias covalentes**:
-
-- **Estado a condición ambiente:** Típicamente **sólidos, líquidos o gases** (ej. el agua es un líquido, el azúcar es un sólido, el dióxido de carbono es un gas).
-- **Punto de fusión/ebullición:** **Bajos** (ej. el agua requiere poca temperatura para cambiar de fase).
-- **Solubilidad en agua:** **Poco solubles en agua** (ej. el azúcar es menos soluble en agua que la sal).
-- **Conductividad eléctrica:** Tienen en general una **baja conductividad**.
-
-### Enlace metálico
-
-El enlace metálico se produce entre **metales** y se da por el **compartimiento de muchos electrones**.
-
-| Aspecto | Descripción y Mecanismo |
-| --- | --- |
-| **Participantes** | Se produce entre **metales** (ej. cobre, aluminio). |
-| **Mecanismo** | Se basa en la **atracción** entre **iones metálicos positivos** (cationes, que son los átomos que perdieron electrones) y una **nube o mar de electrones** (cargas negativas). |
-| **Electrones** | Los electrones están **deslocalizados**; no pertenecen a un átomo en particular, sino que son un colectivo que se mueve entre los iones positivos. |
-| **Electronegatividad** | Este tipo de enlace **no se incluye** en la escala de electronegatividad, ya que no se da por la resta entre dos átomos enlazados, sino por el compartimiento de muchos electrones entre muchos átomos. |
-
-**Propiedades de las sustancias metálicas**:
-
-- **Estado a condición ambiente:** Típicamente **sólidos**.
- - **Punto de fusión/ebullición:** **Muy altos**; se necesitan temperaturas muy elevadas para fundir un metal.
- - **Solubilidad en agua:** **Insolubles o no solubles** en agua.
- - **Conductividad eléctrica:** **Muy alta conductividad eléctrica**. Esto se explica por el **movimiento deslocalizado de los electrones**.
-
----
+| Característica | Enlace Iónico | Enlace Covalente | Enlace Metálico |
+|----------------|---------------|------------------|-----------------|
+| **Mecanismo** | Robo o transferencia de electrones | Compartimiento de electrones | Compartimiento de muchos electrones |
+| **Participantes** | Metal + No metal | No metal + No metal | Metal + Metal |
+| **Electronegatividad ($\Delta \text{EN}$)** | Mayor a 1,7 | Entre 0 y 1,7 (no polar: 0–0,4; polar: 0,4–1,7) | No aplica (compartimiento deslocalizado) |
+| **Formación de iones** | Catión (+) y anión (−) | No hay iones | Mar de electrones + cationes |
+| **Ejemplo** | $\text{NaCl}$, $\text{KCl}$ | $\text{H}_2\text{O}$, $\text{H}_2$, $\text{NH}_3$ | Cobre, aluminio, aleaciones |
+| **Estado a condiciones ambiente** | Sólidos cristalinos | Sólidos, líquidos o gases | Sólidos |
+| **Punto de fusión/ebullición** | Altos | Bajos | Muy altos |
+| **Solubilidad en agua** | Alta | Baja | Insolubles |
+| **Conductividad eléctrica** | Alta (en solución o fundido) | Baja | Muy alta |
 
 ### ✏️ Practica
 
@@ -294,29 +260,6 @@ Teniendo en cuenta las propiedades presentadas según su tipo de enlace, complet
 | Ca y F | | | |
 | F y F | | | |
 | O y F | | | |
-
-### ✏️ Practica
-
-La siguiente tabla presenta información sobre los elementos A, D, X y Z:
-
-| Elemento | Electrones de valencia | Electronegatividad |
-|----------|------------------------|-------------------|
-| A | 1 | 0,79 |
-| D | 2 | 0,95 |
-| X | 6 | 3,50 |
-| Z | 7 | 3,04 |
-
-**1. Identifique el tipo de enlace químico presente en los siguientes compuestos:**
-
-**A.** AZ.
-
-**B.** DX.
-
-**C.** $\text{X}_2$.
-
-**D.** $\text{A}_2$.
-
-**E.** $\text{Z}_2\text{X}$.
 
 ---
 

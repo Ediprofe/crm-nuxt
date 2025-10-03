@@ -1,8 +1,10 @@
 <script setup lang="ts">
 import { ref, computed, onMounted, onUnmounted, watch, nextTick } from 'vue'
 import { TIMEOUTS, DEFAULTS } from '~/config/constants'
+import { CONTENT_ICONS, getIconClass, type ContentIconType } from '~/config/icons'
 import { extractCleanHeadingText } from '~/utils/search'
-import type { TocItem } from '~/types/content'
+import { detectHeadingContentTypes } from '~/utils/content-detection'
+import type { TocItem, ContentType } from '~/types/content'
 
 const props = defineProps<{
   contentElement: HTMLElement | null
@@ -17,6 +19,21 @@ const emit = defineEmits<{
 const tocItems = ref<TocItem[]>([])
 const activeId = ref<string>('')
 const isMobileMenuOpen = ref(false)
+
+/**
+ * ══════════════════════════════════════════════════════════════════════════════
+ * CONFIGURACIÓN DE ÍCONOS CENTRALIZADA
+ * ══════════════════════════════════════════════════════════════════════════════
+ * 
+ * Los íconos ahora se importan desde ~/config/icons.ts
+ * Esto garantiza consistencia total entre desktop, móvil y otros componentes.
+ * 
+ * Beneficios:
+ * - ✅ DRY: Un solo lugar para definir íconos (config/icons.ts)
+ * - ✅ Type Safety: Tipado completo compartido
+ * - ✅ Mantenibilidad: Cambios en un solo archivo
+ * - ✅ Escalabilidad: Fácil agregar nuevos íconos
+ */
 
 // Función para medir y actualizar la altura del header dinámicamente
 function updateHeaderHeight() {
@@ -58,6 +75,9 @@ function extractHeadings() {
     // Extraer texto limpio manejando LaTeX/KaTeX
     const cleanText = extractCleanHeadingText(heading as HTMLElement)
 
+    // Detectar tipos de contenido asociados (videos, playlists, práctica, etc.)
+    const contentTypes = detectHeadingContentTypes(heading as HTMLElement)
+
     // Si el heading no tiene ID, crear uno basado en el texto limpio
     if (!id) {
       id = cleanText.toLowerCase()
@@ -69,7 +89,8 @@ function extractHeadings() {
     items.push({
       id,
       text: cleanText,
-      level
+      level,
+      contentTypes: contentTypes.length > 0 ? contentTypes : undefined
     })
   })
 
@@ -225,6 +246,26 @@ defineExpose({
                 borderLeftColor: 'transparent'
               }"
             >
+              <!-- ═══════════════════════════════════════════════════════ -->
+              <!-- ÍCONOS DE CONTENIDO - DRY: Código reutilizable         -->
+              <!-- ═══════════════════════════════════════════════════════ -->
+              <span v-if="item.contentTypes?.length" class="content-icons">
+                <template v-for="type in item.contentTypes" :key="type">
+                  <svg 
+                    v-if="CONTENT_ICONS[type as ContentIconType]"
+                    :class="getIconClass(type as ContentIconType)"
+                    :viewBox="CONTENT_ICONS[type as ContentIconType].viewBox"
+                    :fill="CONTENT_ICONS[type as ContentIconType].fill"
+                    :stroke="CONTENT_ICONS[type as ContentIconType].stroke"
+                    :stroke-width="CONTENT_ICONS[type as ContentIconType].strokeWidth || undefined"
+                    :stroke-linecap="CONTENT_ICONS[type as ContentIconType].strokeLinecap || undefined"
+                    :stroke-linejoin="CONTENT_ICONS[type as ContentIconType].strokeLinejoin || undefined"
+                  >
+                    <path :d="CONTENT_ICONS[type as ContentIconType].path" />
+                  </svg>
+                </template>
+              </span>
+              
               {{ item.text }}
             </a>
           </li>
@@ -278,6 +319,26 @@ defineExpose({
                     : 'text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-700 border-l-4 border-transparent'
                 ]"
               >
+                <!-- ═══════════════════════════════════════════════════════ -->
+                <!-- ÍCONOS DE CONTENIDO - MISMO CÓDIGO QUE DESKTOP (DRY)   -->
+                <!-- ═══════════════════════════════════════════════════════ -->
+                <span v-if="item.contentTypes?.length" class="content-icons">
+                  <template v-for="type in item.contentTypes" :key="type">
+                    <svg 
+                      v-if="CONTENT_ICONS[type as ContentIconType]"
+                      :class="getIconClass(type as ContentIconType)"
+                      :viewBox="CONTENT_ICONS[type as ContentIconType].viewBox"
+                      :fill="CONTENT_ICONS[type as ContentIconType].fill"
+                      :stroke="CONTENT_ICONS[type as ContentIconType].stroke"
+                      :stroke-width="CONTENT_ICONS[type as ContentIconType].strokeWidth || undefined"
+                      :stroke-linecap="CONTENT_ICONS[type as ContentIconType].strokeLinecap || undefined"
+                      :stroke-linejoin="CONTENT_ICONS[type as ContentIconType].strokeLinejoin || undefined"
+                    >
+                      <path :d="CONTENT_ICONS[type as ContentIconType].path" />
+                    </svg>
+                  </template>
+                </span>
+                
                 {{ item.text }}
               </a>
             </li>
@@ -289,9 +350,9 @@ defineExpose({
 </template>
 
 <style scoped>
-/* ========================================
+/* ═══════════════════════════════════════════════════════════════════════════
    ESTILOS SIDEBAR (Desktop/Tablet)
-   ======================================== */
+   ═══════════════════════════════════════════════════════════════════════════ */
 .sidebar {
   position: sticky;
   top: 0;
@@ -376,5 +437,63 @@ defineExpose({
 .sidebar-link-sub {
   padding-left: 1.5rem;
   font-size: 0.8125rem;
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   ESTILOS PARA ÍCONOS DE CONTENIDO
+   Principio: Estilos cohesivos y reutilizables sin !important
+   ═══════════════════════════════════════════════════════════════════════════ */
+.content-icons {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  margin-right: 0.5rem;
+  vertical-align: middle;
+}
+
+.content-icon {
+  width: 0.875rem;
+  height: 0.875rem;
+  opacity: 0.65;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+  flex-shrink: 0;
+  color: var(--accent-primary);
+}
+
+.sidebar-link:hover .content-icon,
+a:hover .content-icon {
+  opacity: 0.9;
+}
+
+.sidebar-link-active .content-icon {
+  opacity: 1;
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   ÍCONOS ESPECÍFICOS (Ordenados por prioridad)
+   Principio: Especificidad adecuada sin necesidad de !important
+   ═══════════════════════════════════════════════════════════════════════════ */
+.playlist-icon {
+  color: var(--accent-primary);
+}
+
+.video-icon {
+  color: var(--accent-primary);
+}
+
+.drive-icon {
+  color: var(--accent-primary);
+}
+
+.tiktok-icon {
+  color: var(--accent-primary);
+  width: 0.8rem;
+  height: 0.8rem;
+}
+
+.practice-icon {
+  color: var(--accent-primary);
+  width: 0.875rem;
+  height: 0.875rem;
 }
 </style>

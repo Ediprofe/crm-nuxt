@@ -111,6 +111,44 @@ function processMediaLinks() {
 function addIconToHeading(link: MediaLink) {
   if (!link.parentHeading) return
 
+  // Agregar metadata al heading para ToC
+  link.parentHeading.setAttribute('data-has-media', 'true')
+  
+  // Determinar el tipo de contenido para ToC
+  let contentType: string
+  if (link.info.type === 'youtube' && link.info.isPlaylist) {
+    contentType = 'playlist'
+  } else if (link.info.type === 'youtube') {
+    contentType = 'video'
+  } else {
+    contentType = link.info.type // 'tiktok' | 'drive'
+  }
+  
+  // Acumular tipos de contenido en lugar de sobrescribir
+  // Esto permite que un heading tenga múltiples tipos (ej: video + tiktok)
+  const existingTypes = link.parentHeading.getAttribute('data-content-types') || ''
+  const typesArray = existingTypes ? existingTypes.split(',') : []
+  
+  // Solo agregar si no existe ya
+  if (!typesArray.includes(contentType)) {
+    typesArray.push(contentType)
+    
+    // Ordenar por prioridad: playlist > video > drive > tiktok
+    // Esto asegura que YouTube siempre aparezca primero
+    const priorityOrder = { playlist: 1, video: 2, drive: 3, tiktok: 4 }
+    typesArray.sort((a, b) => {
+      const priorityA = priorityOrder[a as keyof typeof priorityOrder] || 99
+      const priorityB = priorityOrder[b as keyof typeof priorityOrder] || 99
+      return priorityA - priorityB
+    })
+    
+    link.parentHeading.setAttribute('data-content-types', typesArray.join(','))
+  }
+  
+  // Mantener compatibilidad con código legacy usando el tipo prioritario
+  link.parentHeading.setAttribute('data-content-type', typesArray[0] || contentType)
+
+  // Agregar ícono visual al heading
   const icon = createMediaIcon(link.info.type)
   icon.setAttribute('href', link.url)
   icon.setAttribute('target', '_blank')

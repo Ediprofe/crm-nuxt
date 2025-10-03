@@ -5,6 +5,7 @@ import { DEFAULTS, TIMEOUTS, SIDEBAR } from '~/config/constants'
 import { useTocSheet } from '~/composables/useTocSheet'
 import { useSidebarCollapse } from '~/composables/useSidebarCollapse'
 import { extractCleanHeadingText } from '~/utils/search'
+import { detectHeadingContentTypes } from '~/utils/content-detection'
 import type TableOfContents from '~/components/TableOfContents.vue'
 import type { ContentItem, TocItem } from '~/types/content'
 
@@ -105,6 +106,9 @@ function extractHeadingsFromContent() {
     // Extraer texto limpio manejando LaTeX/KaTeX
     const cleanText = extractCleanHeadingText(heading as HTMLElement)
 
+    // Detectar tipos de contenido asociados (videos, playlists, práctica, etc.)
+    const contentTypes = detectHeadingContentTypes(heading as HTMLElement)
+
     // Si el heading no tiene ID, crear uno basado en el texto limpio
     if (!id) {
       id = cleanText.toLowerCase()
@@ -116,7 +120,8 @@ function extractHeadingsFromContent() {
     items.push({
       id,
       text: cleanText,
-      level
+      level,
+      contentTypes: contentTypes.length > 0 ? contentTypes : undefined
     })
   })
 

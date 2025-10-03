@@ -75,10 +75,16 @@ export function extractDriveId(url: string): MediaInfo | null {
 
 /**
  * Crea un icono profesional para enlaces multimedia
- * Sigue el sistema de diseño V2: neutral por defecto, verde en hover
+ * 
+ * MEJORA: Usa clases CSS definidas en global.css en lugar de estilos inline
+ * para mejor mantenibilidad y rendimiento.
  * 
  * @param type - Tipo de medio (youtube, tiktok, drive)
  * @returns HTMLElement - Elemento <a> con el icono estilizado
+ * 
+ * @example
+ * const icon = createMediaIcon('youtube')
+ * heading.appendChild(icon)
  */
 export function createMediaIcon(type: 'youtube' | 'tiktok' | 'drive'): HTMLElement {
   const link = document.createElement('a')
@@ -96,6 +102,7 @@ export function createMediaIcon(type: 'youtube' | 'tiktok' | 'drive'): HTMLEleme
   
   const path = document.createElementNS('http://www.w3.org/2000/svg', 'path')
   
+  // Configuración de íconos - podría centralizarse en el futuro
   switch (type) {
     case 'youtube':
       svg.setAttribute('fill', 'currentColor')
@@ -118,55 +125,6 @@ export function createMediaIcon(type: 'youtube' | 'tiktok' | 'drive'): HTMLEleme
   svg.appendChild(path)
   iconWrapper.appendChild(svg)
   link.appendChild(iconWrapper)
-  
-  // Agregar estilos inline usando variables CSS
-  const style = document.createElement('style')
-  style.textContent = `
-    .media-icon-link {
-      display: inline-flex;
-      align-items: center;
-      margin-left: 0.5rem;
-      text-decoration: none;
-      vertical-align: middle;
-      transition: transform 0.2s ease;
-    }
-    
-    .media-icon-link:hover {
-      transform: scale(1.1);
-    }
-    
-    .media-icon-wrapper {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      width: 2rem;
-      height: 2rem;
-      border-radius: 0.375rem;
-      background-color: var(--bg-secondary);
-      transition: all 0.3s ease;
-      border: 1px solid var(--border-color);
-    }
-    
-    .media-icon-link:hover .media-icon-wrapper {
-      background-color: var(--accent-primary);
-      border-color: var(--accent-primary);
-    }
-    
-    .media-icon-svg {
-      color: var(--text-muted);
-      transition: color 0.3s ease;
-    }
-    
-    .media-icon-link:hover .media-icon-svg {
-      color: white;
-    }
-  `
-  
-  // Agregar el style al documento si no existe
-  if (!document.getElementById('media-icons-styles')) {
-    style.id = 'media-icons-styles'
-    document.head.appendChild(style)
-  }
   
   return link
 }

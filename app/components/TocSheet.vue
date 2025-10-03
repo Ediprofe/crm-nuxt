@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { TOC_SHEET, Z_INDEX } from '~/config/constants'
+import { CONTENT_ICONS, getIconClass, type ContentIconType } from '~/config/icons'
 import type { TocItem } from '~/types/content'
 
 const props = defineProps<{
@@ -21,6 +22,20 @@ const handleItemClick = (id: string) => {
   emit('navigate', id)
   emit('close')
 }
+
+/**
+ * ══════════════════════════════════════════════════════════════════════════════
+ * CONFIGURACIÓN DE ÍCONOS CENTRALIZADA
+ * ══════════════════════════════════════════════════════════════════════════════
+ * 
+ * Los íconos ahora se importan desde ~/config/icons.ts
+ * Esto garantiza consistencia total entre desktop, móvil y TocSheet.
+ * 
+ * Beneficios:
+ * - ✅ DRY: Un solo lugar para definir íconos
+ * - ✅ Mantenibilidad: Cambios centralizados
+ * - ✅ Consistencia: Mismos íconos en todas las vistas
+ */
 </script>
 
 <template>
@@ -80,7 +95,7 @@ const handleItemClick = (id: string) => {
               >
                 <button
                   @click="handleItemClick(item.id)"
-                  class="w-full text-left px-4 py-3 rounded-lg transition-all"
+                  class="w-full text-left px-4 py-3 rounded-lg transition-all flex items-center"
                   :class="[item.level === 3 ? 'pl-8' : 'pl-4']"
                   :style="activeId === item.id ? {
                     backgroundColor: 'var(--bg-secondary)',
@@ -90,7 +105,27 @@ const handleItemClick = (id: string) => {
                     color: 'var(--text-secondary)'
                   }"
                 >
-                  {{ item.text }}
+                  <!-- ═══════════════════════════════════════════════════════ -->
+                  <!-- ÍCONOS DE CONTENIDO - DRY: Sistema centralizado        -->
+                  <!-- ═══════════════════════════════════════════════════════ -->
+                  <span v-if="item.contentTypes?.length" class="content-icons">
+                    <template v-for="type in item.contentTypes" :key="type">
+                      <svg 
+                        v-if="CONTENT_ICONS[type as ContentIconType]"
+                        :class="getIconClass(type as ContentIconType)"
+                        :viewBox="CONTENT_ICONS[type as ContentIconType].viewBox"
+                        :fill="CONTENT_ICONS[type as ContentIconType].fill"
+                        :stroke="CONTENT_ICONS[type as ContentIconType].stroke"
+                        :stroke-width="CONTENT_ICONS[type as ContentIconType].strokeWidth || undefined"
+                        :stroke-linecap="CONTENT_ICONS[type as ContentIconType].strokeLinecap || undefined"
+                        :stroke-linejoin="CONTENT_ICONS[type as ContentIconType].strokeLinejoin || undefined"
+                      >
+                        <path :d="CONTENT_ICONS[type as ContentIconType].path" />
+                      </svg>
+                    </template>
+                  </span>
+                  
+                  <span>{{ item.text }}</span>
                 </button>
               </li>
             </ul>
@@ -130,5 +165,57 @@ button:not([aria-label="Cerrar"]):hover:not([style*="backgroundColor: var(--bg-s
 .sheet-leave-to .absolute.bottom-0 {
   transform: translateY(100%);
 }
-</style>
 
+/* ═══════════════════════════════════════════════════════════════════════════
+   ESTILOS PARA ÍCONOS DE CONTENIDO - Consistente con Desktop
+   ═══════════════════════════════════════════════════════════════════════════ */
+.content-icons {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  margin-right: 0.5rem;
+  vertical-align: middle;
+}
+
+.content-icon {
+  width: 0.875rem;
+  height: 0.875rem;
+  opacity: 0.65;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+  flex-shrink: 0;
+  color: var(--accent-primary);
+}
+
+button:hover .content-icon {
+  opacity: 0.9;
+}
+
+/* Ícono de playlist */
+.playlist-icon {
+  color: var(--accent-primary);
+}
+
+/* Ícono de video */
+.video-icon {
+  color: var(--accent-primary);
+}
+
+/* Ícono de drive */
+.drive-icon {
+  color: var(--accent-primary);
+}
+
+/* Ícono de tiktok */
+.tiktok-icon {
+  color: var(--accent-primary);
+  width: 0.8rem;
+  height: 0.8rem;
+}
+
+/* Ícono de práctica - AHORA VERDE */
+.practice-icon {
+  color: var(--accent-primary);
+  width: 0.875rem;
+  height: 0.875rem;
+}
+</style>

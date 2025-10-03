@@ -46,17 +46,34 @@ export interface MateriaConfig {
  */
 
 /**
+ * Tipos de contenido que puede tener un heading
+ * - video: Video individual de YouTube
+ * - playlist: Lista de reproducción de YouTube
+ * - tiktok: Video de TikTok
+ * - drive: Enlace a Google Drive
+ * - practice: Sección de práctica/ejercicios
+ */
+export type ContentType = 
+  | 'video' 
+  | 'playlist' 
+  | 'tiktok' 
+  | 'drive' 
+  | 'practice'
+
+/**
  * Representa un item en la tabla de contenidos
  * @property {string} id - ID del elemento heading (usado para scrolling y navegación)
  * @property {string} text - Texto visible del heading
  * @property {number} level - Nivel del heading (2 = H2, 3 = H3)
+ * @property {ContentType[]} [contentTypes] - Tipos de contenido asociados al heading
  * 
  * @example
  * ```ts
  * const tocItem: TocItem = {
  *   id: "introduccion",
  *   text: "Introducción",
- *   level: 2
+ *   level: 2,
+ *   contentTypes: ['video', 'practice']
  * }
  * ```
  */
@@ -64,5 +81,6 @@ export interface TocItem {
   id: string
   text: string
   level: number
+  contentTypes?: ContentType[]
 }
 
