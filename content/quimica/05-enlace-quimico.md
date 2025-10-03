@@ -282,6 +282,21 @@ El enlace metálico se produce entre **metales** y se da por el **compartimiento
  - **Solubilidad en agua:** **Insolubles o no solubles** en agua.
  - **Conductividad eléctrica:** **Muy alta conductividad eléctrica**. Esto se explica por el **movimiento deslocalizado de los electrones**.
 
+---
+
+### ✏️ Practica
+
+Teniendo en cuenta las propiedades presentadas según su tipo de enlace, complete la siguiente tabla:
+
+| Átomos | Tipo de enlace | Punto de fusión y ebullición | Conductor eléctrico en solución |
+|--------|----------------|------------------------------|----------------------------------|
+| Li y O | Iónico | Elevado | Sí |
+| Ca y F | | | |
+| F y F | | | |
+| O y F | | | |
+
+---
+
 ## Enlace covalente doble
 
 https://youtu.be/Qlxxerax9i0?si=sOg_yodwx513WEgN
