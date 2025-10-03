@@ -189,7 +189,7 @@ La **electronegatividad** se define como la **capacidad de los átomos para atra
 
 La **diferencia de electronegatividad** se calcula como la **resta entre las electronegatividades de dos átomos enlazados**. Esta resta indica **qué tan equitativamente comparten los electrones**.
 
-$$\Delta \text{EN} = \text{Electronegatividad Mayor} - \text{Electronegatividad Menor}$$
+$$\Delta \text{EN} = \text{Electronegatividad mayor} - \text{Electronegatividad menor}$$
 
 Esta escala se enfoca en diferenciar el **enlace covalente** del **enlace iónico**.
 
