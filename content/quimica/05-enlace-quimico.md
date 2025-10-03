@@ -55,15 +55,15 @@ El enlace iónico se produce debido al **robo de electrones**. Este robo o trans
 
 **Participantes:**
 Generalmente, este tipo de enlace se da entre un **metal y un no metal**.
-
-**Regla del Octeto:**
+ 
+**Regla del octeto:**
 Los átomos se enlazan con el fin de **completar ocho electrones en la última capa** (regla del octeto).
 
-1. **Transferencia de Electrones:** En el proceso de enlace iónico, solamente participan los **electrones de valencia**, que son aquellos que se encuentran en la capa más externa o última capa del átomo.
-2. **El Metal (Cede Electrones):** El átomo de metal (como el sodio, $\text{Na}$), que generalmente tiene pocos electrones de valencia (por ejemplo, uno solo), le resulta más fácil **entregar** ese electrón al no metal.
-3. **El No Metal (Recibe Electrones):** El átomo no metálico (como el cloro, $\text{Cl}$), que ya tiene una gran cantidad de electrones de valencia (por ejemplo, siete), **recibe** el electrón transferido.
+1. **Transferencia de electrones:** En el proceso de enlace iónico, solamente participan los **electrones de valencia**, que son aquellos que se encuentran en la capa más externa o última capa del átomo.
+2. **El metal (cede electrones):** El átomo de metal (como el sodio, $\text{Na}$), que generalmente tiene pocos electrones de valencia (por ejemplo, uno solo), le resulta más fácil **entregar** ese electrón al no metal.
+3. **El no metal (recibe electrones):** El átomo no metálico (como el cloro, $\text{Cl}$), que ya tiene una gran cantidad de electrones de valencia (por ejemplo, siete), **recibe** el electrón transferido.
 
-**Formación de Iones:**
+**Formación de iones:**
 
 La transferencia de electrones produce átomos cargados (iones):
 
@@ -72,7 +72,7 @@ La transferencia de electrones produce átomos cargados (iones):
 
 De esta forma, los átomos quedan enlazados a través de este robo o transferencia de electrones.
 
-### Ejemplos de Enlaces Iónicos
+### Ejemplos de enlaces iónicos
 
 - **Cloruro de Sodio ($\text{NaCl}$):** Se forma entre el sodio ($\text{Na}$), que es un metal, y el cloro ($\text{Cl}$), que es un no metal. El sodio cede su único electrón de la última capa al cloro. Al cederlo, el sodio queda con la segunda capa completa (ocho electrones), cumpliendo su octeto, y el cloro queda con ocho electrones en su capa de valencia, cumpliendo también su octeto.
 - **Óxido de Potasio ($\text{K}_2\text{O}$):** Se forma entre potasio ($\text{K}$), que es un metal, y oxígeno ($\text{O}$), que es un no metal.
@@ -95,7 +95,7 @@ El **enlace covalente** es un tipo de enlace químico que se distingue por el **
 3. **Electrones involucrados:** Solo participan los **electrones de valencia**, que son los electrones ubicados en la última capa de los átomos.
 4. **Objetivo:** Al igual que en el enlace iónico, los átomos se enlazan con el fin de **completar ocho electrones en la última capa** (regla del octeto).
 
-### Regla del dueto (Excepción del hidrógeno)
+### Regla del dueto (excepción del hidrógeno)
 
 Es importante tener en cuenta que el **hidrógeno** constituye una **excepción importante** a la regla del octeto.
 
@@ -233,35 +233,38 @@ El enlace iónico se caracteriza por el **robo de electrones**.
 **Propiedades de las sustancias iónicas**:
 
 - **Estado a condición ambiente:** Típicamente **sólidos cristalinos**, como la sal de cocina ($\text{NaCl}$).
-- **Punto de Fusión/Ebullición:** **Altos**; se necesita mucha temperatura para fundirlos o volverlos gas.
-- **Solubilidad en Agua:** **Alta** (ej. la sal de cocina se disuelve muy bien en agua).
-- **Conductividad Eléctrica:** **Alta** (ej. el agua salada conduce más la electricidad que el agua pura).
+**Propiedades de las sustancias iónicas**:
 
-### 2. Enlace Covalente
+- **Estado a condición ambiente:** Típicamente **sólidos cristalinos**, como la sal de cocina ($\text{NaCl}$).
+ - **Punto de fusión/ebullición:** **Altos**; se necesita mucha temperatura para fundirlos o volverlos gas.
+ - **Solubilidad en agua:** **Alta** (ej. la sal de cocina se disuelve muy bien en agua).
+ - **Conductividad eléctrica:** **Alta** (ej. el agua salada conduce más la electricidad que el agua pura).
 
-El enlace covalente se forma por **compartimiento de electrones**.
+### 2. Enlace covalente
+
+El enlace covalente se forma por **compartimento de electrones**.
 
 | Aspecto | Descripción y Mecanismo |
 | --- | --- |
 | **Participantes** | Generalmente, se da entre un **no metal con otro no metal**. |
 | **Mecanismo** | Los átomos comparten sus **electrones de valencia** para cumplir la regla del octeto (ocho electrones en la última capa). |
 | **Excepción** | El **hidrógeno** es una excepción, ya que busca cumplir la **regla del dueto** (dos electrones). |
-| **Enlace Covalente Dativo/Coordinado** | Tipo especial donde el **par de electrones compartidos es aportado por uno solo de los átomos** del enlace. |
-- *Clasificación según la diferencia de electronegatividad ($\Delta \text{EN}$) **:
+| **Enlace covalente dativo/coordinado** | Tipo especial donde el **par de electrones compartidos es aportado por uno solo de los átomos** del enlace. |
+- *Clasificación según la diferencia de electronegatividad ($\Delta \text{EN}$):*
 
 Los enlaces covalentes se dan cuando la $\Delta \text{EN}$ está entre $0$ y $1,7$:
 
-1. **Covalente No Polar:** $\Delta \text{EN}$ **desde $0$ hasta $0,4$**. Los átomos comparten los electrones de forma **muy pareja** (ej. $\text{H}_2$, donde $\Delta \text{EN} = 0$). Los electrones no buscan ningún polo.
-2. **Covalente Polar:** $\Delta \text{EN}$ **entre $0,4$ y hasta $1,7$**. Existe más diferencia, y un átomo atrae el par de electrones con **más fuerza**, quedando el par más cerca de un polo (el átomo más electronegativo).
+1. **Covalente no polar:** $\Delta \text{EN}$ **desde $0$ hasta $0,4$**. Los átomos comparten los electrones de forma **muy pareja** (ej. $\text{H}_2$, donde $\Delta \text{EN} = 0$). Los electrones no buscan ningún polo.
+2. **Covalente polar:** $\Delta \text{EN}$ **entre $0,4$ y hasta $1,7$**. Existe más diferencia, y un átomo atrae el par de electrones con **más fuerza**, quedando el par más cerca de un polo (el átomo más electronegativo).
 
 **Propiedades de las sustancias covalentes**:
 
 - **Estado a condición ambiente:** Típicamente **sólidos, líquidos o gases** (ej. el agua es un líquido, el azúcar es un sólido, el dióxido de carbono es un gas).
-- **Punto de Fusión/Ebullición:** **Bajos** (ej. el agua requiere poca temperatura para cambiar de fase).
-- **Solubilidad en Agua:** **Poco solubles en agua** (ej. el azúcar es menos soluble en agua que la sal).
-- **Conductividad Eléctrica:** Tienen en general una **baja conductividad**.
+- **Punto de fusión/ebullición:** **Bajos** (ej. el agua requiere poca temperatura para cambiar de fase).
+- **Solubilidad en agua:** **Poco solubles en agua** (ej. el azúcar es menos soluble en agua que la sal).
+- **Conductividad eléctrica:** Tienen en general una **baja conductividad**.
 
-### 3. Enlace Metálico
+### 3. Enlace metálico
 
 El enlace metálico se produce entre **metales** y se da por el **compartimiento de muchos electrones**.
 
@@ -275,9 +278,9 @@ El enlace metálico se produce entre **metales** y se da por el **compartimiento
 **Propiedades de las sustancias metálicas**:
 
 - **Estado a condición ambiente:** Típicamente **sólidos**.
-- **Punto de Fusión/Ebullición:** **Muy altos**; se necesitan temperaturas muy elevadas para fundir un metal.
-- **Solubilidad en Agua:** **Insolubles o no solubles** en agua.
-- **Conductividad Eléctrica:** **Muy alta conductividad eléctrica**. Esto se explica por el **movimiento deslocalizado de los electrones**.
+ - **Punto de fusión/ebullición:** **Muy altos**; se necesitan temperaturas muy elevadas para fundir un metal.
+ - **Solubilidad en agua:** **Insolubles o no solubles** en agua.
+ - **Conductividad eléctrica:** **Muy alta conductividad eléctrica**. Esto se explica por el **movimiento deslocalizado de los electrones**.
 
 ## Enlace covalente doble
 
