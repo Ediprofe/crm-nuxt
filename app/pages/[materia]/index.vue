@@ -102,7 +102,7 @@ const structuredData = {
                   <span class="unidad-badge">
                     {{ index + 1 }}
                   </span>
-                  <h2 class="unidad-title capitalize">
+                  <h2 class="unidad-title">
                     {{ getTitulo(unidad) }}
                   </h2>
                 </div>
