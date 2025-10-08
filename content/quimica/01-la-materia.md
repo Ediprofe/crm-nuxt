@@ -79,7 +79,7 @@ El volumen es también una propiedad de la materia y se define como el **espacio
 
 ◦ **Erlenmeyer**
 
-◦ **Baker** 
+◦ **Beaker** 
 
 *(Nota: El tubo de ensayo y el gotero se utilizan más para almacenar muestras o dispensar líquido de a poco, y no son propiamente instrumentos para medir volumen, especialmente el tubo de ensayo mostrado).*
 
@@ -126,12 +126,12 @@ La **densidad depende de la sustancia** de la que se esté hablando. La regla ge
 
 A continuación, se muestra una tabla comparativa de densidades de diferentes materiales, la cual ilustra la relación entre densidad y flotación:
 
-| Sustancia | Densidad (g/mL) | Observación y Flotación | Fuente |
-| --- | --- | --- | --- |
-| **Piedra** | 2,5 | Es la más densa; más maciza que el agua. Va al fondo porque el agua es menos densa. |  |
-| **Agua** | 1,0 | Es menos densa que la piedra, por lo que flota sobre ella. |  |
-| **Aceite de Cocina** | 0,92 | Es menos denso que el agua. Flota sobre el agua. |  |
-| **Pelota Playera** | 0,4 | Muy poco densa (tiene poca masa en $1 \text{ mL}$). Flota en el agua. |  |
+| Sustancia | Densidad (g/mL) | Observación y Flotación |
+| --- | --- | --- |
+| **Piedra** | 2,5 | Es la más densa; más maciza que el agua. Va al fondo porque el agua es menos densa. |
+| **Agua** | 1,0 | Es menos densa que la piedra, por lo que flota sobre ella. |
+| **Aceite de Cocina** | 0,92 | Es menos denso que el agua. Flota sobre el agua. |
+| **Pelota Playera** | 0,4 | Muy poco densa (tiene poca masa en $1 \text{ mL}$). Flota en el agua. |
 
 ## Temperatura
 
@@ -195,7 +195,7 @@ https://youtu.be/tDBfaewlmFs?si=gASvLQ82b8l-WidU
 
 https://vt.tiktok.com/ZSBp7Grrr/
 
-El estudio de la materia incluye la clasificación de sus **propiedades**, las cuales son las **características o atributos de las sustancias** que ayudan a describirlas. Estas propiedades se dividen en dos categorías principales: **Propiedades Cualitativas** y **Propiedades Cuantitativas**.
+El estudio de la materia incluye la clasificación de sus **propiedades**, las cuales son las **características o atributos de las sustancias** que ayudan a describirlas. Estas propiedades se dividen en dos categorías principales: **Propiedades cualitativas** y **Propiedades cuantitativas**.
 
 ### Propiedades cualitativas
 
@@ -314,7 +314,7 @@ La materia se puede clasificar inicialmente como **uniforme** o **no uniforme**.
 Las sustancias puras siempre muestran una **sola fórmula**. Se dividen en dos tipos:
 
 1. **elementos:** son sustancias puras que tienen átomos de **un solo tipo de átomo** o de un solo elemento.
-    - Ejemplos incluyen $\text{H}_2$, $\text{O}_2$, $\text{C}$ (carbono), $\text{Na}$ (sodio), $\text{Fe}$ (hierro) y $\text{N}_2$ (nitrógeno).
+    - Ejemplos incluyen $\text{H}_2$ (hidrógeno), $\text{O}_2$ (oxígeno), $\text{C}$ (carbono), $\text{Na}$ (sodio), $\text{Fe}$ (hierro) y $\text{N}_2$ (nitrógeno).
     - Los elementos son aquellos que se encuentran en la **tabla periódica**.
 2. **compuestos:** son sustancias puras que, a pesar de tener una **única fórmula**, están hechas de **átomos de más de un elemento**.
     - Ejemplos incluyen el agua ($\text{H}_2\text{O}$), que combina átomos de hidrógeno ($\text{H}$) y oxígeno ($\text{O}$), o $\text{NaCl}$ (sal de cocina), que combina sodio ($\text{Na}$) y cloro ($\text{Cl}$).
@@ -328,7 +328,7 @@ Las mezclas se caracterizan por tener **dos o más fórmulas** o dos o más comp
 - **Ejemplos:**
     - El **aire** es una mezcla que contiene $\text{O}_2$ (elemento), $\text{H}_2\text{O}$ (compuesto) y $\text{N}_2$ (elemento).
     - El **agua salada** es una mezcla con dos compuestos, agua ($\text{H}_2\text{O}$) y sal ($\text{NaCl}$).
-    - Una mezcla de agua y arena ($\text{SiO}_2$) también es una mezcla de dos compuestos.
+    - Una mezcla de agua ($\text{H}_2\text{O}$) y arena ($\text{SiO}_2$) también es una mezcla de dos compuestos.
 
 Las mezclas se clasifican en dos tipos principales:
 
