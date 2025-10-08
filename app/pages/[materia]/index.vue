@@ -33,7 +33,7 @@ const { data: unidades } = await useAsyncData(`${materia}-index`, async () => {
 // Función para limpiar el slug de la URL (quitar prefijo numérico)
 const getSlugFromPath = (path: string): string => {
   const parts = path.split('/')
-  const filename = parts[parts.length - 1]
+  const filename = parts[parts.length - 1] || ''
   // Remover prefijo tipo "01-" y retornar el resto
   return filename.replace(/^\d+-/, '')
 }
