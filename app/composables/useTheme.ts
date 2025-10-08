@@ -4,7 +4,7 @@ import { STORAGE_KEYS } from '~/config/constants'
 export type Theme = 'light' | 'dark'
 
 // Estado reactivo compartido globalmente (singleton)
-const isDark = ref(false) // Por defecto: tema claro
+const isDark = ref(true) // Por defecto: tema oscuro
 const STORAGE_KEY = STORAGE_KEYS.THEME
 
 // Inicializar el estado basado en el DOM (el plugin ya aplicó la clase)
