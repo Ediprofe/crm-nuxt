@@ -358,13 +358,13 @@ table.responsive-table tbody tr:hover {
   
   /* Cada celda es una fila dentro de la card */
   table.responsive-table td {
-    display: grid;
-    grid-template-columns: minmax(8rem, 40%) 1fr;
-    gap: 0.75rem;
-    align-items: start;
+    position: relative;
+    display: block;
     border: 0;
     border-bottom: 1px solid var(--border-color);
     padding: 0.875rem 1rem;
+    padding-left: calc(40% + 1.5rem); /* Espacio para el label */
+    min-height: 3rem;
   }
   
   /* Última celda sin border */
@@ -372,12 +372,20 @@ table.responsive-table tbody tr:hover {
     border-bottom: 0;
   }
   
-  /* Label (nombre de la columna) usando data-label */
+  /* Label (nombre de la columna) - POSICIONADO ABSOLUTO A LA IZQUIERDA */
   table.responsive-table td::before {
     content: attr(data-label);
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 40%;
+    padding: 0.875rem 1rem;
     font-weight: 600;
     color: var(--text-primary);
     font-size: 0.875rem;
+    white-space: normal;
+    word-wrap: break-word;
+    text-align: left;
   }
   
   /* Eliminar fade effect en móvil */
