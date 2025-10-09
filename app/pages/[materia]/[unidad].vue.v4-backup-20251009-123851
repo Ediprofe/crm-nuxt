@@ -420,7 +420,22 @@ onUnmounted(() => {
   transition: all 0.3s ease;
 }
 
-/* Nota: Sin padding en wrapper - cada elemento markdown aplica su propio espaciado en global.css */
+/* Wrapper interno con padding (para texto normal) */
+.prose-wrapper {
+  padding: 1rem;
+}
+
+@media (min-width: 768px) {
+  .prose-wrapper {
+    padding: 2.5rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .prose-wrapper {
+    padding: 3rem;
+  }
+}
 
 
 /* Loading State */
