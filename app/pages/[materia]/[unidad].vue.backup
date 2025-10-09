@@ -387,7 +387,7 @@ onUnmounted(() => {
   .content-main {
     grid-column: 2;
     min-width: 0;
-    overflow: visible;
+    overflow: hidden;
   }
 }
 
@@ -415,7 +415,7 @@ onUnmounted(() => {
   border-color: var(--border-color);
   background-color: var(--bg-card);
   width: 100%;
-  overflow: visible; /* ✅ Permite breakout de tablas en móvil */
+  overflow: hidden; /* Importante: hidden, no hidden-x */
   transition: all 0.3s ease;
 }
 
