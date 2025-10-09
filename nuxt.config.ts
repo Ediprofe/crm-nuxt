@@ -44,6 +44,7 @@ export default defineNuxtConfig({
   },
   
   mdc: {
+    // Configuración de plugins de markdown
     remarkPlugins: {
       'remark-math': {}
     },
@@ -51,4 +52,7 @@ export default defineNuxtConfig({
       'rehype-katex': {}
     }
   }
+  
+  // NOTA: ProseTable.vue en /app/components/content/ será usado automáticamente
+  // por @nuxtjs/mdc para renderizar tablas markdown
 })

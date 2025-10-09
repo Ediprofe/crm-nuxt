@@ -148,6 +148,8 @@ body {
 }
 
 /* TABLAS: Sin padding lateral - ancho completo disponible */
+/* Nota: Las tablas ahora se renderizan dentro de .table-wrap por ProseTable.vue */
+.prose > .table-wrap,
 .prose > table {
   padding-left: 0;
   padding-right: 0;
@@ -356,22 +358,25 @@ table.responsive-table tbody tr:hover {
     transform: translateY(-2px);
   }
   
-  /* Cada celda es una fila dentro de la card */
+  /* Cada celda muestra label y contenido en columna vertical */
   table.responsive-table td {
     display: flex;
     flex-direction: column;
     gap: 0.5rem;
     border: 0;
     border-bottom: 1px solid var(--border-color);
-    padding: 0.875rem 1rem;
+    padding: 1rem;
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+    line-height: 1.6;
   }
   
-  /* Última celda sin border */
+  /* Última celda sin border inferior */
   table.responsive-table td:last-child {
     border-bottom: 0;
   }
   
-  /* Label (nombre de la columna) - ARRIBA DEL CONTENIDO */
+  /* Label como pseudo-elemento - se muestra ARRIBA del contenido */
   table.responsive-table td::before {
     content: attr(data-label);
     display: block;
@@ -380,13 +385,7 @@ table.responsive-table tbody tr:hover {
     font-size: 0.875rem;
     line-height: 1.4;
     margin-bottom: 0.25rem;
-  }
-  
-  /* El contenido está debajo del label con buen espaciado */
-  table.responsive-table td {
-    color: var(--text-secondary);
-    font-size: 0.9rem;
-    line-height: 1.6;
+    order: -1;
   }
   
   /* Eliminar fade effect en móvil */
