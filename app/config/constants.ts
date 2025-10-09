@@ -93,3 +93,12 @@ export const CSS_VARIABLES = {
   HEADER_HEIGHT: '--header-height'
 } as const
 
+// Configuración de tablas responsivas
+export const TABLE_CONFIG = {
+  SCROLL_SHADOW_COLOR: 'rgba(0, 0, 0, 0.1)', // Sombra para indicar scroll
+  SCROLL_SHADOW_COLOR_DARK: 'rgba(255, 255, 255, 0.1)', // Sombra en modo oscuro
+  MIN_WIDTH: '100%', // Ancho mínimo de la tabla
+  MOBILE_FONT_SIZE: '0.85rem', // Fuente más pequeña en móvil
+  MOBILE_PADDING: '0.5rem' // Padding reducido en móvil
+} as const
+

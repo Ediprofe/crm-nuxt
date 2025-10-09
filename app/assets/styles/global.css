@@ -169,16 +169,31 @@ body {
   text-decoration-color: var(--accent-primary-hover);
 }
 
-/* Tablas */
+/* ========================================
+   TABLAS RESPONSIVAS CON SCROLL HORIZONTAL
+   ======================================== */
+
+/* 
+ * Wrapper para tablas con scroll horizontal elegante
+ * Se aplica automáticamente a todas las tablas en markdown
+ */
+.prose {
+  /* Asegurar que las tablas tengan scroll horizontal */
+  overflow-x: auto;
+}
+
+/* Tabla base */
 .prose table {
   width: 100%;
+  min-width: 600px; /* Ancho mínimo para mantener legibilidad */
   margin: 2rem 0;
   border-collapse: collapse;
   font-size: 0.9rem;
   border-radius: 0.5rem;
-  overflow: hidden;
+  display: table; /* Asegurar display correcto */
 }
 
+/* Headers de tabla */
 .prose th {
   background-color: var(--bg-secondary);
   padding: 0.75rem;
@@ -187,8 +202,10 @@ body {
   border: 1px solid var(--border-color);
   color: var(--text-primary);
   transition: background-color 0.2s ease;
+  white-space: nowrap; /* Evitar que los headers se rompan */
 }
 
+/* Celdas de tabla */
 .prose td {
   padding: 0.75rem;
   border: 1px solid var(--border-color);
@@ -196,8 +213,69 @@ body {
   transition: background-color 0.2s ease;
 }
 
+/* Hover en filas */
 .prose tr:hover {
   background-color: var(--bg-secondary);
+}
+
+/* ========================================
+   OPTIMIZACIONES MOBILE (RESPONSIVE)
+   ======================================== */
+
+@media (max-width: 767px) {
+  /* Reducir fuente en móvil para mejor legibilidad */
+  .prose table {
+    font-size: 0.85rem;
+    min-width: 500px; /* Reducir ancho mínimo en móvil */
+  }
+  
+  /* Reducir padding en celdas para ahorrar espacio */
+  .prose th,
+  .prose td {
+    padding: 0.5rem;
+  }
+  
+  /* Indicadores visuales de scroll */
+  .prose {
+    /* Sombra sutil indicando que hay más contenido a la derecha */
+    background: 
+      linear-gradient(90deg, var(--bg-card) 30%, transparent),
+      linear-gradient(-90deg, var(--bg-card) 30%, transparent),
+      linear-gradient(90deg, rgba(0,0,0,0.1) 0%, transparent 10px),
+      linear-gradient(-90deg, rgba(0,0,0,0.1) 0%, transparent 10px);
+    background-repeat: no-repeat;
+    background-size: 
+      40px 100%, 
+      40px 100%, 
+      10px 100%, 
+      10px 100%;
+    background-position: 
+      left center, 
+      right center, 
+      left center, 
+      right center;
+    background-attachment: local, local, scroll, scroll;
+  }
+  
+  .dark .prose {
+    background: 
+      linear-gradient(90deg, var(--bg-card) 30%, transparent),
+      linear-gradient(-90deg, var(--bg-card) 30%, transparent),
+      linear-gradient(90deg, rgba(255,255,255,0.1) 0%, transparent 10px),
+      linear-gradient(-90deg, rgba(255,255,255,0.1) 0%, transparent 10px);
+    background-repeat: no-repeat;
+    background-size: 
+      40px 100%, 
+      40px 100%, 
+      10px 100%, 
+      10px 100%;
+    background-position: 
+      left center, 
+      right center, 
+      left center, 
+      right center;
+    background-attachment: local, local, scroll, scroll;
+  }
 }
 
 /* Separadores */
