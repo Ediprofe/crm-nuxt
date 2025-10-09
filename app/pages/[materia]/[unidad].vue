@@ -4,7 +4,6 @@ import { materiasConfig } from '~/config/materias'
 import { DEFAULTS, TIMEOUTS, SIDEBAR } from '~/config/constants'
 import { useTocSheet } from '~/composables/useTocSheet'
 import { useSidebarCollapse } from '~/composables/useSidebarCollapse'
-import { useTableWrapper } from '~/composables/useTableWrapper'
 import { extractCleanHeadingText } from '~/utils/search'
 import { detectHeadingContentTypes } from '~/utils/content-detection'
 import type TableOfContents from '~/components/TableOfContents.vue'
@@ -75,8 +74,6 @@ const { isOpen, shouldShowFab, openSheet, closeSheet, handleScroll } = useTocShe
 // Sidebar collapse para desktop
 const { isCollapsed, toggleSidebar, expandSidebar } = useSidebarCollapse()
 
-// Envolver tablas automáticamente (replica comportamiento de artifacts de Claude)
-useTableWrapper(contentElement)
 
 // Debug mode solo en desarrollo
 if (import.meta.dev) {
@@ -439,18 +436,6 @@ onUnmounted(() => {
   }
 }
 
-/* En móvil, las tablas deben salirse del prose-wrapper */
-@media (max-width: 767px) {
-  /* Las tablas se colocan FUERA del prose-wrapper visualmente */
-  .prose-wrapper :deep(.table-wrapper) {
-    margin-left: -1rem;
-    margin-right: -1rem;
-    width: calc(100% + 2rem);
-    border-radius: 0;
-    border-left: none;
-    border-right: none;
-  }
-}
 
 /* Loading State */
 .loading-container {
