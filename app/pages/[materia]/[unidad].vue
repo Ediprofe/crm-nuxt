@@ -13,7 +13,7 @@ const route = useRoute()
 const materia = route.params.materia as string
 const unidadSlug = route.params.unidad as string
 
-// Buscar el contenido usando queryCollection (API de @nuxt/content v3.7+)
+// Buscar el contenido usando queryCollection (API de @nuxt/content v3.7+).
 const { data: unidad } = await useAsyncData(`${materia}-${unidadSlug}`, async () => {
   // Obtener todos los archivos de la colección "content"
   const items = await queryCollection('content').all() as ContentItem[]
