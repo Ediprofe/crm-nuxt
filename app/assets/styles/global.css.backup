@@ -1,0 +1,407 @@
+/* ========================================
+   VARIABLES DE TEMA - EDIPROFE DESIGN SYSTEM
+   Inspirado en Nuxt.com con adaptaciones educativas
+   ======================================== */
+
+:root {
+  /* Fondos - Modo Claro (Gris suave profesional) */
+  --bg-primary: rgb(250 250 250);        /* Gris ultra claro - más suave que blanco */
+  --bg-secondary: rgb(245 245 245);      /* Gris muy claro */
+  --bg-sidebar: rgb(255 255 255);        /* Blanco puro para sidebar */
+  --bg-card: rgb(255 255 255);           /* Blanco puro para tarjetas */
+  
+  /* Textos - Modo Claro (Máximo contraste) */
+  --text-primary: rgb(17 24 39);         /* gray-900 - Negro profundo */
+  --text-secondary: rgb(55 65 81);       /* gray-700 - Gris oscuro */
+  --text-muted: rgb(107 114 128);        /* gray-500 - Gris medio */
+  
+  /* Bordes - Modo Claro (Sutiles y profesionales) */
+  --border-color: rgb(229 231 235);      /* gray-200 */
+  --border-hover: rgb(209 213 219);      /* gray-300 */
+  
+  /* Acentos - Modo Claro (Verde sutil y profesional) */
+  --accent-primary: rgb(16 185 129);     /* emerald-500 */
+  --accent-primary-hover: rgb(5 150 105); /* emerald-600 */
+  --accent-secondary: rgb(100 116 139);   /* slate-500 - Gris neutro */
+  --accent-secondary-hover: rgb(71 85 105); /* slate-600 */
+  
+  /* Headings - Modo Claro (Gris oscuro en lugar de verde) */
+  --heading-color: rgb(30 41 59);        /* slate-800 - Profesional */
+  --heading-h1-color: rgb(15 23 42);     /* slate-900 - Muy oscuro */
+  
+  /* Éxito/Error/Warning */
+  --success-color: rgb(34 197 94);       /* green-500 */
+  --error-color: rgb(239 68 68);         /* red-500 */
+  --warning-color: rgb(245 158 11);      /* amber-500 */
+  
+  --header-height: 56px; /* Altura compacta del header */
+}
+
+.dark {
+  /* Fondos - Modo Oscuro (Inspirado en Nuxt - Ultra profundo) */
+  --bg-primary: rgb(9 9 11);             /* zinc-950 - Casi negro como Nuxt */
+  --bg-secondary: rgb(24 24 27);         /* zinc-900 - Gris muy oscuro */
+  --bg-sidebar: rgb(24 24 27);           /* zinc-900 */
+  --bg-card: rgb(24 24 27);              /* zinc-900 */
+  
+  /* Textos - Modo Oscuro (Alto contraste para legibilidad) */
+  --text-primary: rgb(250 250 250);      /* zinc-50 - Blanco suave */
+  --text-secondary: rgb(212 212 216);    /* zinc-300 - Gris claro */
+  --text-muted: rgb(161 161 170);        /* zinc-400 - Gris medio */
+  
+  /* Bordes - Modo Oscuro (Sutiles pero visibles) */
+  --border-color: rgb(39 39 42);         /* zinc-800 */
+  --border-hover: rgb(63 63 70);         /* zinc-700 */
+  
+  /* Acentos - Modo Oscuro (Verde sutil) */
+  --accent-primary: rgb(52 211 153);     /* emerald-400 - Brillante */
+  --accent-primary-hover: rgb(16 185 129); /* emerald-500 */
+  --accent-secondary: rgb(148 163 184);   /* slate-400 - Gris neutro */
+  --accent-secondary-hover: rgb(203 213 225); /* slate-300 */
+  
+  /* Headings - Modo Oscuro (Blanco para máximo contraste) */
+  --heading-color: rgb(241 245 249);     /* slate-100 - Casi blanco */
+  --heading-h1-color: rgb(248 250 252);  /* slate-50 - Blanco suave */
+  
+  /* Éxito/Error/Warning - Vibrantes en oscuro */
+  --success-color: rgb(74 222 128);      /* green-400 */
+  --error-color: rgb(248 113 113);       /* red-400 */
+  --warning-color: rgb(251 191 36);      /* amber-400 */
+}
+
+/* ========================================
+   ESTILOS BASE CON SOPORTE DARK MODE
+   ======================================== */
+
+body {
+  font-family: 'Inter', ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  background-color: var(--bg-primary);
+  color: var(--text-secondary);
+  transition: background-color 0.2s ease, color 0.2s ease;
+  font-feature-settings: 'cv02', 'cv03', 'cv04', 'cv11';
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ========================================
+   ESTILOS MARKDOWN (PROSE)
+   ======================================== */
+
+/* Estilos base para todo el markdown renderizado */
+.prose {
+  color: var(--text-secondary);
+  max-width: none;
+}
+
+/* Títulos */
+.prose h1 {
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: var(--heading-h1-color);
+  margin-bottom: 2rem;
+  border-bottom: 2px solid var(--border-color);
+  padding-bottom: 0.75rem;
+  letter-spacing: -0.025em;
+  transition: all 0.2s ease;
+}
+
+.prose h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--heading-color);
+  margin-top: 3rem;
+  margin-bottom: 1.5rem;
+  letter-spacing: -0.02em;
+  transition: color 0.2s ease;
+}
+
+.prose h3 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--heading-color);
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  letter-spacing: -0.01em;
+  transition: color 0.2s ease;
+}
+
+/* Texto y párrafos */
+.prose p {
+  margin-bottom: 1.5rem;
+  line-height: 1.75;
+  color: var(--text-secondary);
+}
+
+.prose strong {
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+/* Listas */
+.prose ul {
+  list-style-type: disc;
+  margin-left: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.prose ol {
+  list-style-type: decimal;
+  margin-left: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.prose li {
+  margin-bottom: 0.5rem;
+  line-height: 1.75;
+}
+
+/* Enlaces */
+.prose a {
+  color: var(--accent-primary);
+  text-decoration: underline;
+  text-decoration-color: var(--accent-primary);
+  text-underline-offset: 3px;
+  transition: all 0.2s ease;
+}
+
+.prose a:hover {
+  color: var(--accent-primary-hover);
+  text-decoration-color: var(--accent-primary-hover);
+}
+
+
+/* ========================================
+   TABLAS RESPONSIVE - SOLO CSS
+   Sin JavaScript, sin wrappers dinámicos
+   ======================================== */
+
+/**
+ * ESTRATEGIA: Contenedor de overflow en .prose
+ * Las tablas fluyen naturalmente dentro
+ */
+
+/* Hacer que .prose sea el contenedor scrollable */
+.prose {
+  color: var(--text-secondary);
+  max-width: none;
+  /* NO overflow aquí - lo manejamos por tabla */
+}
+
+/* Cada tabla individual maneja su propio overflow */
+.prose table {
+  display: block; /* ← KEY: Permite overflow-x */
+  width: 100%;
+  max-width: 100%;
+  overflow-x: auto;
+  margin: 2rem 0;
+  border-collapse: collapse;
+  font-size: 0.9rem;
+  border-radius: 0.5rem;
+  border: 1px solid var(--border-color);
+  background-color: var(--bg-card);
+  
+  /* Scroll suave en móvil */
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: thin;
+  scrollbar-color: var(--accent-primary) transparent;
+}
+
+/* La tabla interna (el <table> real) */
+.prose table > * {
+  display: table; /* Restaurar display para el contenido */
+  width: 100%;
+  min-width: 600px; /* Ancho mínimo para legibilidad */
+  margin: 0;
+  border-collapse: collapse;
+}
+
+/* Scrollbar personalizado */
+.prose table::-webkit-scrollbar {
+  height: 8px;
+}
+
+.prose table::-webkit-scrollbar-track {
+  background: var(--bg-secondary);
+  border-radius: 4px;
+}
+
+.prose table::-webkit-scrollbar-thumb {
+  background-color: var(--accent-primary);
+  border-radius: 4px;
+}
+
+/* Headers */
+.prose th {
+  background-color: var(--bg-secondary);
+  padding: 0.75rem;
+  text-align: left;
+  font-weight: 600;
+  border: 1px solid var(--border-color);
+  color: var(--text-primary);
+  white-space: nowrap;
+}
+
+/* Celdas */
+.prose td {
+  padding: 0.75rem;
+  border: 1px solid var(--border-color);
+  vertical-align: top;
+}
+
+/* Hover */
+.prose tbody tr:hover {
+  background-color: var(--bg-secondary);
+}
+
+/* ========================================
+   MOBILE OPTIMIZATIONS
+   🎯 SOLUCIÓN: Sin min-width para respetar viewport
+   ======================================== */
+
+@media (max-width: 767px) {
+  /* Breakout del padding en móvil */
+  .prose table {
+    margin-left: -1rem;
+    margin-right: -1rem;
+    width: calc(100% + 2rem);
+    border-radius: 0;
+    border-left: none;
+    border-right: none;
+    font-size: 0.75rem;
+  }
+  
+  /* 🔥 CRÍTICO: Sin min-width en móvil para respetar viewport */
+  .prose table > * {
+    min-width: 0;        /* Respeta viewport - no fuerza expansión */
+    width: auto;         /* Ajusta al contenido */
+  }
+  
+  .prose th,
+  .prose td {
+    padding: 0.4rem 0.3rem;
+    font-size: 0.75rem;
+  }
+  
+  /* Permitir wrap en headers si necesario */
+  .prose th {
+    white-space: normal;
+    line-height: 1.3;
+  }
+}
+
+/* Separadores */
+.prose hr {
+  margin: 2rem 0;
+  border: none;
+  border-top: 2px solid var(--border-color);
+}
+
+/* Blockquotes */
+.prose blockquote {
+  border-left: 4px solid var(--border-hover);
+  padding: 1rem 1rem 1rem 1.5rem;
+  margin: 1.5rem 0;
+  font-style: italic;
+  color: var(--text-muted);
+  background-color: var(--bg-secondary);
+  border-radius: 0.5rem;
+  transition: all 0.2s ease;
+}
+
+/* Code inline */
+.prose code {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace;
+  background-color: var(--bg-secondary);
+  padding: 0.25rem 0.5rem;
+  border-radius: 0.375rem;
+  font-size: 0.875rem;
+  color: var(--accent-primary);
+  font-weight: 500;
+  border: 1px solid var(--border-color);
+  transition: all 0.2s ease;
+}
+
+/* Code blocks */
+.prose pre {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace;
+  background-color: var(--bg-secondary);
+  padding: 1.5rem;
+  border-radius: 0.75rem;
+  overflow-x: auto;
+  margin: 1.5rem 0;
+  border: 1px solid var(--border-color);
+  transition: all 0.2s ease;
+}
+
+.prose pre code {
+  font-family: inherit;
+  background-color: transparent;
+  padding: 0;
+  color: var(--text-primary);
+  border: none;
+  font-weight: normal;
+}
+
+/* ========================================
+   SMOOTH SCROLL & TOC STYLES
+   ======================================== */
+
+/* Smooth scroll para toda la página */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Ajuste de padding para headings con IDs (para compensar header fijo) */
+.prose h2[id],
+.prose h3[id] {
+  scroll-margin-top: var(--header-height);
+}
+
+/* Mejorar la transición de color en el TOC */
+.table-of-contents a {
+  transition: all 0.2s ease-in-out;
+}
+
+/* ========================================
+   MEDIA ICON STYLES
+   Estilos para íconos de multimedia en headings
+   ======================================== */
+
+.media-icon-link {
+  display: inline-flex;
+  align-items: center;
+  margin-left: 0.5rem;
+  text-decoration: none;
+  vertical-align: middle;
+  transition: transform 0.2s ease;
+}
+
+.media-icon-link:hover {
+  transform: scale(1.1);
+}
+
+.media-icon-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 0.375rem;
+  background-color: var(--bg-secondary);
+  transition: all 0.3s ease;
+  border: 1px solid var(--border-color);
+}
+
+.media-icon-link:hover .media-icon-wrapper {
+  background-color: var(--accent-primary);
+  border-color: var(--accent-primary);
+}
+
+.media-icon-svg {
+  color: var(--text-muted);
+  transition: color 0.3s ease;
+}
+
+.media-icon-link:hover .media-icon-svg {
+  color: white;
+}
