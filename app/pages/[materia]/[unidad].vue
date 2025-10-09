@@ -78,6 +78,18 @@ const { isCollapsed, toggleSidebar, expandSidebar } = useSidebarCollapse()
 // Envolver tablas automáticamente (replica comportamiento de artifacts de Claude)
 useTableWrapper(contentElement)
 
+// Debug mode solo en desarrollo
+if (import.meta.dev) {
+  watch([unidad, contentElement], ([unidadVal, contentVal]) => {
+    console.group('🔍 DEBUG - Estado del Componente')
+    console.log('Unidad cargada:', !!unidadVal)
+    console.log('Título:', unidadVal?.title)
+    console.log('ContentElement:', !!contentVal)
+    console.log('Tablas detectadas:', contentVal?.querySelectorAll('table').length || 0)
+    console.groupEnd()
+  }, { immediate: true })
+}
+
 // Computed para el ancho del sidebar
 const sidebarWidth = computed(() => 
   isCollapsed.value ? SIDEBAR.COLLAPSED_WIDTH : SIDEBAR.WIDTH
@@ -264,8 +276,15 @@ onUnmounted(() => {
       ]"
     />
 
+    <!-- Loading State -->
+    <div v-if="!unidad" class="loading-container">
+      <div class="loading-spinner"></div>
+      <p class="loading-text">Cargando contenido...</p>
+    </div>
+
     <!-- Layout con sidebar y contenido -->
     <div 
+      v-else
       class="layout-grid"
       :style="{ 
         '--sidebar-width': sidebarWidth,
@@ -398,6 +417,7 @@ onUnmounted(() => {
   padding: 1rem;
   width: 100%;
   overflow-x: hidden;
+  min-height: 50vh; /* Asegurar altura mínima */
   transition: all 0.3s ease;
 }
 
@@ -411,6 +431,37 @@ onUnmounted(() => {
   .content-card {
     padding: 3rem;
   }
+}
+
+/* Loading State */
+.loading-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: calc(100vh - 56px);
+  gap: 1rem;
+}
+
+.loading-spinner {
+  width: 48px;
+  height: 48px;
+  border: 4px solid var(--border-color);
+  border-top-color: var(--accent-primary);
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.loading-text {
+  color: var(--text-muted);
+  font-size: 0.875rem;
+  font-weight: 500;
 }
 
 </style>

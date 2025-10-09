@@ -87,10 +87,28 @@ body {
    ESTILOS MARKDOWN (PROSE)
    ======================================== */
 
-/* Estilos base para todo el markdown renderizado */
+/* ========================================
+   FIX CRÍTICO: Asegurar visibilidad en modo oscuro
+   ======================================== */
+
+/* Override para asegurar que el contenido sea siempre visible */
 .prose {
   color: var(--text-secondary);
   max-width: none;
+}
+
+/* Forzar colores en modo oscuro */
+.dark .prose {
+  color: rgb(212 212 216) !important; /* zinc-300 */
+}
+
+.dark .prose p,
+.dark .prose li {
+  color: rgb(212 212 216) !important; /* Asegurar legibilidad */
+}
+
+.dark .prose strong {
+  color: rgb(250 250 250) !important; /* zinc-50 */
 }
 
 /* Títulos */
