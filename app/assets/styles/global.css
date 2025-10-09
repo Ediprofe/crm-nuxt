@@ -289,67 +289,89 @@ body {
 }
 
 /* ============================================================================
-   OPTIMIZACIÓN MÓVIL - TABLA COMPACTA CON ANCHO COMPLETO
-   Objetivo: Tabla legible que usa todo el viewport sin expandirlo
+   OPTIMIZACIÓN MÓVIL - TABLA COMPACTA CON ALINEACIÓN CORRECTA
+   Objetivo: Headers y contenido alineados, scroll horizontal funcional
    ============================================================================ */
 
 @media (max-width: 767px) {
-  /* Contenedor de tabla: ancho completo del viewport */
+  /* Wrapper scrollable - la tabla misma con overflow */
   .prose > table {
+    /* Full width con breakout */
     width: 100vw;
     max-width: 100vw;
-    display: block;
-    overflow-x: auto;
-    -webkit-overflow-scrolling: touch;
-    
-    /* Tamaño compacto pero legible */
-    font-size: 0.75rem;
-    
-    /* Márgenes verticales con padding lateral 0 */
-    margin: 1.5rem 0;
-    padding: 0;
-    
-    /* Posicionamiento para breakout */
     position: relative;
     left: 50%;
     right: 50%;
     margin-left: -50vw;
     margin-right: -50vw;
     
-    /* Scroll interno suave */
+    /* Scroll horizontal contenedor */
+    display: block;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    
+    /* Espaciado */
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
+    padding: 0 1rem; /* Padding lateral interno */
+    
+    /* Tamaño compacto */
+    font-size: 0.75rem;
+    
+    /* Scrollbar personalizado */
     scrollbar-width: thin;
     scrollbar-color: var(--accent-primary) transparent;
   }
   
-  /* Tabla interna */
-  .prose table > * {
+  /* LA CLAVE: tbody, thead como tabla interna con ancho mínimo */
+  .prose table > tbody {
     display: table;
     width: 100%;
-    min-width: 280px; /* Mínimo absoluto para 2-3 columnas */
-    margin: 0;
-    padding: 0 1rem; /* Padding lateral interno para contenido de la tabla */
+    min-width: 320px; /* Ancho mínimo para 2-3 columnas */
+    table-layout: auto; /* Permite ajuste automático de columnas */
+  }
+  
+  .prose table > thead {
+    display: table;
+    width: 100%;
+    min-width: 320px; /* MISMO ancho que tbody para alineación */
+    table-layout: auto; /* MISMO layout que tbody */
+  }
+  
+  /* Filas mantienen estructura de tabla */
+  .prose table thead tr,
+  .prose table tbody tr {
+    display: table-row;
+  }
+  
+  /* Celdas mantienen estructura nativa */
+  .prose table th,
+  .prose table td {
+    display: table-cell;
+    vertical-align: top;
   }
   
   /* Headers compactos */
-  .prose th {
-    padding: 0.4rem 0.3rem;
+  .prose table th {
+    padding: 0.5rem 0.4rem;
     font-size: 0.7rem;
     font-weight: 600;
-    white-space: nowrap; /* Evita wrap en headers */
+    white-space: nowrap; /* Evita wrap en headers para mejor alineación */
     line-height: 1.2;
+    text-align: left;
   }
   
   /* Celdas compactas */
-  .prose td {
-    padding: 0.4rem 0.3rem;
+  .prose table td {
+    padding: 0.5rem 0.4rem;
     font-size: 0.75rem;
-    line-height: 1.3;
+    line-height: 1.4;
     white-space: normal; /* Permite wrap en contenido */
   }
   
-  /* Ajustar ancho de columnas automáticamente */
-  .prose th,
-  .prose td {
+  /* Permitir que columnas se ajusten automáticamente */
+  .prose table th,
+  .prose table td {
     max-width: none;
     width: auto;
   }
@@ -367,18 +389,23 @@ body {
 
 /* Pantallas muy pequeñas (<360px) */
 @media (max-width: 359px) {
-  .prose table {
+  .prose > table {
     font-size: 0.7rem;
   }
   
-  .prose th {
+  .prose table > thead,
+  .prose table > tbody {
+    min-width: 280px; /* Reducir mínimo para pantallas muy pequeñas */
+  }
+  
+  .prose table th {
     font-size: 0.65rem;
-    padding: 0.35rem 0.25rem;
+    padding: 0.4rem 0.3rem;
   }
   
-  .prose td {
+  .prose table td {
     font-size: 0.7rem;
-    padding: 0.35rem 0.25rem;
+    padding: 0.4rem 0.3rem;
   }
 }
 

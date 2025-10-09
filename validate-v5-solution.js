@@ -30,17 +30,49 @@ if (tables.length > 0 && isMobile) {
   
   console.log(`\n✅ Tabla en móvil:`);
   console.log(`   - width: ${tStyles.width}`);
-  console.log(`   - padding-left: ${tStyles.paddingLeft}`); // Esperado: "0px"
-  console.log(`   - padding-right: ${tStyles.paddingRight}`); // Esperado: "0px"
+  console.log(`   - padding-left: ${tStyles.paddingLeft}`);
+  console.log(`   - padding-right: ${tStyles.paddingRight}`);
   console.log(`   - overflow-x: ${tStyles.overflowX}`); // Esperado: "auto"
   console.log(`   - position: ${tStyles.position}`); // Esperado: "relative"
-  console.log(`   - left: ${tStyles.left}`); // Esperado: "50%"
   
-  const tableInner = table.querySelector('tbody');
-  if (tableInner) {
-    const innerStyles = window.getComputedStyle(tableInner);
-    console.log(`   - tbody padding-left: ${innerStyles.paddingLeft}`); // Esperado: "16px" (1rem)
-    console.log(`   - tbody min-width: ${innerStyles.minWidth}`); // Esperado: "280px"
+  // Verificar thead y tbody
+  const thead = table.querySelector('thead');
+  const tbody = table.querySelector('tbody');
+  
+  if (thead && tbody) {
+    const theadStyles = window.getComputedStyle(thead);
+    const tbodyStyles = window.getComputedStyle(tbody);
+    
+    console.log(`\n✅ Alineación thead/tbody:`);
+    console.log(`   - thead display: ${theadStyles.display}`); // Esperado: "table"
+    console.log(`   - tbody display: ${tbodyStyles.display}`); // Esperado: "table"
+    console.log(`   - thead min-width: ${theadStyles.minWidth}`); // Esperado: "320px"
+    console.log(`   - tbody min-width: ${tbodyStyles.minWidth}`); // Esperado: "320px"
+    console.log(`   - thead table-layout: ${theadStyles.tableLayout}`); // Esperado: "auto"
+    console.log(`   - tbody table-layout: ${tbodyStyles.tableLayout}`); // Esperado: "auto"
+    
+    // Verificar que sean iguales
+    const aligned = 
+      theadStyles.minWidth === tbodyStyles.minWidth &&
+      theadStyles.tableLayout === tbodyStyles.tableLayout;
+    
+    console.log(`   - ${aligned ? '✅' : '❌'} Propiedades ${aligned ? 'IDÉNTICAS' : 'DIFERENTES'}`);
+    
+    // Verificar anchos de primera columna
+    const firstHeader = thead.querySelector('th:first-child');
+    const firstCell = tbody.querySelector('td:first-child');
+    
+    if (firstHeader && firstCell) {
+      const headerWidth = firstHeader.offsetWidth;
+      const cellWidth = firstCell.offsetWidth;
+      const diff = Math.abs(headerWidth - cellWidth);
+      
+      console.log(`\n📏 Primera columna:`);
+      console.log(`   - Header: ${headerWidth}px`);
+      console.log(`   - Body: ${cellWidth}px`);
+      console.log(`   - Diff: ${diff}px`);
+      console.log(`   - ${diff <= 1 ? '✅' : '⚠️'} ${diff <= 1 ? 'Alineado' : 'Desalineado'}`);
+    }
   }
   
   // Verificar viewport expansion
