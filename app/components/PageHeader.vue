@@ -64,14 +64,28 @@ const props = defineProps<{
   position: sticky;
   top: 0;
   z-index: 50;
-  background-color: rgba(255, 255, 255, 0.9);
-  backdrop-filter: blur(12px);
+  background-color: var(--bg-card); /* Usar variable en lugar de rgba */
   border-bottom: 1px solid var(--border-color);
   transition: all 0.3s ease;
 }
 
-.dark .page-header {
-  background-color: rgba(24, 24, 27, 0.9);
+/* Backdrop blur solo en dispositivos que lo soportan bien */
+@supports (backdrop-filter: blur(12px)) {
+  .page-header {
+    background-color: rgba(255, 255, 255, 0.9);
+    backdrop-filter: blur(12px);
+  }
+  
+  .dark .page-header {
+    background-color: rgba(24, 24, 27, 0.9);
+  }
+}
+
+/* Fallback para dispositivos sin soporte (móviles antiguos) */
+@supports not (backdrop-filter: blur(12px)) {
+  .page-header {
+    background-color: var(--bg-card);
+  }
 }
 
 .page-header-container {
