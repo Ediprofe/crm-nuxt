@@ -259,23 +259,31 @@ body {
    ======================================== */
 
 @media (max-width: 767px) {
-  /* Extender el wrapper hasta los bordes en móvil */
+  /* Hacer que el wrapper ocupe todo el ancho disponible sin overflow */
   .table-wrapper {
-    margin: 1.5rem -1rem; /* Margen negativo para llegar a los bordes */
-    border-radius: 0;
-    border-left: none;
-    border-right: none;
+    margin: 1.5rem 0; /* Sin márgenes negativos */
+    border-radius: 0.375rem; /* Mantener border radius */
+    border-left: 1px solid var(--border-color); /* Restaurar bordes */
+    border-right: 1px solid var(--border-color);
+    width: 100%; /* Ocupar todo el ancho disponible */
+    max-width: 100%; /* No exceder el contenedor */
   }
   
   /* Reducir tamaños en móvil */
   .table-wrapper table {
-    font-size: 0.85rem;
-    min-width: 550px;
+    font-size: 0.8rem; /* Más pequeño para que quepa mejor */
+    min-width: 500px; /* Reducir mínimo */
   }
   
   .prose th,
   .prose td {
-    padding: 0.5rem;
+    padding: 0.4rem; /* Más compacto */
+    font-size: 0.8rem;
+  }
+  
+  /* Headers más compactos */
+  .prose th {
+    padding: 0.4rem 0.3rem;
   }
 }
 
