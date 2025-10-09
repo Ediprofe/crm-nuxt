@@ -391,9 +391,10 @@ onUnmounted(() => {
   border: 1px solid;
   border-color: var(--border-color);
   background-color: var(--bg-card);
-  padding: 1.5rem;
+  padding: 1rem;
   width: 100%;
   transition: all 0.3s ease;
+  overflow-x: hidden;
 }
 
 @media (min-width: 768px) {
