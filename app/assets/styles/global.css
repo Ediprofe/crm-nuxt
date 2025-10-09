@@ -255,6 +255,7 @@ body {
 
 /* ========================================
    MOBILE OPTIMIZATIONS
+   🎯 SOLUCIÓN: Sin min-width para respetar viewport
    ======================================== */
 
 @media (max-width: 767px) {
@@ -269,14 +270,22 @@ body {
     font-size: 0.75rem;
   }
   
+  /* 🔥 CRÍTICO: Sin min-width en móvil para respetar viewport */
   .prose table > * {
-    min-width: 500px; /* Más pequeño en móvil */
+    min-width: 0;        /* Respeta viewport - no fuerza expansión */
+    width: auto;         /* Ajusta al contenido */
   }
   
   .prose th,
   .prose td {
     padding: 0.4rem 0.3rem;
     font-size: 0.75rem;
+  }
+  
+  /* Permitir wrap en headers si necesario */
+  .prose th {
+    white-space: normal;
+    line-height: 1.3;
   }
 }
 
