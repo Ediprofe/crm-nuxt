@@ -310,9 +310,12 @@ onUnmounted(() => {
       <!-- Contenido Principal -->
       <main ref="contentRef" class="content-main">
         <div class="content-card">
-          <ContentRenderer v-if="unidad" :value="unidad" class="prose prose-lg dark:prose-invert max-w-none" />
-          <div v-else class="text-center py-12">
-            <p style="color: var(--text-muted);">Contenido no encontrado</p>
+          <!-- Wrapper para contenido con padding -->
+          <div class="prose-wrapper">
+            <ContentRenderer v-if="unidad" :value="unidad" class="prose prose-lg dark:prose-invert max-w-none" />
+            <div v-else class="text-center py-12">
+              <p style="color: var(--text-muted);">Contenido no encontrado</p>
+            </div>
           </div>
         </div>
       </main>
@@ -414,21 +417,38 @@ onUnmounted(() => {
   border: 1px solid;
   border-color: var(--border-color);
   background-color: var(--bg-card);
-  padding: 1rem;
   width: 100%;
-  overflow-x: hidden;
+  overflow: hidden; /* Importante: hidden, no hidden-x */
   transition: all 0.3s ease;
 }
 
+/* Wrapper interno con padding (para texto normal) */
+.prose-wrapper {
+  padding: 1rem;
+}
+
 @media (min-width: 768px) {
-  .content-card {
+  .prose-wrapper {
     padding: 2.5rem;
   }
 }
 
 @media (min-width: 1024px) {
-  .content-card {
+  .prose-wrapper {
     padding: 3rem;
+  }
+}
+
+/* En móvil, las tablas deben salirse del prose-wrapper */
+@media (max-width: 767px) {
+  /* Las tablas se colocan FUERA del prose-wrapper visualmente */
+  .prose-wrapper :deep(.table-wrapper) {
+    margin-left: -1rem;
+    margin-right: -1rem;
+    width: calc(100% + 2rem);
+    border-radius: 0;
+    border-left: none;
+    border-right: none;
   }
 }
 

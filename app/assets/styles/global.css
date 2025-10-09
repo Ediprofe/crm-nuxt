@@ -171,13 +171,8 @@ body {
 
 /* ========================================
    TABLAS CON WRAPPER SCROLLABLE
-   Replica el comportamiento de Claude artifacts
    ======================================== */
 
-/**
- * El wrapper es el contenedor con scroll
- * Similar a cómo Claude envuelve sus artifacts
- */
 .table-wrapper {
   position: relative;
   width: 100%;
@@ -187,16 +182,11 @@ body {
   border-radius: 0.5rem;
   border: 1px solid var(--border-color);
   background-color: var(--bg-card);
-  
-  /* Scroll suave en dispositivos táctiles */
   -webkit-overflow-scrolling: touch;
-  
-  /* Scrollbar personalizado (thin) */
   scrollbar-width: thin;
   scrollbar-color: var(--accent-primary) transparent;
 }
 
-/* Scrollbar personalizado para webkit (Chrome, Safari, Edge) */
 .table-wrapper::-webkit-scrollbar {
   height: 8px;
 }
@@ -209,27 +199,17 @@ body {
 .table-wrapper::-webkit-scrollbar-thumb {
   background-color: var(--accent-primary);
   border-radius: 4px;
-  transition: background-color 0.2s ease;
 }
 
-.table-wrapper::-webkit-scrollbar-thumb:hover {
-  background-color: var(--accent-primary-hover);
-}
-
-/**
- * La tabla dentro del wrapper
- * NO tiene overflow porque el wrapper lo maneja
- */
 .table-wrapper table {
   width: 100%;
-  min-width: 600px; /* Ancho mínimo para mantener legibilidad */
-  margin: 0; /* Sin margin porque el wrapper ya lo tiene */
+  min-width: 600px;
+  margin: 0;
   border-collapse: collapse;
   font-size: 0.9rem;
-  border: none; /* Sin border porque el wrapper lo tiene */
+  border: none;
 }
 
-/* Headers de tabla */
 .prose th {
   background-color: var(--bg-secondary);
   padding: 0.75rem;
@@ -237,47 +217,29 @@ body {
   font-weight: 600;
   border: 1px solid var(--border-color);
   color: var(--text-primary);
-  white-space: nowrap; /* Evitar saltos de línea en headers */
-  transition: background-color 0.2s ease;
+  white-space: nowrap;
 }
 
-/* Celdas de tabla */
 .prose td {
   padding: 0.75rem;
   border: 1px solid var(--border-color);
   vertical-align: top;
-  transition: background-color 0.2s ease;
 }
 
-/* Hover en filas */
 .prose tbody tr:hover {
   background-color: var(--bg-secondary);
 }
 
-/* ========================================
-   RESPONSIVE - MOBILE OPTIMIZATIONS
-   ======================================== */
-
+/* Mobile: fuente más pequeña */
 @media (max-width: 767px) {
-  /* En móvil, la tabla ocupa el 100% del contenedor */
-  .table-wrapper {
-    margin: 1.5rem 0;
-    border-radius: 0.5rem;
-    width: 100%;
-    max-width: 100%;
-  }
-  
-  /* Fuente más pequeña */
   .table-wrapper table {
-    font-size: 0.75rem;
-    min-width: 480px;
+    font-size: 0.8rem;
+    min-width: 500px;
   }
   
-  /* Padding compacto */
   .prose th,
   .prose td {
-    padding: 0.35rem 0.25rem;
-    font-size: 0.75rem;
+    padding: 0.5rem 0.35rem;
   }
 }
 
