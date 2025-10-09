@@ -89,7 +89,7 @@ const structuredData = {
     <main class="container mx-auto px-4 py-12 md:py-16">
       <!-- Sección de materias -->
       <div class="mb-10">
-        <h2 class="text-2xl md:text-3xl font-bold mb-3 transition-colors" style="color: var(--heading-color);">Materias Disponibles</h2>
+        <h2 class="text-2xl md:text-3xl font-bold mb-3 transition-colors" style="color: var(--heading-color);">Materias disponibles</h2>
         <p class="text-base md:text-lg transition-colors" style="color: var(--text-secondary);">Selecciona una materia para comenzar a estudiar</p>
       </div>
 

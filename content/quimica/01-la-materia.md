@@ -1,8 +1,9 @@
 ---
 title: La materia
-description: La materia, sus propiedades y cambios
+description: La materia, sus propiedades, cambios y tipos de materia.
 ---
 # La materia
+
 ## Resumen de la unidad
 
 La materia es todo lo que tiene masa y ocupa espacio; aprenderás a medir masa y volumen y a comprender la densidad. La temperatura influye en el movimiento de sus partículas y puede cambiar su estado (sólido, líquido, gas), mientras que la conductividad eléctrica determina si una sustancia conduce o aísla la corriente. Estudiaremos propiedades cualitativas (color, olor, textura) y cuantitativas (masa, volumen), diferenciando las intensivas (densidad, conductividad) de las extensivas (masa, volumen). También distinguiremos los cambios físicos (variación de forma o estado) de los cambios químicos (formación de nuevas sustancias) y clasificaremos la materia en sustancias puras (elementos y compuestos) y mezclas (homogéneas y heterogéneas).
@@ -27,12 +28,12 @@ Las fases de la materia son básicamente tres: **sólido, líquido y gas**.
 
 Los cambios entre estas fases tienen nombres específicos:
 
-- **Fusión:** es el cambio de fase de **sólido a líquido**. Por ejemplo, el agua que se saca del congelador y se vuelve líquida experimenta este cambio.
-- **Solidificación:** es el cambio de fase de **líquido a sólido**.
-- **Ebullición:** es el cambio de fase de **líquido a gas**.
-- **Condensación:** es el cambio de fase de **gas a líquido**.
-- **Sublimación:** es el cambio de fase de **sólido a gas**.
-- **Sublimación inversa:** es el cambio de fase de **gas a sólido**
+- **Fusión:** Es el cambio de fase de **sólido a líquido**. Por ejemplo, el agua que se saca del congelador y se vuelve líquida experimenta este cambio.
+- **Solidificación:** Es el cambio de fase de **líquido a sólido**.
+- **Ebullición:** Es el cambio de fase de **líquido a gas**.
+- **Condensación:** Es el cambio de fase de **gas a líquido**.
+- **Sublimación:** Es el cambio de fase de **sólido a gas**.
+- **Sublimación Inversa:** Es el cambio de fase de **gas a sólido**
 
 ## Masa y volumen
 
@@ -40,58 +41,16 @@ https://youtu.be/H1XMFH5f_x4?si=1rtYo1DI2ipnr2WO
 
 https://vt.tiktok.com/ZSBp743qq/
 
-Tanto la **masa** como el **volumen** son **propiedades de la materia**. Una propiedad se define como una **característica o atributo de las sustancias** que ayuda a describirlas o caracterizarlas.
+Tanto la **masa** como el **volumen** son propiedades fundamentales de la materia. Una **propiedad** se define como una característica o atributo que permite **describir o identificar** una sustancia. En la siguiente tabla se resumen y comparan estas dos propiedades esenciales:
 
-Aquí se detalla la información sobre masa y volumen:
+### Masa y volumen
 
-**Masa**
+| **Propiedad** | **Definición / Concepto** | **Descripción** | **Instrumentos de Medición** | **Unidades de Medición** | **Ejemplo** |
+| --- | --- | --- | --- | --- | --- |
+| **Masa** | Cantidad de materia que posee un cuerpo. | Describe cuánta materia tiene un objeto. | Balanza | - Gramos (g)  - Kilogramos (kg)  - Libras  - Onzas  - Toneladas | Una piedra tiene una masa de 2500 g. |
+| **Volumen** | Espacio que ocupa un cuerpo. | Se refiere al tamaño o espacio ocupado por la materia. | Vaso medidor, pipetas, matraz aforado, probeta, Erlenmeyer, baker *(El tubo de ensayo y el gotero no se usan para medir volumen).* | - Litros (L)  - Mililitros (mL)  - Galones  - Metros cúbicos (m³) | El agua dentro de un frasco puede ocupar un volumen de 1,5 L. |
 
-La masa es una propiedad de la materia que describe la **cantidad de material que posee un cuerpo**.
-
-- **Descripción:** la masa se utiliza para describir la cantidad de materia de un objeto. Por ejemplo, si una piedra tiene una masa de 2500 gramos, esta medida describe la cantidad de materia que posee esa piedra.
-- **Medición:** la masa se mide utilizando una **balanza**.
-- **Unidades de medición:** la masa puede medirse en varias unidades, entre ellas:
-
-◦ **Gramos** (g)
-
-◦ **Kilogramos** (kg)
-
-◦ **Libras**
-
-◦ **Onzas**
-
-◦ **Toneladas**
-
-**Volumen**
-
-El volumen es también una propiedad de la materia y se define como el **espacio ocupado por un cuerpo**.
-
-- **Concepto:** al escuchar la palabra volumen, se debe pensar en el **espacio ocupado** o en el **tamaño**. Por ejemplo, el agua dentro de un frasco puede ocupar un volumen de 1,5 litros.
-- **Medición (instrumentos):** el volumen se puede medir con diversos instrumentos:
-
-◦ Un **vaso medidor** (como un termo medidor)
-
-◦ **Pipetas**
-
-◦ **Matraz aforado**
-
-◦ **Probeta**
-
-◦ **Erlenmeyer**
-
-◦ **Beaker** 
-
-*(Nota: El tubo de ensayo y el gotero se utilizan más para almacenar muestras o dispensar líquido de a poco, y no son propiamente instrumentos para medir volumen, especialmente el tubo de ensayo mostrado).*
-
-**Unidades de medición:** las unidades que se usan para medir el volumen (el espacio ocupado por un cuerpo) incluyen:
-
-◦ **Litros** (L)
-
-◦ **Mililitros** (mL)
-
-◦ **Galones**
-
-◦ **Metros cúbicos**
+Estas dos propiedades permiten **cuantificar y describir** la materia de forma precisa, y son fundamentales tanto en la vida cotidiana como en los estudios científicos.
 
 ## Densidad
 
@@ -128,10 +87,10 @@ A continuación, se muestra una tabla comparativa de densidades de diferentes ma
 
 | Sustancia | Densidad (g/mL) | Observación y Flotación |
 | --- | --- | --- |
-| **Piedra** | 2,5 | Es la más densa; más maciza que el agua. Va al fondo porque el agua es menos densa. |
-| **Agua** | 1,0 | Es menos densa que la piedra, por lo que flota sobre ella. |
-| **Aceite de Cocina** | 0,92 | Es menos denso que el agua. Flota sobre el agua. |
-| **Pelota Playera** | 0,4 | Muy poco densa (tiene poca masa en $1 \text{ mL}$). Flota en el agua. |
+| **Piedra** | 2.5 | Es la más densa; más maciza que el agua. Va al fondo porque el agua es menos densa. |
+| **Agua** | 1.0 | Es menos densa que la piedra, por lo que flota sobre ella. |
+| **Aceite de Cocina** | 0.92 | Es menos denso que el agua. Flota sobre el agua. |
+| **Pelota Playera** | 0.4 | Muy poco densa (tiene poca masa en $1 \text{ mL}$). Flota en el agua. |
 
 ## Temperatura
 
@@ -139,31 +98,27 @@ https://youtu.be/XLy85EFdaHY?si=VhAcxwBP1HCLmypg
 
 https://vt.tiktok.com/ZSBp7ER6C/
 
-La temperatura es una **propiedad de la materia** que sirve para describir **qué tan caliente o qué tan frío se encuentra un cuerpo**. Es una medida bastante familiar, donde **más calor** implica **más temperatura** y **más frío** implica **menos temperatura**.
+La **temperatura** es una **propiedad de la materia** que permite describir **qué tan caliente o frío se encuentra un cuerpo**. Es una medida cotidiana y fácil de comprender: **a mayor calor, mayor temperatura**, y **a menor calor, menor temperatura**.
 
-Ideas clave:
+En la siguiente tabla se presenta de forma resumida la información principal sobre la temperatura y sus valores característicos en distintos materiales.
 
-- **Definición general:** la temperatura nos dice qué tan caliente o frío está un cuerpo.
-- **Instrumento de medición:** el instrumento utilizado para medir la temperatura se llama **termómetro**.
-- **Unidades de medición:** algunas unidades para la temperatura son los **grados Celsius**, los **grados Fahrenheit**, los **Kelvin** y los **Rankine**.
-    - Como ejemplo, $40^\circ \text{C}$ equivalen a $104^\circ \text{F}$, $313 \text{ K}$, o $564 \text{ Ranking}$.
+### Propiedades de la materia: Temperatura
+
+| **Aspecto** | **Descripción** |
+| --- | --- |
+| **Definición general** | Indica qué tan caliente o frío está un cuerpo. |
+| **Instrumento de medición** | Termómetro. |
+| **Unidades de medición** | - Grados Celsius (°C)  - Grados Fahrenheit (°F)  - Kelvin (K)  - Rankine (°R) |
+| **Ejemplo de conversión** | 40 °C = 104 °F = 313 K = 564 °R |
 
 ### Temperaturas específicas de la materia
 
-Tanto la temperatura de fusión como la de ebullición **dependen del material** y cada sustancia maneja una temperatura diferente.
+| **Tipo de temperatura** | **Definición** | **Ejemplos** |
+| --- | --- | --- |
+| **Temperatura de fusión** | Es la temperatura a la cual una sustancia **pasa del estado sólido al líquido**. | - Agua: **0 °C**  - Hierro: **1535 °C**  *(El hierro requiere más energía para fundirse que el agua).* |
+| **Temperatura de ebullición** | Es la temperatura a la cual una sustancia **pasa del estado líquido al gaseoso**. | - Agua: **100 °C**  - Alcohol: **78 °C**  *(El agua necesita más calor que el alcohol para evaporarse).* |
 
-- **Temperatura de fusión:**
-    - es la temperatura a la cual un cuerpo **pasa de la fase sólida a la fase líquida**.
-    - **Ejemplos de valores:**
-        - La temperatura de fusión del **agua** es de $\mathbf{0^\circ \text{C}}$.
-        - La temperatura de fusión del **hierro** es de $\mathbf{1535^\circ \text{C}}$.
-    - El hierro tiene más temperatura de fusión que el agua, lo que implica que se necesita **mucha más energía (calor) para volver líquido el hierro**.
-- **Temperatura de ebullición:**
-    - es la temperatura a la cual un cuerpo **pasa de la fase líquida a la fase gaseosa**.
-    - **Ejemplos de valores:**
-        - La temperatura de ebullición del **agua** es de $\mathbf{100^\circ \text{C}}$.
-        - La temperatura de ebullición del **alcohol** es más baja, $\mathbf{78^\circ \text{C}}$.
-    - Se debe aplicar **más calor al agua** que al alcohol para que el agua pueda pasar de fase líquida a fase gaseosa.
+En resumen, la **temperatura** nos ayuda a **caracterizar el estado térmico de la materia** y a comprender los **cambios de fase** que ocurren cuando una sustancia recibe o pierde calor.
 
 ## Conductividad eléctrica
 
@@ -175,19 +130,19 @@ La conductividad eléctrica es una **propiedad de la materia** que nos dice **qu
 
 Ideas clave:
 
-- **Definición:** la conductividad describe qué tan bien o qué tan mal una sustancia es capaz de conducir la electricidad.
-- **Instrumento y unidades:** la conductividad se mide con un instrumento conocido como **conductímetro** y sus unidades son los **microsiemens por centímetro**.
+- **Definición:** La conductividad describe qué tan bien o qué tan mal una sustancia es capaz de conducir la electricidad.
+- **Instrumento y unidades:** La conductividad se mide con un instrumento conocido como **conductímetro** y sus unidades son los **microsim por centímetro**.
 - **El cobre (conductor por excelencia):**
-    - el **cobre** es un **excelente conductor de electricidad** y es el conductor de electricidad **por excelencia**.
+    - El **cobre** es un **excelente conductor de electricidad** y es el conductor de electricidad **por excelencia**.
     - El cobre conduce muchísimo más la electricidad que otros materiales.
 - **El agua y la salinidad:**
-    - el **agua** es un conductor de electricidad. Aunque no es tan buen conductor como el cobre, se le puede considerar un **regular excelente conductor de electricidad**, y es suficiente para representar un peligro al entrar en contacto con aparatos electrónicos.
-    - el **agua de mar** conduce mejor la electricidad que el **agua potable**.
-    - la razón de la mayor conductividad del agua de mar es la presencia de **sal**, que es un compuesto formado por sodio ($\text{Na}$) y cloro ($\text{Cl}$).
-- **Comparación de conductividad (microsiems por centímetro):**
-    - el agua potable maneja una medida de aproximadamente **200 microsiems por centímetro**.
-    - el agua de mar maneja una medida de **50,000 microsiems por centímetro**.
-    - el cobre tiene una medida de **580,000 millones de microsiems por cada centímetro**, lo que demuestra que conduce muchísimo más que el agua de mar y el agua potable.
+    - El **agua** es un conductor de electricidad. Aunque no es tan buen conductor como el cobre, se le puede considerar un **regular excelente conductor de electricidad**, y es suficiente para representar un peligro al entrar en contacto con aparatos electrónicos.
+    - El **agua de mar** conduce mejor la electricidad que el **agua potable**.
+    - La razón de la mayor conductividad del agua de mar es la presencia de **sal**, que es un compuesto formado por sodio ($\text{Na}$) y cloro ($\text{Cl}$).
+- **Comparación de Conductividad (microsiemspor centímetro):**
+    - El agua potable maneja una medida de aproximadamente **200 microsiems por centímetro**.
+    - El agua de mar maneja una medida de **50,000 microsiems por centímetro**.
+    - El cobre tiene una medida de **580,000 millones de microsiems por cada centímetro**, lo que demuestra que conduce muchísimo más que el agua de mar y el agua potable.
 
 ## Propiedades cualitativas y cuantitativas
 
@@ -195,29 +150,18 @@ https://youtu.be/tDBfaewlmFs?si=gASvLQ82b8l-WidU
 
 https://vt.tiktok.com/ZSBp7Grrr/
 
-El estudio de la materia incluye la clasificación de sus **propiedades**, las cuales son las **características o atributos de las sustancias** que ayudan a describirlas. Estas propiedades se dividen en dos categorías principales: **Propiedades cualitativas** y **Propiedades cuantitativas**.
+El estudio de la **materia** implica analizar sus **propiedades**, entendidas como las **características o atributos** que permiten **describir y diferenciar** las sustancias.
 
-### Propiedades cualitativas
+Estas propiedades se clasifican en dos grandes categorías: **propiedades cualitativas** y **propiedades cuantitativas**, según la forma en que se describen o miden.
 
-Las propiedades cualitativas son aquellas que describen los cuerpos o los materiales a través de una **cualidad**.
+### Clasificación de las propiedades de la materia
 
-- **Descripción:** se describen los cuerpos con una cualidad, lo que significa que **no hay un dato numérico ni unidad de medida**.
-- **Ejemplos:**
-    - **Sabor:** al describir la leche como "dulce".
-    - **Color:** al describir la leche como "blanco".
-    - **Textura:** al describir la leche como "cremosa".
+| **Tipo de propiedad** | **Descripción** | **Ejemplos** |
+| --- | --- | --- |
+| **Propiedades cualitativas** | Describen los materiales mediante una **cualidad**, sin utilizar números ni unidades de medida. Se basan en la percepción sensorial. | - **Sabor:** la leche es dulce.  - **Color:** la leche es blanca.  - **Textura:** la leche es cremosa. |
+| **Propiedades cuantitativas** | Describen los materiales mediante una **cantidad**, siempre acompañada de un **valor numérico y una unidad de medida**. | - **Masa:** 2300 g  - **Volumen:** 1,5 L  - **Densidad:** 1 g/mL  - **Temperatura:** 36,3 °C  - **Conductividad eléctrica:** 50 000 microsiemens/cm |
 
-### Propiedades cuantitativas
-
-Las propiedades cuantitativas son aquellas que describen los cuerpos con una **cantidad**.
-
-- **Descripción:** estas propiedades siempre están acompañadas de un **número y una unidad de medida**.
-- **Ejemplos:** las siguientes propiedades que ya hemos discutido en la conversación son clasificadas como cuantitativas:
-    - **Masa:** describe la cantidad de material con una cantidad numérica (ejemplo: $2300 \text{ g}$).
-    - **Volumen:** describe el espacio ocupado con una cantidad numérica (ejemplo: $1,5 \text{ L}$).
-    - **Densidad:** describe la relación masa/volumen con un número y unidad de medida (ejemplo: $1 \frac{\text{g}}{\text{mL}}$).
-    - **Temperatura:** se describe con un numerito y una unidad de medida (ejemplo: $36,3 ^\circ \text{C}$).
-    - **Conductividad eléctrica:** se describe con un número y una unidad de medida (ejemplo: $50000$ microsiemens por centímetro).
+En conclusión, las **propiedades cualitativas** permiten **reconocer o identificar** una sustancia mediante sus características visibles o perceptibles, mientras que las **cuantitativas** permiten **medir y comparar** de manera objetiva los distintos aspectos de la materia.
 
 ## Propiedades intensivas y extensivas
 
@@ -227,26 +171,19 @@ https://vt.tiktok.com/ZSBp7Q5CQ/
 
 **Propiedades intensivas y extensivas**
 
-La clasificación de las propiedades de la materia también se puede realizar según si dependen o no de la cantidad de material presente, dividiéndose en **propiedades intensivas** y **propiedades extensivas**.
+La clasificación de las propiedades de la materia también se puede realizar según si **dependen o no de la cantidad de material presente**, dividiéndose en **propiedades intensivas** y **propiedades extensivas**. A continuación se presenta un resumen en tabla y, después, notas clave para no perder información importante.
 
-**Propiedades extensivas**
+### Clasificación de las propiedades de la materia según la cantidad de material
 
-Las propiedades extensivas son aquellas que **dependen de la cantidad de material**. Si hay poco material, la medida es una, y si hay más material, la medida cambia o aumenta.
+| **Tipo de propiedad** | **Descripción** | **Ejemplos esenciales** |
+| --- | --- | --- |
+| **Propiedades extensivas** | **Dependen de la cantidad de material.** Si hay poco material, la medida es una; si hay más material, la medida cambia o aumenta. | - **Masa:** depende de la cantidad. Ej.: poco material $50\ \text{mg}$; con más material la masa **cambia y aumenta**.  - **Volumen:** depende de la cantidad. Ej.: frasco pequeño $500\ \text{mL}$ vs. frasco grande $1000\ \text{mL}$ (la medida **cambia**). |
+| **Propiedades intensivas** | **No dependen de la cantidad de material.** La medida es la misma, independientemente del tamaño. | - **Temperatura:** no cambia por tener un frasco pequeño o grande de agua.  - **Conductividad eléctrica:** la medida es la misma con poco o mucho material.  - **Densidad:** no depende del tamaño del frasco. |
 
-- **masa:** es una propiedad **extensiva** porque depende de la cantidad de material. Si se tiene poco material (ejemplo: $50 \text{ mg}$), la medida de la masa es diferente a si se tiene mucho material, donde la masa cambia y aumenta.
-- **volumen:** es una propiedad **extensiva** porque depende de la cantidad de materia. Si se tiene un frasco pequeño con poco material ($500 \text{ mL}$), el volumen es menor que en un frasco más grande con más material ($1000 \text{ mL}$), lo que significa que la medida cambia.
+**Notas clave:**
 
-**Propiedades intensivas**
-
-Las propiedades intensivas son aquellas que **no dependen de la cantidad de material** que haya en el cuerpo. La medida es la misma, independientemente del tamaño del material.
-
-- **temperatura:** es una propiedad **intensiva**. La temperatura **no va a cambiar** si se tiene un frasco pequeño de agua o un frasco grande de agua; no depende de cuánto material se tenga.
-- **conductividad eléctrica:** es una propiedad **intensiva**. La medida de conductividad eléctrica será la **misma** en un frasco pequeño de agua que en uno grande, independientemente de si hay mucho o poco material.
-- **densidad:** es una propiedad **intensiva**. La densidad **no depende del tamaño** de ese frasco donde se tiene el agua.
-
-◦ La densidad es cuánta masa hay en cierto volumen. Por ejemplo, en el agua, la densidad de $1 \frac{\text{g}}{\text{mL}}$ es la misma en un frasco pequeño que en uno grande, ya que en ambos casos, cada $1 \text{ mL}$ de agua tendrá $1 \text{ g}$ de agua.
-
-◦ La densidad tampoco depende del tamaño del material en términos de flotación: una piedra pequeña o grande irá al fondo porque su densidad no depende de su tamaño. Lo mismo ocurre con el aceite; si se echa poco o mucho, igualmente flotará sobre el agua porque la densidad no depende de la cantidad de material.
+- **Densidad:** es cuánta **masa** hay en cierto **volumen**. En el agua, la densidad de $1\ \frac{\text{g}}{\text{mL}}$ es la misma en un frasco pequeño que en uno grande, ya que en ambos casos, **cada $1\ \text{mL}$ de agua tendrá $1\ \text{g}$ de agua**.
+- **Flotación y densidad:** la densidad **no depende del tamaño** del material. Una **piedra** pequeña o grande irá al fondo; el **aceite**, con poco o mucho volumen, **flotará** sobre el agua porque su densidad no depende de la cantidad de material.
 
 ## Cambio físico y cambio químico
 
@@ -256,31 +193,34 @@ https://vt.tiktok.com/ZSBp3jakY/
 
 **Cambio físico y cambio químico**
 
-Los cambios que experimenta la materia se dividen en dos categorías principales: **cambios físicos** y **cambios químicos**. La diferencia crucial entre ellos reside en si la sustancia inicial se transforma o no en una sustancia nueva.
+Los cambios que experimenta la materia se dividen en dos categorías principales: **cambios físicos** y **cambios químicos**.
 
-**Cambios físicos**
+La diferencia fundamental entre ellos es si la sustancia **se transforma o no en una nueva sustancia** después del cambio.
 
-Los cambios físicos son aquellos donde **no aparecen nuevas sustancias** entre el momento anterior (antes) y el posterior (después) al cambio. La **fórmula química es la misma** antes y después del cambio porque la sustancia sigue siendo la misma.
+A continuación se muestra una tabla comparativa y, más abajo, ejemplos explicados con detalle.
 
-- **Ejemplos:**
+### Clasificación de los cambios en la materia
 
-◦ **Cambios de fase:** Cuando el agua congelada (hielo, fase sólida) se saca de la nevera y se convierte en agua líquida. Aunque hubo un cambio (de fase sólida a líquida), la sustancia sigue siendo agua en ambos casos; no apareció una nueva sustancia.
+| **Tipo de cambio** | **Descripción general** | **Presencia de nuevas sustancias** | **Ejemplo básico** |
+| --- | --- | --- | --- |
+| **Cambio físico** | **No aparecen nuevas sustancias**; solo cambian aspectos como el estado o la forma. La **fórmula química se mantiene igual** antes y después del cambio. | No | El hielo se derrite y se convierte en agua líquida: sigue siendo agua (H₂O). |
+| **Cambio químico** | Se forman **nuevas sustancias** con **nuevas fórmulas químicas**; la sustancia original se transforma en otra diferente. | Sí | Al quemar papel, aparece ceniza, una sustancia nueva. |
 
-◦ **Cambios de forma:** Cuando un papel entero se recorta en trocitos. Sigue siendo papel en el antes y en el después, por lo tanto, la fórmula química es la misma y el cambio es físico.
+### Ejemplos y explicaciones adicionales
 
-**Cambios químicos**
+**Cambios físicos:**
 
-Los cambios químicos son aquellos donde **sí aparecen nuevas sustancias** entre el antes y el después. Esto ocurre porque hay una nueva fórmula química, lo que significa que la sustancia ha cambiado su naturaleza.
+- **Cambios de fase:** Cuando el agua congelada (hielo, fase sólida) se saca de la nevera y se convierte en agua líquida. Aunque hubo un cambio de estado, sigue siendo agua; no apareció una nueva sustancia.
+- **Cambios de forma:** Cuando se recorta un papel en trozos más pequeños. Antes y después sigue siendo papel; por lo tanto, la fórmula química no cambia.
 
-- **Ejemplos:**
+**Cambios químicos:**
 
-◦ **Quema de papel:** Cuando se quema papel, la sustancia resultante es **ceniza**. La ceniza es una nueva sustancia con una fórmula química diferente a la del papel inicial, lo que lo clasifica como un cambio químico.
+- **Quema de papel:** Al quemarse, el papel se transforma en **ceniza**, una sustancia con una fórmula química distinta, por lo que es un cambio químico.
+- **Oxidación de un clavo:** Un clavo que se moja y se deja al aire se **oxida**. El óxido formado es una nueva sustancia que no estaba presente antes.
+- **Descomposición y digestión:** Durante la **digestión de alimentos**, se generan **nutrientes** con fórmulas químicas más simples que las de los alimentos originales.
+- **Oxidación de un banano:** Cuando un banano se oxida, la superficie cambia de color porque aparecen nuevas sustancias; por tanto, se trata de un cambio químico.
 
-◦ **Oxidación de un clavo:** Si un clavo metálico nuevo se deja al aire libre y se moja, se **oxida**. Aparece un óxido que rodea al metal; como el óxido es una sustancia nueva que no estaba presente al inicio, es un cambio químico.
-
-◦ **Descomposición y digestión:** Cuando los alimentos entran en el proceso de **digestión** y aparecen **nutrientes**, esto es un cambio químico. Las fórmulas químicas de los alimentos originales son más complejas que las de los nutrientes, y la descomposición resulta en nuevas sustancias con diferentes fórmulas químicas.
-
-◦ **Oxidación de un banano:** Si un banano se oxida, la sustancia que aparece no estaba en el antes, lo que significa que apareció una nueva sustancia y se produce un cambio químico.
+En resumen, los **cambios físicos** modifican solo el aspecto o estado de la materia, mientras que los **cambios químicos** alteran su composición, dando lugar a nuevas sustancias.
 
 ## De qué está hecha la materia - Átomos, elementos y compuestos
 
@@ -307,41 +247,63 @@ https://vt.tiktok.com/ZSBpvDwev/
 
 ### Sustancias puras y mezclas
 
-La materia se puede clasificar inicialmente como **uniforme** o **no uniforme**. Aquella materia que es uniforme tiene un **único componente** o, dicho de otra forma, una **única fórmula**. Si una sustancia posee una sola fórmula, se denomina **sustancia pura**. Si la materia es no uniforme, significa que tiene **dos o más componentes** o **dos o más fórmulas**, y a esto se le llama **mezcla**.
+La **materia** puede clasificarse según su **composición** en **uniforme** o **no uniforme**.
+
+Cuando la materia es **uniforme**, presenta un **solo componente** o una **única fórmula química**, y se denomina **sustancia pura**.
+
+Por el contrario, cuando la materia **no es uniforme**, contiene **dos o más componentes o fórmulas**, y se conoce como **mezcla**.
+
+La siguiente tabla resume estas diferencias:
+
+| **Tipo de materia** | **Número de componentes o fórmulas** | **Descripción general** | **Ejemplos** |
+| --- | --- | --- | --- |
+| **Sustancia pura** | Una sola fórmula | Composición constante; todas sus partes son iguales. | Agua (H₂O), oxígeno (O₂), sodio (Na), sal (NaCl). |
+| **Mezcla** | Dos o más fórmulas | Combinación física de sustancias (elementos o compuestos) sin reacción química entre ellas. | Aire, agua salada, agua con arena. |
+
+---
 
 ### Sustancias puras
 
-Las sustancias puras siempre muestran una **sola fórmula**. Se dividen en dos tipos:
+Las **sustancias puras** presentan una **única fórmula** y siempre mantienen la misma composición.
 
-1. **elementos:** son sustancias puras que tienen átomos de **un solo tipo de átomo** o de un solo elemento.
-    - Ejemplos incluyen $\text{H}_2$ (hidrógeno), $\text{O}_2$ (oxígeno), $\text{C}$ (carbono), $\text{Na}$ (sodio), $\text{Fe}$ (hierro) y $\text{N}_2$ (nitrógeno).
-    - Los elementos son aquellos que se encuentran en la **tabla periódica**.
-2. **compuestos:** son sustancias puras que, a pesar de tener una **única fórmula**, están hechas de **átomos de más de un elemento**.
-    - Ejemplos incluyen el agua ($\text{H}_2\text{O}$), que combina átomos de hidrógeno ($\text{H}$) y oxígeno ($\text{O}$), o $\text{NaCl}$ (sal de cocina), que combina sodio ($\text{Na}$) y cloro ($\text{Cl}$).
+Se clasifican en **elementos** y **compuestos**:
 
-En general, en las reacciones químicas, las sustancias que intervienen son sustancias puras (elementos o compuestos).
+| **Tipo de sustancia pura** | **Descripción** | **Ejemplos** |
+| --- | --- | --- |
+| **Elemento** | Formado por **un solo tipo de átomo** o de elemento. No puede descomponerse químicamente. | H₂, O₂, C (carbono), Na (sodio), Fe (hierro), N₂ (nitrógeno). |
+| **Compuesto** | Formado por **átomos de diferentes elementos** unidos químicamente en proporciones fijas. | H₂O (agua), NaCl (sal de cocina). |
+
+En las **reacciones químicas**, las sustancias que intervienen son **sustancias puras**, ya sean **elementos** o **compuestos**.
+
+---
 
 ### Mezclas
 
-Las mezclas se caracterizan por tener **dos o más fórmulas** o dos o más componentes. Estos componentes pueden ser una combinación de elementos o compuestos.
+Las **mezclas** contienen **dos o más componentes** (elementos o compuestos) que se combinan **sin formar una nueva sustancia**.
 
 - **Ejemplos:**
-    - El **aire** es una mezcla que contiene $\text{O}_2$ (elemento), $\text{H}_2\text{O}$ (compuesto) y $\text{N}_2$ (elemento).
-    - El **agua salada** es una mezcla con dos compuestos, agua ($\text{H}_2\text{O}$) y sal ($\text{NaCl}$).
-    - Una mezcla de agua ($\text{H}_2\text{O}$) y arena ($\text{SiO}_2$) también es una mezcla de dos compuestos.
+    - El **aire**, que contiene O₂ (elemento), H₂O (compuesto) y N₂ (elemento).
+    - El **agua salada**, mezcla de H₂O y NaCl.
+    - El **agua con arena (SiO₂)**, donde los dos compuestos se mantienen separados.
 
-Las mezclas se clasifican en dos tipos principales:
+Las mezclas pueden ser de dos tipos:
 
-1. **homogéneas:** no se distinguen sus componentes a simple vista. El aire y el agua salada bien mezclada son ejemplos de mezclas homogéneas.
-2. **heterogéneas:** sí se pueden observar o distinguir sus componentes a simple vista. Ejemplos de mezclas heterogéneas son el agua y el aceite (no son miscibles, el aceite queda arriba y el agua abajo) y el agua y la arena (la arena no es soluble y se puede distinguir del agua).
+| **Tipo de mezcla** | **Características** | **Ejemplos** |
+| --- | --- | --- |
+| **Homogénea** | No se distinguen sus componentes a simple vista. | Aire, agua salada bien disuelta. |
+| **Heterogénea** | Se distinguen sus componentes a simple vista. | Agua y aceite, agua y arena. |
+
+---
 
 ### Procesos de mezcla y separación
 
-Los procesos de **separación de mezclas**, como separar el agua de la sal, son considerados **procesos físicos**. La razón es que no aparecen nuevas sustancias o nuevas fórmulas en el proceso; tanto antes de la separación (cuando estaban mezcladas) como después (cuando están separadas), se siguen teniendo las mismas sustancias ($\text{H}_2\text{O}$ y $\text{NaCl}$).
+Los **procesos de mezcla y separación** se consideran **procesos físicos**, ya que **no aparecen nuevas sustancias**.
 
-De manera similar, los procesos de **formación de mezclas** (cuando sustancias separadas se juntan) también son **procesos físicos**, ya que las sustancias son las mismas en el antes y el después.
+Por ejemplo, al separar **agua y sal**, antes y después se mantienen las mismas fórmulas químicas: H₂O y NaCl.
 
-Sin embargo, si se produce una transformación donde aparece una **nueva fórmula**, como cuando elementos ($\text{H}_2$ y $\text{O}_2$) se combinan para formar un compuesto (agua, $\text{H}_2\text{O}$), este proceso es un **cambio o proceso químico**.
+Del mismo modo, **formar una mezcla** también es un proceso físico, porque las sustancias se combinan sin cambiar su naturaleza química.
+
+En cambio, si durante la combinación **aparece una nueva fórmula**, como al unir H₂ y O₂ para formar H₂O (agua), el proceso es un **cambio o proceso químico**.
 
 ## Sustancias puras y mezclas - repaso
 
@@ -349,85 +311,50 @@ https://youtu.be/AWvU73gY8Ys?si=ziYypKraOC4Prv3z
 
 https://vt.tiktok.com/ZSBpvYTw6/
 
-### Sustancias puras y mezclas
 
-La materia puede ser clasificada como **uniforme** o **no uniforme**. Esta clasificación se basa en la cantidad de componentes o fórmulas que posee una sustancia.
+## **✏️** Taller 1
 
-- Si la materia es uniforme, posee un **único componente** o una **única fórmula**, y se denomina **sustancia pura**.
-- Si la materia es no uniforme, tiene **dos o más componentes** o **dos o más fórmulas**, y se le llama **mezcla**.
+https://drive.google.com/file/d/1lPWjMhcZ5uTZvTW7GU0RAvZmZmI7N50P/view?usp=drive_link
 
-### Sustancias puras
+Intenta realizar el taller antes de ver la solución en video.
 
-Las sustancias puras tienen composición uniforme y un solo componente. Este único componente puede ser un elemento o un compuesto.
-
-1. **Elementos:**
-    - son sustancias puras que tienen átomos de **un solo tipo de átomo** o de un solo elemento.
-    - Aunque el átomo puede unirse de a dos (como $\text{H}_2$ o $\text{O}_2$ o $\text{N}_2$), sigue siendo un solo tipo de átomo o un solo elemento.
-    - Los elementos se encuentran en la **tabla periódica**.
-    - Ejemplos incluyen $\text{C}$ (carbono), $\text{Na}$ (sodio), $\text{Fe}$ (hierro), $\text{H}_2$, $\text{O}_2$ y $\text{N}_2$.
-2. **Compuestos:**
-    - son sustancias puras que, aunque tienen una **única fórmula**, están formadas por la unión de **átomos de más de un elemento**.
-    - Ejemplos: el agua ($\text{H}_2\text{O}$), que combina átomos de hidrógeno ($\text{H}$) y oxígeno ($\text{O}$), o la sal de cocina ($\text{NaCl}$), que combina sodio ($\text{Na}$) y cloro ($\text{Cl}$).
-    - Las sustancias que intervienen en las reacciones químicas son elementos y compuestos, que en general clasifican como sustancias puras.
-
-### Mezclas
-
-Las mezclas se caracterizan por tener dos o más componentes o dos o más fórmulas. Estos componentes pueden ser una combinación de elementos y/o compuestos.
-
-- **Ejemplos:** El aire (que contiene elementos como $\text{O}_2$ y $\text{N}_2$, y compuestos como $\text{H}_2\text{O}$), el agua salada (dos compuestos: $\text{H}_2\text{O}$ y $\text{NaCl}$), o la mezcla de agua y arena ($\text{SiO}_2$).
-
-Las mezclas se clasifican en dos tipos principales:
-
-1. **homogéneas:** no se distinguen sus componentes a simple vista. Ejemplos de esto son el aire y el agua salada que esté bien mezclada.
-2. **heterogéneas:** sí se pueden distinguir sus componentes a simple vista. Ejemplos son el agua y el aceite (los cuales no son miscibles, quedando el aceite arriba y el agua abajo), y el agua y la arena (ya que la arena no es soluble y se puede distinguir del agua).
-
-### Procesos de formación y separación
-
-Los procesos de **separación de mezclas** (como separar el agua de la sal) son considerados **procesos físicos**, porque las sustancias son las mismas (las mismas fórmulas) antes de la separación (mezcladas) y después (separadas). Del mismo modo, los procesos de **formación de mezclas** también son **procesos físicos**.
-
-En contraste, la **formación de un compuesto** a partir de elementos (como $\text{H}_2$ y $\text{O}_2$ que se combinan para formar $\text{H}_2\text{O}$) es un **cambio o proceso químico**, ya que en este caso sí aparece una nueva fórmula o nueva sustancia (el agua).
-
-# Taller 1
-
-https://drive.google.com/drive/folders/1dJD70oJDpW7OWXNKLv1TVwQ5YUTw9C3y?usp=drive_link
-
-## T1. Ejercicio 1
+### T1. Ejercicio 1
 
 https://youtu.be/X8bKbBKRZPo?si=0yKLyPEPNNkA8534
 
 https://vt.tiktok.com/ZSBpvMru3/
 
-## T1. Ejercicio 2
+### T1. Ejercicio 2
 
 https://youtu.be/95khkgbdRAE?si=u7GBDVZxBVFe-0Sr
 
 https://vt.tiktok.com/ZSBpvkAn2/
 
-## T1. Ejercicio 3
+### T1. Ejercicio 3
 
 https://youtu.be/lvkPzpnmvT4?si=CHoHkTmhYcmXdAqF
 
 https://vt.tiktok.com/ZSBpvdHos/
 
-## T1. Ejercicio 4
+### T1. Ejercicio 4
 
 https://youtu.be/G5PLSZuW3MQ?si=wXWLN1mdd5XINYJp
 
 https://vt.tiktok.com/ZSBpc2Epd/
 
-## T1. Ejercicio 5
+### T1. Ejercicio 5
 
 https://youtu.be/JgLD7M_sRlk?si=56omjCCiqq1DrHRI
 
 https://vt.tiktok.com/ZSBpcyrNS/
 
-## T1. Ejercicio 6
+### T1. Ejercicio 6
 
 https://youtu.be/osI1nAQea3U?si=KPPDQL7ihKFjbdxx
 
 https://vt.tiktok.com/ZSBpctcyn/
 
-## T1. Ejercicio 7
+### T1. Ejercicio 7
 
 https://youtu.be/KPoXP45YAGk?si=721Ko9c52FyoHNDY
 

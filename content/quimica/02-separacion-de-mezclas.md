@@ -150,31 +150,46 @@ La fase móvil tiene la función de coger los componentes de la mezcla y **arras
 - La fase móvil (alcohol) arrastra el color azul y el amarillo a diferente velocidad, permitiendo la visualización de los componentes de la mezcla.
 - El componente que es arrastrado a **más velocidad** (por ejemplo, el azul) es aquel con el cual la fase móvil tiene **más afinidad**.
 
-## Resumen - separación de mezclas
+## Repaso - separación de mezclas
 
 https://youtu.be/fhRda9Pc8e0?si=ZWpb2Oh9xWl4G0oK
 
 https://vt.tiktok.com/ZSBJD473A/
 
-## Ejercicio 1
+| **Método de separación** | **Indicado para** | **Propiedad de la que se saca provecho** |
+|---------------------------|------------------|------------------------------------------|
+| **Tamizado** | Mezclas heterogéneas de sólidos | Tamaño de las partículas |
+| **Filtración** | Sólidos insolubles en líquidos | Tamaño de las partículas |
+| **Decantación** | Líquidos inmiscibles o sólido-líquido | Densidad |
+| **Evaporación** | Sólidos solubles en líquidos | Punto de ebullición |
+| **Destilación** | Líquidos miscibles | Punto de ebullición |
+| **Cromatografía** | Mezclas homogéneas de líquidos | Afinidad con una fase móvil |
+
+## **✏️** Taller 1
+
+https://drive.google.com/file/d/1eF8fIkoXQY8QNYv0y0kjboW5jEmqTs4c/view?usp=drive_link
+
+Intenta realizar los ejercicios antes de ver la solución en video.
+
+### T1. Ejercicio 1
 
 https://youtu.be/1Zz_tC_MMpQ?si=58nJ0bbwnSCsaQ1g
 
 https://vt.tiktok.com/ZSBJDCHsu/
 
-## Ejercicio 2
+### T1. Ejercicio 2
 
 https://youtu.be/FJWxFYQF4G4?si=iYEpTI-18wcGImzv
 
 https://vt.tiktok.com/ZSBJDyt12/
 
-## Ejercicio 3
+### T1. Ejercicio 3
 
 https://youtu.be/IZ9WgmuQyEA?si=Cxf7qdAE4sNGsh6Y
 
 https://vt.tiktok.com/ZSBJD9HHE/
 
-## Ejercicio 4
+### T1. Ejercicio 4
 
 https://youtu.be/Jrfyd8zLDyA?si=FTic-8gYsGZN4yH4
 
