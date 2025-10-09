@@ -417,7 +417,6 @@ onUnmounted(() => {
   padding: 1rem;
   width: 100%;
   overflow-x: hidden;
-  min-height: 50vh; /* Asegurar altura mínima */
   transition: all 0.3s ease;
 }
 
