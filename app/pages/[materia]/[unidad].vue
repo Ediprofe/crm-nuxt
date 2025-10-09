@@ -4,6 +4,7 @@ import { materiasConfig } from '~/config/materias'
 import { DEFAULTS, TIMEOUTS, SIDEBAR } from '~/config/constants'
 import { useTocSheet } from '~/composables/useTocSheet'
 import { useSidebarCollapse } from '~/composables/useSidebarCollapse'
+import { useTableWrapper } from '~/composables/useTableWrapper'
 import { extractCleanHeadingText } from '~/utils/search'
 import { detectHeadingContentTypes } from '~/utils/content-detection'
 import type TableOfContents from '~/components/TableOfContents.vue'
@@ -73,6 +74,9 @@ const { isOpen, shouldShowFab, openSheet, closeSheet, handleScroll } = useTocShe
 
 // Sidebar collapse para desktop
 const { isCollapsed, toggleSidebar, expandSidebar } = useSidebarCollapse()
+
+// Envolver tablas automáticamente (replica comportamiento de artifacts de Claude)
+useTableWrapper(contentElement)
 
 // Computed para el ancho del sidebar
 const sidebarWidth = computed(() => 
@@ -393,8 +397,8 @@ onUnmounted(() => {
   background-color: var(--bg-card);
   padding: 1rem;
   width: 100%;
-  transition: all 0.3s ease;
   overflow-x: hidden;
+  transition: all 0.3s ease;
 }
 
 @media (min-width: 768px) {

@@ -170,27 +170,63 @@ body {
 }
 
 /* ========================================
-   TABLAS RESPONSIVAS CON SCROLL HORIZONTAL
+   TABLAS CON WRAPPER SCROLLABLE
+   Replica el comportamiento de Claude artifacts
    ======================================== */
 
-/* 
- * Wrapper para tablas con scroll horizontal elegante
- * Se aplica automáticamente a todas las tablas en markdown
+/**
+ * El wrapper es el contenedor con scroll
+ * Similar a cómo Claude envuelve sus artifacts
  */
-.prose {
-  /* Asegurar que las tablas tengan scroll horizontal */
+.table-wrapper {
+  position: relative;
+  width: 100%;
   overflow-x: auto;
+  overflow-y: hidden;
+  margin: 2rem 0;
+  border-radius: 0.5rem;
+  border: 1px solid var(--border-color);
+  background-color: var(--bg-card);
+  
+  /* Scroll suave en dispositivos táctiles */
+  -webkit-overflow-scrolling: touch;
+  
+  /* Scrollbar personalizado (thin) */
+  scrollbar-width: thin;
+  scrollbar-color: var(--accent-primary) transparent;
 }
 
-/* Tabla base */
-.prose table {
+/* Scrollbar personalizado para webkit (Chrome, Safari, Edge) */
+.table-wrapper::-webkit-scrollbar {
+  height: 8px;
+}
+
+.table-wrapper::-webkit-scrollbar-track {
+  background: var(--bg-secondary);
+  border-radius: 4px;
+}
+
+.table-wrapper::-webkit-scrollbar-thumb {
+  background-color: var(--accent-primary);
+  border-radius: 4px;
+  transition: background-color 0.2s ease;
+}
+
+.table-wrapper::-webkit-scrollbar-thumb:hover {
+  background-color: var(--accent-primary-hover);
+}
+
+/**
+ * La tabla dentro del wrapper
+ * NO tiene overflow porque el wrapper lo maneja
+ */
+.table-wrapper table {
   width: 100%;
   min-width: 600px; /* Ancho mínimo para mantener legibilidad */
-  margin: 2rem 0;
+  margin: 0; /* Sin margin porque el wrapper ya lo tiene */
   border-collapse: collapse;
   font-size: 0.9rem;
-  border-radius: 0.5rem;
-  display: table; /* Asegurar display correcto */
+  border: none; /* Sin border porque el wrapper lo tiene */
 }
 
 /* Headers de tabla */
@@ -201,8 +237,8 @@ body {
   font-weight: 600;
   border: 1px solid var(--border-color);
   color: var(--text-primary);
+  white-space: nowrap; /* Evitar saltos de línea en headers */
   transition: background-color 0.2s ease;
-  white-space: nowrap; /* Evitar que los headers se rompan */
 }
 
 /* Celdas de tabla */
@@ -214,67 +250,32 @@ body {
 }
 
 /* Hover en filas */
-.prose tr:hover {
+.prose tbody tr:hover {
   background-color: var(--bg-secondary);
 }
 
 /* ========================================
-   OPTIMIZACIONES MOBILE (RESPONSIVE)
+   RESPONSIVE - MOBILE OPTIMIZATIONS
    ======================================== */
 
 @media (max-width: 767px) {
-  /* Reducir fuente en móvil para mejor legibilidad */
-  .prose table {
-    font-size: 0.85rem;
-    min-width: 500px; /* Reducir ancho mínimo en móvil */
+  /* Extender el wrapper hasta los bordes en móvil */
+  .table-wrapper {
+    margin: 1.5rem -1rem; /* Margen negativo para llegar a los bordes */
+    border-radius: 0;
+    border-left: none;
+    border-right: none;
   }
   
-  /* Reducir padding en celdas para ahorrar espacio */
+  /* Reducir tamaños en móvil */
+  .table-wrapper table {
+    font-size: 0.85rem;
+    min-width: 550px;
+  }
+  
   .prose th,
   .prose td {
     padding: 0.5rem;
-  }
-  
-  /* Indicadores visuales de scroll */
-  .prose {
-    /* Sombra sutil indicando que hay más contenido a la derecha */
-    background: 
-      linear-gradient(90deg, var(--bg-card) 30%, transparent),
-      linear-gradient(-90deg, var(--bg-card) 30%, transparent),
-      linear-gradient(90deg, rgba(0,0,0,0.1) 0%, transparent 10px),
-      linear-gradient(-90deg, rgba(0,0,0,0.1) 0%, transparent 10px);
-    background-repeat: no-repeat;
-    background-size: 
-      40px 100%, 
-      40px 100%, 
-      10px 100%, 
-      10px 100%;
-    background-position: 
-      left center, 
-      right center, 
-      left center, 
-      right center;
-    background-attachment: local, local, scroll, scroll;
-  }
-  
-  .dark .prose {
-    background: 
-      linear-gradient(90deg, var(--bg-card) 30%, transparent),
-      linear-gradient(-90deg, var(--bg-card) 30%, transparent),
-      linear-gradient(90deg, rgba(255,255,255,0.1) 0%, transparent 10px),
-      linear-gradient(-90deg, rgba(255,255,255,0.1) 0%, transparent 10px);
-    background-repeat: no-repeat;
-    background-size: 
-      40px 100%, 
-      40px 100%, 
-      10px 100%, 
-      10px 100%;
-    background-position: 
-      left center, 
-      right center, 
-      left center, 
-      right center;
-    background-attachment: local, local, scroll, scroll;
   }
 }
 
