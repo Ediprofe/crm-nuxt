@@ -9,185 +9,6 @@ import { detectHeadingContentTypes } from '~/utils/content-detection'
 import type TableOfContents from '~/components/TableOfContents.vue'
 import type { ContentItem, TocItem } from '~/types/content'
 
-// ============================================================================
-// SISTEMA DE WRAPPER DINÁMICO PARA TABLAS RESPONSIVE v4.0
-// ============================================================================
-
-/**
- * Breakpoints para responsive (alineados con Tailwind CSS)
- */
-const BREAKPOINTS = {
-  MOBILE: 768,
-  TABLET: 1024
-} as const
-
-/**
- * Clases CSS para el wrapper de tablas
- */
-const WRAPPER_CLASSES = {
-  CONTAINER: 'table-wrapper-mobile',
-  SCROLLABLE: 'table-scrollable'
-} as const
-
-/**
- * Atributo data para marcar tablas ya procesadas
- */
-const DATA_ATTR = 'data-table-wrapped'
-
-/**
- * Debounce delay para eventos de resize
- */
-const RESIZE_DEBOUNCE_MS = 150
-
-// Estado reactivo
-const isMobileViewport = ref(false)
-const isProcessing = ref(false)
-let resizeTimer: ReturnType<typeof setTimeout> | null = null
-
-/**
- * Detecta si el viewport actual es móvil
- */
-function checkMobileViewport(): boolean {
-  return window.innerWidth < BREAKPOINTS.MOBILE
-}
-
-/**
- * Encuentra todas las tablas en el contenido que NO están ya procesadas
- */
-function findUnprocessedTables(container: HTMLElement): HTMLTableElement[] {
-  const tables = container.querySelectorAll('table')
-  return Array.from(tables).filter(table => 
-    !table.hasAttribute(DATA_ATTR)
-  )
-}
-
-/**
- * Envuelve una tabla en un div scrollable para móvil
- */
-function wrapTableForMobile(table: HTMLTableElement): void {
-  if (!table || table.hasAttribute(DATA_ATTR)) {
-    return
-  }
-
-  const wrapper = document.createElement('div')
-  wrapper.className = `${WRAPPER_CLASSES.CONTAINER} ${WRAPPER_CLASSES.SCROLLABLE}`
-  
-  table.parentNode?.insertBefore(wrapper, table)
-  wrapper.appendChild(table)
-  table.setAttribute(DATA_ATTR, 'true')
-  
-  if (import.meta.dev) {
-    console.log('📱 Tabla envuelta para móvil:', table)
-  }
-}
-
-/**
- * Desenvuelve una tabla, removiendo el wrapper y restaurando estructura original
- */
-function unwrapTable(table: HTMLTableElement): void {
-  if (!table || !table.hasAttribute(DATA_ATTR)) {
-    return
-  }
-
-  const wrapper = table.parentElement
-  
-  if (!wrapper || !wrapper.classList.contains(WRAPPER_CLASSES.CONTAINER)) {
-    return
-  }
-
-  const grandParent = wrapper.parentNode
-  
-  if (!grandParent) {
-    return
-  }
-
-  grandParent.insertBefore(table, wrapper)
-  grandParent.removeChild(wrapper)
-  table.removeAttribute(DATA_ATTR)
-  
-  if (import.meta.dev) {
-    console.log('🖥️ Tabla desenvuelta para desktop:', table)
-  }
-}
-
-/**
- * Procesa todas las tablas según el viewport actual
- */
-function processTablesForViewport(container: HTMLElement | null): void {
-  if (!container || isProcessing.value) {
-    return
-  }
-
-  isProcessing.value = true
-
-  try {
-    const currentIsMobile = checkMobileViewport()
-    
-    if (currentIsMobile) {
-      const unwrappedTables = findUnprocessedTables(container)
-      
-      if (unwrappedTables.length > 0) {
-        if (import.meta.dev) {
-          console.log(`📱 Procesando ${unwrappedTables.length} tablas para móvil`)
-        }
-        
-        unwrappedTables.forEach(wrapTableForMobile)
-      }
-    } else {
-      const wrappedTables = container.querySelectorAll(`table[${DATA_ATTR}]`)
-      
-      if (wrappedTables.length > 0) {
-        if (import.meta.dev) {
-          console.log(`🖥️ Procesando ${wrappedTables.length} tablas para desktop`)
-        }
-        
-        wrappedTables.forEach(table => unwrapTable(table as HTMLTableElement))
-      }
-    }
-
-    isMobileViewport.value = currentIsMobile
-  } finally {
-    isProcessing.value = false
-  }
-}
-
-/**
- * Handler para eventos de resize con debounce
- */
-function handleTableResize(): void {
-  if (resizeTimer) {
-    clearTimeout(resizeTimer)
-  }
-
-  resizeTimer = setTimeout(() => {
-    if (contentElement.value) {
-      processTablesForViewport(contentElement.value)
-    }
-  }, RESIZE_DEBOUNCE_MS)
-}
-
-// Debugging en desarrollo
-if (import.meta.dev) {
-  ;(window as any).__tableWrapper = {
-    isMobile: () => checkMobileViewport(),
-    findTables: () => {
-      const prose = document.querySelector('.prose')
-      return prose ? findUnprocessedTables(prose as HTMLElement) : []
-    },
-    processNow: () => {
-      const prose = document.querySelector('.prose')
-      if (prose) {
-        processTablesForViewport(prose as HTMLElement)
-      }
-    },
-    getWrappedCount: () => {
-      return document.querySelectorAll(`table[${DATA_ATTR}]`).length
-    }
-  }
-  
-  console.log('🔧 Table Wrapper Debug Tools disponibles en window.__tableWrapper')
-}
-
 const route = useRoute()
 const materia = route.params.materia as string
 const unidadSlug = route.params.unidad as string
@@ -395,18 +216,12 @@ if (import.meta.dev) {
   }, { immediate: true })
 }
 
-// Watch para extraer headings Y procesar tablas cuando contentElement esté listo
-watch(contentElement, async (newElement) => {
+// Watch para extraer headings cuando contentElement esté listo
+watch(contentElement, (newElement) => {
   if (newElement) {
-    // Esperar a que el DOM esté completamente renderizado
-    await nextTick()
-    
+    // Pequeño delay para asegurar que el DOM esté completamente renderizado
     setTimeout(() => {
-      // Extraer headings
       extractHeadingsFromContent()
-      
-      // NUEVO: Procesar tablas para viewport actual
-      processTablesForViewport(newElement)
     }, TIMEOUTS.DOM_READY)
   }
 })
@@ -427,14 +242,6 @@ onMounted(async () => {
   window.addEventListener('scroll', handleScroll, { passive: true })
   window.addEventListener('scroll', updateActiveHeading, { passive: true })
   
-  // NUEVO: Agregar listener para resize de tablas
-  window.addEventListener('resize', handleTableResize, { passive: true })
-  
-  // NUEVO: Procesamiento inicial de tablas
-  if (contentElement.value) {
-    processTablesForViewport(contentElement.value)
-  }
-  
   // Checks iniciales
   handleScroll()
   updateActiveHeading()
@@ -443,14 +250,6 @@ onMounted(async () => {
 onUnmounted(() => {
   window.removeEventListener('scroll', handleScroll)
   window.removeEventListener('scroll', updateActiveHeading)
-  
-  // NUEVO: Remover listener de resize
-  window.removeEventListener('resize', handleTableResize)
-  
-  // NUEVO: Limpiar timer si existe
-  if (resizeTimer) {
-    clearTimeout(resizeTimer)
-  }
 })
 </script>
 
