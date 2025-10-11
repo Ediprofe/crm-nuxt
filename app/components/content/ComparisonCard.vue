@@ -3,7 +3,7 @@ interface ComparisonItem {
   title: string
   description: string
   details?: string
-  color?: 'primary' | 'secondary' | 'accent' | 'success' | 'warning'
+  icon?: string
 }
 
 const props = withDefaults(
@@ -16,21 +16,25 @@ const props = withDefaults(
     columns: 2
   }
 )
+
+// Asignar iconos por defecto si no se proporcionan
+const getIcon = (item: ComparisonItem, index: number) => {
+  if (item.icon) return item.icon
+  const icons = ['🧪', '💎', '⚡', '🔬', '🌟', '🎯']
+  return icons[index % icons.length]
+}
 </script>
 
 <template>
-  <div class="comparison-card">
-    <h3 v-if="title" class="comparison-title">
-      <span class="title-icon">🔍</span>
-      {{ title }}
-    </h3>
+  <div class="comparison-wrapper">
+    <h3 v-if="title" class="comparison-title">{{ title }}</h3>
     <div class="comparison-grid" :style="{ '--columns': columns }">
       <div
         v-for="(item, index) in items"
         :key="index"
         class="comparison-item"
-        :class="`color-${item.color || 'primary'}`"
       >
+        <div class="item-icon">{{ getIcon(item, index) }}</div>
         <h4 class="item-title">{{ item.title }}</h4>
         <p class="item-description">{{ item.description }}</p>
         <p v-if="item.details" class="item-details">{{ item.details }}</p>
@@ -40,150 +44,124 @@ const props = withDefaults(
 </template>
 
 <style scoped>
-.comparison-card {
-  margin: 3rem 0;
+/* Sistema de diseño profesional - Inspirado en Material Design 3 */
+
+.comparison-wrapper {
+  margin: 2.5rem 0;
 }
 
 .comparison-title {
-  font-size: 1.5rem;
-  font-weight: 700;
-  margin-bottom: 2rem;
-  margin-left: 0;
-  padding-left: 0;
-  color: var(--text-primary);
-  display: flex;
-  align-items: center;
-  gap: 0.625rem;
+  font-size: clamp(1.375rem, 3vw, 1.75rem);
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+  color: rgb(var(--heading));
+  padding-left: 1rem;
+  transition: color 0.2s;
 }
 
-.title-icon {
-  font-size: 1.5rem;
-  opacity: 0.85;
+@media (min-width: 768px) {
+  .comparison-title {
+    padding-left: 2.5rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .comparison-title {
+    padding-left: 3rem;
+  }
 }
 
 .comparison-grid {
   display: grid;
-  grid-template-columns: repeat(var(--columns, 2), 1fr);
-  gap: 1.25rem;
-  align-items: stretch;
+  grid-template-columns: repeat(var(--columns, 3), 1fr);
+  gap: 1rem;
+  padding: 0 1rem;
+}
+
+@media (min-width: 768px) {
+  .comparison-grid {
+    padding: 0 2.5rem;
+    gap: 1.25rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .comparison-grid {
+    padding: 0 3rem;
+    gap: 1.5rem;
+  }
 }
 
 @media (max-width: 767px) {
   .comparison-grid {
     grid-template-columns: 1fr;
-    gap: 0.75rem;
+    gap: 1rem;
   }
 }
 
 .comparison-item {
-  padding: 1.75rem;
-  border-radius: 0.875rem;
-  border: 2px solid;
-  background-color: var(--bg-card);
-  transition: all 0.3s ease;
+  padding: 1.5rem;
+  border-radius: 0.75rem;
+  background-color: rgb(var(--bg-card));
+  border: 1px solid rgb(var(--border));
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
   position: relative;
-  overflow: hidden;
   display: flex;
   flex-direction: column;
-}
-
-.comparison-item::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 4px;
-  opacity: 0.8;
-  transition: opacity 0.3s ease;
+  gap: 0.75rem;
+  box-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1);
 }
 
 .comparison-item:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 16px -4px rgb(0 0 0 / 0.1), 0 4px 6px -2px rgb(0 0 0 / 0.05);
+  border-color: rgb(var(--accent));
 }
 
-.comparison-card:hover::before {
-  opacity: 1;
-}
-
-/* Color variants */
-.card-primary {
-  border-color: var(--accent-primary);
-}
-
-.color-primary {
-  border-color: var(--accent-primary);
-}
-
-.color-primary::before {
-  background: linear-gradient(90deg, var(--accent-primary), var(--accent-primary-hover));
-}
-
-.color-secondary {
-  border-color: var(--accent-secondary);
-}
-
-.color-secondary::before {
-  background: linear-gradient(90deg, var(--accent-secondary), var(--accent-secondary-hover));
-}
-
-.color-accent {
-  border-color: rgb(139 92 246); /* violet-500 */
-}
-
-.color-accent::before {
-  background: linear-gradient(90deg, rgb(139 92 246), rgb(124 58 237));
-}
-
-.color-success {
-  border-color: var(--success-color);
-}
-
-.color-success::before {
-  background: linear-gradient(90deg, var(--success-color), rgb(22 163 74));
-}
-
-.color-warning {
-  border-color: var(--warning-color);
-}
-
-.color-warning::before {
-  background: linear-gradient(90deg, var(--warning-color), rgb(217 119 6));
+.item-icon {
+  font-size: 2rem;
+  line-height: 1;
+  margin-bottom: 0.25rem;
 }
 
 .item-title {
-  font-size: 1.125rem;
-  font-weight: 700;
-  color: var(--text-primary);
-  margin: 0 0 1rem 0;
-  line-height: 1.3;
+  font-size: 1.0625rem;
+  font-weight: 600;
+  color: rgb(var(--text-primary));
+  margin: 0;
+  line-height: 1.4;
   display: flex;
   align-items: center;
   gap: 0.5rem;
+  transition: color 0.2s;
 }
 
 .item-description {
-  color: var(--text-primary);
+  color: rgb(var(--text-secondary));
   line-height: 1.6;
-  margin: 0 0 0.75rem 0;
-  font-size: 1rem;
-  font-weight: 500;
+  margin: 0;
+  font-size: 0.9375rem;
+  font-weight: 400;
+  transition: color 0.2s;
 }
 
 .item-details {
-  color: var(--text-secondary);
-  font-size: 0.9rem;
-  line-height: 1.6;
-  margin: 0.75rem 0 0 0;
+  color: rgb(var(--text-muted));
+  font-size: 0.875rem;
+  line-height: 1.5;
+  margin: 0.5rem 0 0 0;
   padding-top: 0.75rem;
-  border-top: 1px solid var(--border-color);
-  opacity: 0.9;
+  border-top: 1px solid rgb(var(--border));
+  transition: color 0.2s;
 }
 
 @media (max-width: 767px) {
   .comparison-item {
-    padding: 1rem;
+    padding: 1.25rem;
+  }
+  
+  .item-icon {
+    font-size: 1.75rem;
   }
   
   .item-title {

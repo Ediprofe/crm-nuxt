@@ -1,72 +1,73 @@
-/* ========================================
-   VARIABLES DE TEMA - EDIPROFE DESIGN SYSTEM
-   Inspirado en Nuxt.com con adaptaciones educativas
-   ======================================== */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ============================================================================
+   EDIPROFE DESIGN SYSTEM v3.0 - CSS VARIABLES
+   Sistema unificado basado en design-tokens.ts
+   ============================================================================ */
 
 :root {
-  /* Fondos - Modo Claro (Gris suave profesional) */
-  --bg-primary: rgb(250 250 250);        /* Gris ultra claro - más suave que blanco */
-  --bg-secondary: rgb(245 245 245);      /* Gris muy claro */
-  --bg-sidebar: rgb(255 255 255);        /* Blanco puro para sidebar */
-  --bg-card: rgb(255 255 255);           /* Blanco puro para tarjetas */
+  /* Backgrounds - Sistema profesional limpio */
+  --bg-primary: 250 250 250;       /* Gris ultra claro neutral */
+  --bg-secondary: 245 246 247;     /* Gris suave para sections */
+  --bg-card: 255 255 255;          /* Blanco puro para cards */
   
-  /* Textos - Modo Claro (Máximo contraste) */
-  --text-primary: rgb(17 24 39);         /* gray-900 - Negro profundo */
-  --text-secondary: rgb(55 65 81);       /* gray-700 - Gris oscuro */
-  --text-muted: rgb(107 114 128);        /* gray-500 - Gris medio */
+  /* Text - Máxima legibilidad */
+  --text-primary: 17 24 39;        /* Casi negro con tono azul (gray-900) */
+  --text-secondary: 55 65 81;      /* Gris oscuro (gray-700) */
+  --text-muted: 107 114 128;       /* Gris medio (gray-500) */
   
-  /* Bordes - Modo Claro (Sutiles y profesionales) */
-  --border-color: rgb(229 231 235);      /* gray-200 */
-  --border-hover: rgb(209 213 219);      /* gray-300 */
+  /* Borders - Sutiles y elegantes */
+  --border: 229 231 235;           /* Gris claro (gray-200) */
+  --border-hover: 209 213 219;     /* Gris medio para hover (gray-300) */
   
-  /* Acentos - Modo Claro (Verde sutil y profesional) */
-  --accent-primary: rgb(16 185 129);     /* emerald-500 */
-  --accent-primary-hover: rgb(5 150 105); /* emerald-600 */
-  --accent-secondary: rgb(100 116 139);   /* slate-500 - Gris neutro */
-  --accent-secondary-hover: rgb(71 85 105); /* slate-600 */
+  /* Accent - Azul profesional */
+  --accent: 37 99 235;             /* Blue-600 - Principal */
+  --accent-hover: 29 78 216;       /* Blue-700 - Hover */
   
-  /* Headings - Modo Claro (Gris oscuro en lugar de verde) */
-  --heading-color: rgb(30 41 59);        /* slate-800 - Profesional */
-  --heading-h1-color: rgb(15 23 42);     /* slate-900 - Muy oscuro */
+  /* Headings - Jerarquía clara */
+  --heading: 30 41 59;             /* Slate-800 - H2/H3 */
+  --heading-strong: 15 23 42;      /* Slate-900 - H1 */
   
-  /* Éxito/Error/Warning */
-  --success-color: rgb(34 197 94);       /* green-500 */
-  --error-color: rgb(239 68 68);         /* red-500 */
-  --warning-color: rgb(245 158 11);      /* amber-500 */
+  /* Semantic colors */
+  --success: 34 197 94;
+  --warning: 245 158 11;
+  --error: 239 68 68;
+  --info: 59 130 246;
   
-  --header-height: 56px; /* Altura compacta del header */
+  /* Layout */
+  --header-height: 56px;
 }
 
 .dark {
-  /* Fondos - Modo Oscuro (Inspirado en Nuxt - Ultra profundo) */
-  --bg-primary: rgb(9 9 11);             /* zinc-950 - Casi negro como Nuxt */
-  --bg-secondary: rgb(24 24 27);         /* zinc-900 - Gris muy oscuro */
-  --bg-sidebar: rgb(24 24 27);           /* zinc-900 */
-  --bg-card: rgb(24 24 27);              /* zinc-900 */
+  /* Backgrounds */
+  --bg-primary: 9 9 11;            /* neutral-950 */
+  --bg-secondary: 24 24 27;        /* zinc-900 */
+  --bg-card: 24 24 27;
   
-  /* Textos - Modo Oscuro (Alto contraste para legibilidad) */
-  --text-primary: rgb(250 250 250);      /* zinc-50 - Blanco suave */
-  --text-secondary: rgb(212 212 216);    /* zinc-300 - Gris claro */
-  --text-muted: rgb(161 161 170);        /* zinc-400 - Gris medio */
+  /* Text */
+  --text-primary: 250 250 250;     /* neutral-50 */
+  --text-secondary: 212 212 216;   /* zinc-300 */
+  --text-muted: 161 161 170;       /* zinc-400 */
   
-  /* Bordes - Modo Oscuro (Sutiles pero visibles) */
-  --border-color: rgb(39 39 42);         /* zinc-800 */
-  --border-hover: rgb(63 63 70);         /* zinc-700 */
+  /* Borders */
+  --border: 39 39 42;              /* zinc-800 */
+  --border-hover: 63 63 70;        /* zinc-700 */
   
-  /* Acentos - Modo Oscuro (Verde sutil) */
-  --accent-primary: rgb(52 211 153);     /* emerald-400 - Brillante */
-  --accent-primary-hover: rgb(16 185 129); /* emerald-500 */
-  --accent-secondary: rgb(148 163 184);   /* slate-400 - Gris neutro */
-  --accent-secondary-hover: rgb(203 213 225); /* slate-300 */
+  /* Accent */
+  --accent: 52 211 153;            /* accent-400 */
+  --accent-hover: 16 185 129;      /* accent-500 */
   
-  /* Headings - Modo Oscuro (Blanco para máximo contraste) */
-  --heading-color: rgb(241 245 249);     /* slate-100 - Casi blanco */
-  --heading-h1-color: rgb(248 250 252);  /* slate-50 - Blanco suave */
+  /* Headings */
+  --heading: 241 245 249;          /* slate-100 */
+  --heading-strong: 248 250 252;   /* slate-50 */
   
-  /* Éxito/Error/Warning - Vibrantes en oscuro */
-  --success-color: rgb(74 222 128);      /* green-400 */
-  --error-color: rgb(248 113 113);       /* red-400 */
-  --warning-color: rgb(251 191 36);      /* amber-400 */
+  /* Semantic */
+  --success: 74 222 128;
+  --warning: 251 191 36;
+  --error: 248 113 113;
+  --info: 96 165 250;
 }
 
 /* ========================================
@@ -75,8 +76,8 @@
 
 body {
   font-family: 'Inter', ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-  background-color: var(--bg-primary);
-  color: var(--text-secondary);
+  background-color: rgb(var(--bg-primary));
+  color: rgb(var(--text-secondary));
   transition: background-color 0.2s ease, color 0.2s ease;
   font-feature-settings: 'cv02', 'cv03', 'cv04', 'cv11';
   -webkit-font-smoothing: antialiased;
@@ -89,7 +90,7 @@ body {
 
 /* Estilos base para todo el markdown renderizado */
 .prose {
-  color: var(--text-secondary);
+  color: rgb(var(--text-secondary));
   max-width: none;
 }
 
@@ -160,48 +161,52 @@ body {
   margin-right: 0;
 }
 
-/* Títulos */
+/* Headings - Mejor jerarquía y espaciado */
 .prose h1 {
-  font-size: 2.5rem;
+  font-size: clamp(2rem, 5vw, 2.75rem);
   font-weight: 800;
-  color: var(--heading-h1-color);
-  margin-bottom: 2rem;
-  border-bottom: 2px solid var(--border-color);
-  padding-bottom: 0.75rem;
-  letter-spacing: -0.025em;
-  transition: all 0.2s ease;
+  color: rgb(var(--heading-strong));
+  margin-bottom: 1.5rem;
+  margin-top: 0;
+  line-height: 1.1;
+  letter-spacing: -0.03em;
+  transition: color 0.2s;
 }
 
 .prose h2 {
-  font-size: 2rem;
+  font-size: clamp(1.75rem, 4vw, 2rem);
   font-weight: 700;
-  color: var(--heading-color);
+  color: rgb(var(--accent));
   margin-top: 3rem;
   margin-bottom: 1.5rem;
+  line-height: 1.25;
   letter-spacing: -0.02em;
-  transition: color 0.2s ease;
+  transition: color 0.2s;
+  position: relative;
 }
 
 .prose h3 {
-  font-size: 1.5rem;
+  font-size: clamp(1.375rem, 3vw, 1.75rem);
   font-weight: 600;
-  color: var(--heading-color);
-  margin-top: 2rem;
+  color: rgb(var(--heading));
+  margin-top: 2.5rem;
   margin-bottom: 1rem;
-  letter-spacing: -0.01em;
-  transition: color 0.2s ease;
+  line-height: 1.3;
+  letter-spacing: -0.015em;
+  transition: color 0.2s;
 }
 
-/* Texto y párrafos */
+/* Texto - Mejor legibilidad */
 .prose p {
-  margin-bottom: 1.5rem;
+  margin-bottom: 1.25rem;
+  font-size: 1.0625rem;
   line-height: 1.75;
-  color: var(--text-secondary);
+  color: rgb(var(--text-secondary));
 }
 
 .prose strong {
   font-weight: 600;
-  color: var(--text-primary);
+  color: rgb(var(--text-primary));
 }
 
 /* Listas */
@@ -224,16 +229,16 @@ body {
 
 /* Enlaces */
 .prose a {
-  color: var(--accent-primary);
+  color: rgb(var(--accent));
   text-decoration: underline;
-  text-decoration-color: var(--accent-primary);
+  text-decoration-color: rgb(var(--accent));
   text-underline-offset: 3px;
   transition: all 0.2s ease;
 }
 
 .prose a:hover {
-  color: var(--accent-primary-hover);
-  text-decoration-color: var(--accent-primary-hover);
+  color: rgb(var(--accent-hover));
+  text-decoration-color: rgb(var(--accent-hover));
 }
 
 
@@ -267,7 +272,7 @@ body {
   
   /* Scrollbar personalizado */
   scrollbar-width: thin;
-  scrollbar-color: var(--accent-primary) transparent;
+  scrollbar-color: rgb(var(--accent)) transparent;
 }
 
 .table-wrap::-webkit-scrollbar {
@@ -279,7 +284,7 @@ body {
 }
 
 .table-wrap::-webkit-scrollbar-thumb {
-  background-color: var(--accent-primary);
+  background-color: rgb(var(--accent));
   border-radius: 3px;
 }
 
@@ -287,7 +292,7 @@ body {
 table.responsive-table {
   width: 100%;
   border-collapse: collapse;
-  background-color: var(--bg-card);
+  background-color: rgb(var(--bg-card));
   border-radius: 0.5rem;
   overflow: hidden;
 }
@@ -295,24 +300,24 @@ table.responsive-table {
 table.responsive-table th,
 table.responsive-table td {
   padding: 0.75rem;
-  border: 1px solid var(--border-color);
+  border: 1px solid rgb(var(--border));
   vertical-align: top;
   text-align: left;
 }
 
 table.responsive-table th {
-  background-color: var(--bg-secondary);
+  background-color: rgb(var(--bg-secondary));
   font-weight: 600;
-  color: var(--text-primary);
+  color: rgb(var(--text-primary));
   white-space: nowrap;
 }
 
 table.responsive-table td {
-  color: var(--text-secondary);
+  color: rgb(var(--text-secondary));
 }
 
 table.responsive-table tbody tr:hover {
-  background-color: var(--bg-secondary);
+  background-color: rgb(var(--bg-secondary));
   transition: background-color 0.2s ease;
 }
 
@@ -321,7 +326,7 @@ table.responsive-table tbody tr:hover {
   table.responsive-table thead th {
     position: sticky;
     top: 0;
-    background-color: var(--bg-secondary);
+    background-color: rgb(var(--bg-secondary));
     z-index: 10;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   }
@@ -348,15 +353,15 @@ table.responsive-table tbody tr:hover {
   table.responsive-table tr {
     display: block;
     margin: 1rem 0;
-    border: 2px solid var(--border-color);
+    border: 2px solid rgb(var(--border));
     border-radius: 0.75rem;
-    background-color: var(--bg-card);
+    background-color: rgb(var(--bg-card));
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
     transition: all 0.3s ease;
   }
   
   table.responsive-table tr:hover {
-    border-color: var(--accent-primary);
+    border-color: rgb(var(--accent));
     box-shadow: 0 4px 12px rgba(16, 185, 129, 0.2);
     transform: translateY(-2px);
   }
@@ -367,9 +372,9 @@ table.responsive-table tbody tr:hover {
     flex-direction: column;
     gap: 0.5rem;
     border: 0;
-    border-bottom: 1px solid var(--border-color);
+    border-bottom: 1px solid rgb(var(--border));
     padding: 1rem;
-    color: var(--text-secondary);
+    color: rgb(var(--text-secondary));
     font-size: 0.9rem;
     line-height: 1.6;
   }
@@ -384,7 +389,7 @@ table.responsive-table tbody tr:hover {
     content: attr(data-label);
     display: block;
     font-weight: 600;
-    color: var(--text-primary);
+    color: rgb(var(--text-primary));
     font-size: 0.875rem;
     line-height: 1.4;
     margin-bottom: 0.25rem;
@@ -454,22 +459,22 @@ table.responsive-table tbody tr:hover {
 /* Focus visible para navegación por teclado */
 table.responsive-table a:focus,
 table.responsive-table button:focus {
-  outline: 2px solid var(--accent-primary);
+  outline: 2px solid rgb(var(--accent));
   outline-offset: 2px;
 }
 
 /* Mejorar contraste en dark mode */
 @media (prefers-color-scheme: dark) {
   table.responsive-table {
-    border-color: var(--border-color);
+    border-color: rgb(var(--border));
   }
   
   table.responsive-table th {
-    color: var(--text-primary);
+    color: rgb(var(--text-primary));
   }
   
   table.responsive-table td {
-    color: var(--text-secondary);
+    color: rgb(var(--text-secondary));
   }
 }
 
@@ -477,17 +482,17 @@ table.responsive-table button:focus {
 .prose hr {
   margin: 2rem 0;
   border: none;
-  border-top: 2px solid var(--border-color);
+  border-top: 2px solid rgb(var(--border));
 }
 
 /* Blockquotes */
 .prose blockquote {
-  border-left: 4px solid var(--border-hover);
+  border-left: 4px solid rgb(var(--border-hover));
   padding: 1rem 1rem 1rem 1.5rem;
   margin: 1.5rem 0;
   font-style: italic;
-  color: var(--text-muted);
-  background-color: var(--bg-secondary);
+  color: rgb(var(--text-muted));
+  background-color: rgb(var(--bg-secondary));
   border-radius: 0.5rem;
   transition: all 0.2s ease;
 }
@@ -495,25 +500,25 @@ table.responsive-table button:focus {
 /* Code inline */
 .prose code {
   font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace;
-  background-color: var(--bg-secondary);
+  background-color: rgb(var(--bg-secondary));
   padding: 0.25rem 0.5rem;
   border-radius: 0.375rem;
   font-size: 0.875rem;
-  color: var(--accent-primary);
+  color: rgb(var(--accent));
   font-weight: 500;
-  border: 1px solid var(--border-color);
+  border: 1px solid rgb(var(--border));
   transition: all 0.2s ease;
 }
 
 /* Code blocks */
 .prose pre {
   font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace;
-  background-color: var(--bg-secondary);
+  background-color: rgb(var(--bg-secondary));
   padding: 1.5rem;
   border-radius: 0.75rem;
   overflow-x: auto;
   margin: 1.5rem 0;
-  border: 1px solid var(--border-color);
+  border: 1px solid rgb(var(--border));
   transition: all 0.2s ease;
 }
 
@@ -521,7 +526,7 @@ table.responsive-table button:focus {
   font-family: inherit;
   background-color: transparent;
   padding: 0;
-  color: var(--text-primary);
+  color: rgb(var(--text-primary));
   border: none;
   font-weight: normal;
 }
@@ -571,21 +576,59 @@ html {
   width: 2rem;
   height: 2rem;
   border-radius: 0.375rem;
-  background-color: var(--bg-secondary);
+  background-color: rgb(var(--bg-secondary));
   transition: all 0.3s ease;
-  border: 1px solid var(--border-color);
+  border: 1px solid rgb(var(--border));
 }
 
 .media-icon-link:hover .media-icon-wrapper {
-  background-color: var(--accent-primary);
-  border-color: var(--accent-primary);
+  background-color: rgb(var(--accent));
+  border-color: rgb(var(--accent));
 }
 
 .media-icon-svg {
-  color: var(--text-muted);
+  color: rgb(var(--text-muted));
   transition: color 0.3s ease;
 }
 
 .media-icon-link:hover .media-icon-svg {
   color: white;
+}
+
+/* ============================================================================
+   UTILITY CLASSES - Clases personalizadas para el sistema de diseño
+   ============================================================================ */
+
+@layer utilities {
+  /* Backgrounds */
+  .bg-primary { background-color: rgb(var(--bg-primary)); }
+  .bg-secondary { background-color: rgb(var(--bg-secondary)); }
+  .bg-card { background-color: rgb(var(--bg-card)); }
+  
+  /* Text colors */
+  .text-primary { color: rgb(var(--text-primary)); }
+  .text-secondary { color: rgb(var(--text-secondary)); }
+  .text-muted { color: rgb(var(--text-muted)); }
+  .text-accent { color: rgb(var(--accent)); }
+  
+  /* Borders */
+  .border-primary { border-color: rgb(var(--border)); }
+  .border-hover { border-color: rgb(var(--border-hover)); }
+  .border-accent { border-color: rgb(var(--accent)); }
+  
+  /* Hover states */
+  .hover\:bg-secondary:hover { background-color: rgb(var(--bg-secondary)); }
+  .hover\:text-accent:hover { color: rgb(var(--accent-hover)); }
+  .hover\:border-accent:hover { border-color: rgb(var(--accent)); }
+  
+  /* Semantic colors */
+  .text-success { color: rgb(var(--success)); }
+  .text-warning { color: rgb(var(--warning)); }
+  .text-error { color: rgb(var(--error)); }
+  .text-info { color: rgb(var(--info)); }
+  
+  .bg-success { background-color: rgb(var(--success)); }
+  .bg-warning { background-color: rgb(var(--warning)); }
+  .bg-error { background-color: rgb(var(--error)); }
+  .bg-info { background-color: rgb(var(--info)); }
 }

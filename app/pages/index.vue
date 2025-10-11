@@ -31,7 +31,7 @@ const structuredData = {
 </script>
 
 <template>
-  <div class="min-h-screen transition-colors" style="background-color: var(--bg-primary);">
+  <div class="min-h-screen transition-colors" style="background-color: rgb(var(--bg-primary));">
     <!-- SEO Meta Tags -->
     <SEO
       :title="seoTitle"
@@ -89,8 +89,8 @@ const structuredData = {
     <main class="container mx-auto px-4 py-12 md:py-16">
       <!-- Sección de materias -->
       <div class="mb-10">
-        <h2 class="text-2xl md:text-3xl font-bold mb-3 transition-colors" style="color: var(--heading-color);">Materias disponibles</h2>
-        <p class="text-base md:text-lg transition-colors" style="color: var(--text-secondary);">Selecciona una materia para comenzar a estudiar</p>
+        <h2 class="text-2xl md:text-3xl font-bold mb-3 transition-colors" style="color: rgb(var(--heading));">Materias disponibles</h2>
+        <p class="text-base md:text-lg transition-colors" style="color: rgb(var(--text-secondary));">Selecciona una materia para comenzar a estudiar</p>
       </div>
 
       <!-- Grid de Materias -->
@@ -123,8 +123,8 @@ const structuredData = {
     </main>
 
     <!-- Footer -->
-    <footer class="mt-20 transition-all border-t" style="background-color: var(--bg-card); border-color: var(--border-color);">
-      <div class="container mx-auto px-4 py-6 text-center transition-colors" style="color: var(--text-muted);">
+    <footer class="mt-20 transition-all border-t" style="background-color: rgb(var(--bg-card)); border-color: rgb(var(--border));">
+      <div class="container mx-auto px-4 py-6 text-center transition-colors" style="color: rgb(var(--text-muted));">
         <p>&copy; 2025 Ediprofe.com</p>
       </div>
     </footer>
@@ -136,7 +136,7 @@ const structuredData = {
 .home-header-title {
   font-size: 1.25rem;
   font-weight: 800;
-  color: var(--text-primary);
+  color: rgb(var(--text-primary));
   letter-spacing: -0.02em;
   transition: color 0.2s ease;
   white-space: nowrap;
@@ -151,7 +151,7 @@ const structuredData = {
 .home-header-subtitle {
   font-size: 0.875rem;
   font-weight: 500;
-  color: var(--text-muted);
+  color: rgb(var(--text-muted));
   transition: color 0.2s ease;
   white-space: nowrap;
 }
@@ -172,7 +172,7 @@ const structuredData = {
 .hero-section {
   position: relative;
   overflow: hidden;
-  background-color: var(--bg-secondary);
+  background-color: rgb(var(--bg-secondary));
   transition: background-color 0.2s ease;
 }
 
@@ -181,14 +181,14 @@ const structuredData = {
   font-weight: 700;
   line-height: 1.2;
   margin-bottom: 1.5rem;
-  color: var(--heading-h1-color);
+  color: rgb(var(--heading-strong));
   transition: color 0.2s ease;
 }
 
 .hero-subtitle {
   display: block;
   margin-top: 0.5rem;
-  color: var(--accent-primary);
+  color: rgb(var(--accent));
   transition: color 0.2s ease;
 }
 
@@ -197,23 +197,23 @@ const structuredData = {
   line-height: 1.6;
   max-width: 56rem;
   margin: 0 auto 2rem;
-  color: var(--text-secondary);
+  color: rgb(var(--text-secondary));
   transition: color 0.2s ease;
 }
 
 .feature-badge {
-  background-color: var(--bg-card);
-  border: 1px solid var(--border-color);
+  background-color: rgb(var(--bg-card));
+  border: 1px solid rgb(var(--border));
   padding: 0.5rem 1rem;
   border-radius: 9999px;
-  color: var(--text-secondary);
+  color: rgb(var(--text-secondary));
   transition: all 0.3s ease;
 }
 
 .feature-badge:hover {
-  background-color: var(--bg-secondary);
-  border-color: var(--accent-primary);
-  color: var(--accent-primary);
+  background-color: rgb(var(--bg-secondary));
+  border-color: rgb(var(--accent));
+  color: rgb(var(--accent));
   transform: translateY(-2px);
 }
 
@@ -223,15 +223,15 @@ const structuredData = {
   overflow: hidden;
   border-radius: 1rem;
   padding: 2rem;
-  background-color: var(--bg-card);
-  border: 2px solid var(--border-color);
+  background-color: rgb(var(--bg-card));
+  border: 2px solid rgb(var(--border));
   box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px -1px rgba(0, 0, 0, 0.1);
   transition: all 0.3s ease;
   cursor: pointer;
 }
 
 .materia-card:hover {
-  border-color: var(--accent-primary);
+  border-color: rgb(var(--accent));
   transform: translateY(-4px);
   box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
 }
@@ -240,22 +240,22 @@ const structuredData = {
   font-size: 1.5rem;
   font-weight: 700;
   margin-bottom: 0.5rem;
-  color: var(--text-primary);
+  color: rgb(var(--text-primary));
   transition: color 0.3s ease;
 }
 
 .materia-card:hover .materia-card-title {
-  color: var(--accent-primary);
+  color: rgb(var(--accent));
 }
 
 .materia-card-action {
   display: flex;
   align-items: center;
-  color: var(--text-muted);
+  color: rgb(var(--text-muted));
   transition: color 0.3s ease;
 }
 
 .materia-card:hover .materia-card-action {
-  color: var(--accent-primary);
+  color: rgb(var(--accent));
 }
 </style>

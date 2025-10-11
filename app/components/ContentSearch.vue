@@ -95,9 +95,9 @@ function handleKeydown(event: KeyboardEvent) {
                lg:left-auto lg:right-6 lg:w-[500px]"
         :style="{ zIndex: Z_INDEX.SEARCH_BAR }"
       >
-        <div class="bg-white dark:bg-gray-800
+        <div class="bg-card
                     rounded-full shadow-2xl
-                    border border-gray-200 dark:border-gray-700
+                    border border-primary
                     p-2 flex flex-col gap-2
                     transition-colors">
           <!-- Input de búsqueda -->
@@ -113,8 +113,8 @@ function handleKeydown(event: KeyboardEvent) {
               placeholder="Buscar en la página..."
               class="w-full pl-10 pr-10 py-2
                      bg-transparent
-                     text-gray-900 dark:text-gray-100
-                     placeholder-gray-400 dark:placeholder-gray-500
+                     text-primary
+                     placeholder-gray-400
                      outline-none text-sm
                      [&::-webkit-search-cancel-button]:hidden"
               @keydown="handleKeydown"
@@ -129,9 +129,9 @@ function handleKeydown(event: KeyboardEvent) {
               v-if="hasQuery"
               @click="resetSearch"
               class="absolute right-2 p-1 rounded-full
-                     text-gray-400 hover:text-gray-600
-                     dark:text-gray-500 dark:hover:text-gray-300
-                     hover:bg-gray-100 dark:hover:bg-gray-700
+                     text-muted hover:text-secondary
+                     
+                     hover:bg-secondary
                      transition-colors"
               aria-label="Limpiar búsqueda"
               title="Limpiar texto"
@@ -146,9 +146,9 @@ function handleKeydown(event: KeyboardEvent) {
               v-else
               @click="closeSearch"
               class="absolute right-2 p-1 rounded-full
-                     text-gray-400 hover:text-gray-600
-                     dark:text-gray-500 dark:hover:text-gray-300
-                     hover:bg-gray-100 dark:hover:bg-gray-700
+                     text-muted hover:text-secondary
+                     
+                     hover:bg-secondary
                      transition-colors"
               aria-label="Cerrar búsqueda"
               title="Cerrar barra de búsqueda"
@@ -160,7 +160,7 @@ function handleKeydown(event: KeyboardEvent) {
           </div>
 
           <!-- Controles de navegación -->
-          <div v-if="hasQuery" class="flex items-center justify-between px-3 py-1 border-t border-gray-200 dark:border-gray-700">
+          <div v-if="hasQuery" class="flex items-center justify-between px-3 py-1 border-t border-primary">
             <!-- Contador de resultados -->
             <span class="text-xs text-gray-600 dark:text-gray-400 font-medium">
               {{ resultsText }}
@@ -173,7 +173,7 @@ function handleKeydown(event: KeyboardEvent) {
                 :disabled="!hasResults"
                 class="p-1.5 rounded-md
                        text-gray-600 dark:text-gray-400
-                       hover:bg-gray-100 dark:hover:bg-gray-700
+                       hover:bg-secondary
                        hover:text-gray-900 dark:hover:text-gray-200
                        disabled:opacity-30 disabled:cursor-not-allowed
                        transition-colors"
@@ -191,7 +191,7 @@ function handleKeydown(event: KeyboardEvent) {
                 :disabled="!hasResults"
                 class="p-1.5 rounded-md
                        text-gray-600 dark:text-gray-400
-                       hover:bg-gray-100 dark:hover:bg-gray-700
+                       hover:bg-secondary
                        hover:text-gray-900 dark:hover:text-gray-200
                        disabled:opacity-30 disabled:cursor-not-allowed
                        transition-colors"
@@ -210,7 +210,7 @@ function handleKeydown(event: KeyboardEvent) {
               @click="closeSearch"
               class="p-1.5 rounded-md
                      text-gray-600 dark:text-gray-400
-                     hover:bg-gray-100 dark:hover:bg-gray-700
+                     hover:bg-secondary
                      hover:text-gray-900 dark:hover:text-gray-200
                      transition-colors"
               aria-label="Cerrar búsqueda"

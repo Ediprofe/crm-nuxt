@@ -1,7 +1,14 @@
 ---
 title: Enlace químico
-description: El enlace químico y sus tipos.
+description: El enlace químico y sus tipos. Estudio de los enlaces iónico, covalente y metálico, junto con la electronegatividad y las propiedades periódicas que determinan la formación de compuestos.
 ---
+
+::unit-header
+---
+title: "Enlace químico"
+description: "El enlace químico y sus tipos. Estudio de los enlaces iónico, covalente y metálico, junto con la electronegatividad y las propiedades periódicas que determinan la formación de compuestos."
+---
+::
 
 ## Resumen
 
