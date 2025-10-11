@@ -6,6 +6,7 @@
 - [InfoBox](#infobox)
 - [KeyPoints](#keypoints)
 - [ProcessSteps](#processsteps)
+- [PracticeExercise](#practiceexercise)
 - [Reglas de Estilo](#reglas-de-estilo)
 
 ---
@@ -319,6 +320,137 @@ steps:
 
 ---
 
+## PracticeExercise
+
+### Descripción
+Contenedor visual para ejercicios prácticos que permite a los estudiantes aplicar conceptos aprendidos. Detectado automáticamente con el patrón `### ✏️ Practica` en markdown.
+
+### Cuándo Usar
+- ✅ Ejercicios con tablas para completar
+- ✅ Preguntas de aplicación práctica
+- ✅ Problemas de cálculo
+- ✅ Actividades de clasificación
+- ❌ Ejercicios muy complejos (mejor dividir en varios)
+
+### Sintaxis
+
+```markdown
+::practice-exercise
+---
+title: "Práctica: Nombre del ejercicio"
+instructions: "Instrucciones claras y concisas para el estudiante"
+---
+
+Contenido del ejercicio con **markdown** y formato.
+
+| Tabla | Para | Completar |
+| --- | --- | --- |
+| Datos |  |  |
+
+Recordatorios o ayudas adicionales.
+
+::
+```
+
+### Propiedades
+
+| Prop | Tipo | Requerido | Default | Descripción |
+|------|------|-----------|---------|-------------|
+| `title` | string | No | "Práctica" | Título del ejercicio |
+| `instructions` | string | No | - | Instrucciones breves sobre qué hacer |
+| `type` | string | No | "mixed" | Tipo de ejercicio: `table`, `questions`, `mixed` |
+
+### Ejemplos Reales
+
+#### Ejemplo 1: Ejercicio con tabla para completar
+
+```markdown
+::practice-exercise
+---
+title: "Práctica: Cálculo de Electronegatividad"
+instructions: "Complete la tabla calculando la diferencia de electronegatividad y determinando el tipo de enlace químico formado."
+---
+
+La siguiente tabla presenta información sobre los elementos A, D, X y Z:
+
+| Elemento | Electrones de valencia | Electronegatividad |
+| --- | --- | --- |
+| A | 1 | 0,82 |
+| D | 2 | 0,98 |
+
+**Complete la siguiente tabla:**
+
+| Compuesto | Diferencia (*Δ*EN) | Tipo de enlace |
+| --- | --- | --- |
+| AZ |  |  |
+| DX |  |  |
+
+**Recordatorio:** Umbrales de clasificación: 0–0,4 (covalente no polar), 0,4–1,7 (covalente polar), >1,7 (iónico).
+
+::
+```
+
+#### Ejemplo 2: Ejercicio de clasificación
+
+```markdown
+::practice-exercise
+---
+title: "Práctica: Propiedades según Tipo de Enlace"
+instructions: "Teniendo en cuenta las propiedades presentadas, complete la siguiente tabla."
+---
+
+| Átomos | Tipo de enlace | Punto de fusión | Conductor |
+| --- | --- | --- | --- |
+| Li y O | Iónico | Elevado | Sí |
+| Ca y F |  |  |  |
+| F y F |  |  |  |
+
+::
+```
+
+### Detección Automática
+
+El patrón `### ✏️ Practica` en el markdown debe convertirse automáticamente en un componente `PracticeExercise`:
+
+**Antes (Markdown):**
+```markdown
+### ✏️ Practica
+
+Complete la siguiente tabla...
+```
+
+**Después (Componente):**
+```markdown
+::practice-exercise
+---
+title: "Práctica"
+instructions: "Complete la siguiente tabla..."
+---
+
+[contenido del ejercicio]
+
+::
+```
+
+### Características de Diseño
+
+- **Fondo degradado**: Púrpura-azul con opacidad baja
+- **Borde destacado**: 2px con color púrpura
+- **Hover effect**: Sombra y borde más intenso
+- **Icono**: Emoji ✏️ grande a la izquierda del título
+- **Tablas estilizadas**: Fondo blanco/oscuro según tema
+- **Responsive**: Colapsa bien en móvil
+
+### Recomendaciones
+
+- **Título claro**: Indicar el tema del ejercicio
+- **Instrucciones concisas**: Una o dos frases máximo
+- **Tablas simples**: Máximo 5-6 columnas
+- **Recordatorios**: Incluir fórmulas o datos necesarios
+- **Espaciado**: Dejar líneas vacías antes y después
+
+---
+
 ## Reglas de Estilo
 
 ### Títulos en Markdown
@@ -415,6 +547,7 @@ Cuando conviertas contenido Markdown a componentes:
 - [ ] ✅ InfoBox usado para advertencias/tips/notas
 - [ ] ✅ ProcessSteps para secuencias temporales
 - [ ] ✅ KeyPoints para listas importantes
+- [ ] ✅ PracticeExercise para secciones `### ✏️ Practica`
 - [ ] ✅ Spacing consistente (líneas vacías)
 - [ ] ✅ Videos/links agrupados al inicio de sección
 - [ ] ✅ Sin títulos markdown redundantes antes de componentes

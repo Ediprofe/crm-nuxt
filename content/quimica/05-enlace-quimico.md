@@ -3,9 +3,9 @@ title: Enlace químico
 description: El enlace químico y sus tipos.
 ---
 
-## Resumen de la unidad
+## Resumen
 
-En esta unidad se estudia el enlace químico como base de la formación de compuestos, considerando la regla del octeto como guía para la estabilidad electrónica. Se analizan los enlaces iónico, covalente (incluyendo dativo, doble y triple) y metálico, junto con la escala de electronegatividad y las estructuras de Lewis.
+En esta unidad se estudia el enlace químico como base de la formación de compuestos, considerando la regla del octeto como guía para la estabilidad electrónica. Se analizan los enlaces iónico, covalente (incluyendo dativo, doble y triple) y metálico, junto con la escala de electronegatividad y las estructuras de Lewis. Se explican las propiedades periódicas que influyen en la formación de enlaces, como la electronegatividad y el radio atómico. A través de comparaciones y ejercicios, el estudiante comprende cómo se relacionan estas propiedades con el tipo de enlace y las características de los compuestos.
 
 # Fundamentos
 
@@ -13,7 +13,7 @@ https://youtube.com/playlist?list=PLvciGh3Wfg7-A9BJ3Qds4U0FXG5kly3Aa&si=LVkhqt40
 
 https://drive.google.com/drive/folders/1wfs82dNO8elM4KXco5oFf1w_0LLRggSw?usp=drive_link
 
-## Enlace químico
+## Enlace químico - introducción
 
 https://youtu.be/Q4ObzTpgVBI?si=Utjbde6LtTmybxB7
 
@@ -23,20 +23,20 @@ El **enlace químico** es fundamental en la formación de todas las sustancias q
 
 ::comparison-card
 ---
-title: "Tipos de Enlace Químico"
+title: "Clasificación de los enlaces químicos"
 columns: 3
 items:
-  - title: "🔋 Enlace Iónico"
-    description: "Transferencia de electrones de un átomo a otro"
-    details: "Metal cede electrones → No metal recibe electrones. Ejemplos: NaCl, K₂O. Forman cristales sólidos."
+  - title: "🔋 Enlace iónico"
+    description: "Transferencia (robo) de electrones de un átomo a otro"
+    details: "Metal + no metal. Ejemplos: NaCl, K₂O. Forman iones que se atraen, sólidos cristalinos, solubles en agua"
     color: "primary"
-  - title: "🤝 Enlace Covalente"
-    description: "Compartimiento de pares de electrones entre átomos"
-    details: "No metal + No metal comparten electrones. Ejemplos: H₂, H₂O, CO₂. Forman moléculas."
+  - title: "🤝 Enlace covalente"
+    description: "Compartimiento de electrones entre átomos"
+    details: "No metal + no metal. Ejemplos: H₂, H₂O. Moléculas gaseosas o líquidas, bajos puntos de fusión"
     color: "secondary"
-  - title: "⚡ Enlace Metálico"
-    description: "Mar de electrones libres compartidos colectivamente"
-    details: "Metal + Metal. Electrones deslocalizados. Ejemplos: Cu, Al, Fe. Alta conductividad eléctrica."
+  - title: "⚡ Enlace metálico"
+    description: "Compartimiento colectivo de muchos electrones libres"
+    details: "Metal + metal. Ejemplos: Cu, Al. Alta conductividad, maleables y brillantes"
     color: "accent"
 ---
 ::
@@ -49,37 +49,49 @@ https://vt.tiktok.com/ZSSaXu9AR/
 
 El **enlace iónico** es uno de los tipos principales de enlace químico y se define como la **unión entre átomos para formar sustancias nuevas**.
 
-::info-box{type="tip" title="💡 Concepto Clave"}
-El enlace iónico se produce por **transferencia de electrones**. El metal cede electrones al no metal, formando iones que se atraen electrostáticamente.
-::
+### Mecanismo y formación
+
+El enlace iónico se produce debido al **robo de electrones**. Este robo o transferencia de electrones resulta en la formación de **iones** que se mantienen unidos.
+
+**Participantes:** Generalmente, este tipo de enlace se da entre un **metal y un no metal**.
+
+**Regla del octeto:** Los átomos se enlazan con el fin de **completar ocho electrones en la última capa** (regla del octeto).
 
 ::process-steps
 ---
-title: "Formación del Enlace Iónico"
+title: "Proceso de formación del enlace iónico"
 steps:
   - title: "Transferencia de electrones"
-    description: "Solo participan los electrones de valencia (última capa). Los átomos buscan completar 8 electrones."
+    description: "Solo participan los electrones de valencia, aquellos que se encuentran en la capa más externa del átomo"
     icon: "1️⃣"
   - title: "El metal cede electrones"
-    description: "El átomo de metal (como Na) tiene pocos electrones de valencia y le resulta fácil entregarlos."
+    description: "El átomo de metal (como el Na) tiene pocos electrones de valencia y le resulta más fácil entregarlos al no metal"
     icon: "2️⃣"
   - title: "El no metal recibe electrones"
-    description: "El átomo no metálico (como Cl) ya tiene muchos electrones y recibe los transferidos."
+    description: "El átomo no metálico (como el Cl) ya tiene muchos electrones de valencia y recibe los transferidos"
     icon: "3️⃣"
   - title: "Formación de iones"
-    description: "El metal queda con carga positiva (+) y el no metal con carga negativa (−). Se atraen."
+    description: "El metal queda con carga positiva (catión) y el no metal con carga negativa (anión). Se atraen electrostáticamente"
     icon: "4️⃣"
 ---
 ::
 
+::info-box{type="info" title="💡 Concepto clave: iones"}
+**Catión (+):** Átomo que **pierde electrones** → Más protones que electrones → Carga positiva
+
+**Anión (−):** Átomo que **gana electrones** → Más electrones que protones → Carga negativa
+::
+
+### Ejemplos de enlaces iónicos
+
 ::key-points
 ---
-title: "Ejemplos de Enlaces Iónicos"
+title: "Compuestos iónicos comunes"
 points:
-  - text: "Cloruro de Sodio (NaCl): El sodio cede su único electrón al cloro. Ambos quedan con 8 electrones en su última capa."
+  - text: "Cloruro de Sodio (NaCl): El Na cede su único electrón al Cl. Ambos completan su octeto (Na con 8e⁻ en su nueva última capa, Cl con 8e⁻)"
     highlight: true
-  - text: "Óxido de Potasio (K₂O): Se forma entre potasio (metal) y oxígeno (no metal)."
-  - text: "Cloruro de Potasio (KCl): El potasio cede su electrón de valencia al cloro."
+  - text: "Óxido de Potasio (K₂O): Dos átomos de K (1e⁻ cada uno) ceden electrones a un átomo de O (6e⁻) que necesita 2e⁻ más"
+  - text: "Cloruro de Potasio (KCl): El K cede su electrón de valencia al Cl, quedando ambos con octeto completo"
 ---
 ::
 
@@ -91,52 +103,87 @@ https://vt.tiktok.com/ZSSaX5t9h/
 
 El **enlace covalente** es un tipo de enlace químico que se distingue por el **compartimiento de electrones**.
 
-::comparison-card
+### Características del enlace covalente
+
+::key-points
 ---
-title: "Características del Enlace Covalente"
-columns: 2
-items:
-  - title: "📋 Mecanismo"
-    description: "Se forma por compartimiento de electrones"
-    color: "primary"
-  - title: "👥 Participantes"
-    description: "Entre no metal y otro no metal"
-    color: "secondary"
-  - title: "⚛️ Electrones"
-    description: "Solo participan los electrones de valencia"
-    color: "success"
-  - title: "🎯 Objetivo"
-    description: "Completar 8 electrones (regla del octeto)"
-    color: "warning"
+title: "Características principales"
+points:
+  - text: "Mecanismo: Se forma por el compartimiento de electrones entre átomos"
+  - text: "Participantes: Generalmente ocurre entre no metal + no metal"
+  - text: "Electrones involucrados: Solo participan los electrones de valencia (última capa)"
+  - text: "Objetivo: Completar ocho electrones en la última capa (regla del octeto)"
 ---
 ::
 
-::info-box{type="warning" title="⚠️ Excepción Importante"}
-El **hidrógeno** no cumple la regla del octeto, sino la **regla del dueto**. El hidrógeno solo necesita **2 electrones** en su última capa para estar estable (como el helio).
+::info-box{type="warning" title="⚠️ Excepción importante: regla del dueto"}
+El **hidrógeno** no cumple la regla del octeto. Solo necesita **2 electrones** en su última capa (regla del dueto).
+
+El gas noble más cercano al hidrógeno es el **helio (He)**, que tiene dos electrones. Por eso, el hidrógeno busca tener solo **dos electrones de valencia** para estar estable.
 ::
+
+### Enlace covalente coordinado o dativo
+
+Un tipo especial de enlace covalente es el **coordinado o dativo**.
+
+**Característica principal:** El par de electrones compartidos es **aportado por uno solo de los átomos**.
+
+**Ejemplo - Catión Amonio (NH₄⁺):**
+- El nitrógeno (5e⁻ de valencia) se enlaza con cuatro hidrógenos
+- En los tres enlaces normales: cada átomo aporta 1e⁻
+- En el enlace dativo: el nitrógeno aporta ambos electrones
+- El H⁺ llegó sin electrones → el ion tiene carga positiva
+
+### Enlace covalente doble
+
+https://youtu.be/Qlxxerax9i0?si=sOg_yodwx513WEgN
+
+https://vt.tiktok.com/ZSSaXADCq/
+
+El **enlace covalente doble** es una variante del enlace covalente que se caracteriza por compartir **dos pares de electrones** (4 electrones totales) entre los átomos enlazados. Se representa gráficamente con una **doble línea (=)**.
+
+### Enlace covalente triple
+
+https://youtu.be/HXu3l8IPkTw?si=rgl9ZAo0awbuMiyh
+
+https://vt.tiktok.com/ZSSaXm38V/
+
+El **enlace covalente triple** comparte **tres pares de electrones** (6 electrones totales) entre dos átomos. Se representa con una **triple línea (≡)**. Es el enlace covalente más fuerte y más corto.
+
+## Repaso: tipos de enlace covalente
+
+Los **enlaces covalentes** se clasifican según **cuántos pares de electrones se comparten** y **quién los aporta**.
 
 ::comparison-card
 ---
-title: "Tipos de Enlace Covalente"
+title: "Tipos de enlace covalente"
 columns: 2
 items:
   - title: "➖ Simple"
-    description: "Un par de electrones compartido (2 electrones)"
-    details: "Cada átomo aporta 1 electrón. Ejemplos: H₂, HCl, CH₄. Representación: H—H"
+    description: "Cada átomo aporta un electrón para formar un par compartido"
+    details: "1 par (2e⁻). Representación: –. Ejemplos: H₂, HCl, CH₄. Es la forma más básica"
     color: "primary"
   - title: "═ Doble"
-    description: "Dos pares de electrones compartidos (4 electrones)"
-    details: "Cada átomo aporta 2 electrones. Ejemplos: O₂, CO₂. Representación: O═O. Enlace más fuerte y corto."
+    description: "Los átomos comparten dos pares de electrones"
+    details: "2 pares (4e⁻). Representación: =. Ejemplos: O₂, CO₂. Enlace más corto y fuerte que el simple"
     color: "secondary"
   - title: "≡ Triple"
-    description: "Tres pares de electrones compartidos (6 electrones)"
-    details: "Cada átomo aporta 3 electrones. Ejemplos: N₂, CO. Representación: N≡N. Enlace muy fuerte y muy corto."
-    color: "accent"
-  - title: "→ Coordinado"
-    description: "Un átomo aporta ambos electrones del par"
-    details: "También llamado dativo. Ejemplo: NH₄⁺. El nitrógeno aporta ambos electrones. Representación: N→H⁺"
+    description: "Los átomos comparten tres pares de electrones"
+    details: "3 pares (6e⁻). Representación: ≡. Ejemplos: N₂, CO, C₂H₂. Enlace más corto y más fuerte"
+    color: "success"
+  - title: "→ Coordinado (dativo)"
+    description: "Un solo átomo aporta ambos electrones del par compartido"
+    details: "1 par (2e⁻). Representación: →. Ejemplo: NH₄⁺ (el N aporta ambos electrones)"
     color: "warning"
 ---
+::
+
+::info-box{type="tip" title="💡 Resumen didáctico"}
+El **enlace simple** es la base: cada átomo aporta 1e⁻.
+
+El **doble** y **triple** aumentan la cantidad de pares compartidos, haciendo el enlace **más fuerte y más corto**.
+
+El **coordinado** es especial porque uno solo de los átomos aporta el par completo.
 ::
 
 ## Enlace metálico
@@ -145,126 +192,204 @@ https://youtu.be/xhe4-iKOaIE?si=mh9Qdz9nkzBuSlZB
 
 https://vt.tiktok.com/ZSSaXAKrc/
 
-El **enlace metálico** es un tipo de unión química que se da por el **compartimiento de muchos electrones**. Este enlace se produce entre **metales**.
+El **enlace metálico** es un tipo de unión química que se da por el **compartimiento de muchos electrones**. Este enlace se produce entre **metales**, como el cobre, aluminio o aleaciones metálicas.
 
-::info-box{type="info" title="💡 Mecanismo"}
-El enlace metálico se establece mediante la **atracción** entre:
+### Mecanismo de unión
 
-- **Iones Metálicos Positivos (Cationes):** Átomos del metal que han perdido electrones
-- **Mar de Electrones:** Electrones con carga negativa que se mueven libremente
-
-La unión ocurre porque las cargas positivas se atraen a las cargas negativas.
-::
+El enlace metálico se establece mediante la **atracción** entre dos componentes cargados:
 
 ::key-points
 ---
-title: "Características del Enlace Metálico"
+columns: 2
 points:
-  - text: "Los electrones están deslocalizados: no pertenecen a ningún átomo en particular"
-    highlight: true
-  - text: "Son un colectivo que pertenece a todos los iones positivos del metal"
-  - text: "Se comparten muchos pares de electrones (no solo un par como en covalente)"
-  - text: "El movimiento libre explica la conductividad eléctrica de los metales"
+  - text: "Iones Metálicos Positivos (Cationes): Átomos del metal que han perdido electrones y tienen carga positiva"
+  - text: "Mar de Electrones (Nube Electrónica): Electrones perdidos que se mueven libremente con carga negativa"
 ---
 ::
 
-## Comparación de enlaces
+La unión ocurre porque los **cationes (+)** se atraen al **mar de electrones (−)**.
 
-https://youtu.be/qV4P3PJCiFE?si=2j9ZfCI5YMWzhzOm
+### Electrones deslocalizados
 
-https://vt.tiktok.com/ZSSaXxCXs/
+::info-box{type="info" title="⚡ Concepto clave: deslocalización"}
+Los electrones en el enlace metálico están **deslocalizados**:
 
-::comparison-card
----
-title: "Comparación de los Tres Tipos de Enlace"
-columns: 3
-items:
-  - title: "🔋 Iónico"
-    description: "Robo o transferencia de electrones"
-    details: "Metal + No metal. ΔEN > 1.7. Sólidos cristalinos, altos puntos de fusión, solubles en agua, conducen en solución."
-    color: "primary"
-  - title: "🤝 Covalente"
-    description: "Compartimiento de electrones"
-    details: "No metal + No metal. ΔEN 0-1.7. Sólidos, líquidos o gases, bajos puntos de fusión, baja conductividad."
-    color: "secondary"
-  - title: "⚡ Metálico"
-    description: "Mar de electrones deslocalizados"
-    details: "Metal + Metal. No aplica ΔEN. Sólidos, muy altos puntos de fusión, insolubles, muy alta conductividad."
-    color: "accent"
----
+- **No pertenecen a ningún átomo específico** ni están en un lugar fijo
+- Son un **colectivo de electrones** compartidos por todos los cationes del metal
+- Se comparten **muchos pares de electrones**, no solo uno o dos
+- Este **movimiento libre** explica la alta **conductividad eléctrica** de los metales
 ::
 
-## Electronegatividad
+### Ejemplo con zinc
+
+Si observamos una lámina de zinc metálico:
+- Cada átomo de Zn pierde 2 electrones → Zn²⁺ (catión)
+- Estos electrones forman el mar de electrones móviles
+- Los cationes Zn²⁺ se atraen al mar de electrones, manteniendo la estructura
+
+## Escalas de electronegatividad
 
 https://youtu.be/XunxWycF4Q8?si=zCtVlG5prejIghHX
 
 https://vt.tiktok.com/ZSSaXgAah/
 
-La **electronegatividad** se define como la **capacidad de los átomos para atraer electrones**.
+La **electronegatividad** se define como la **capacidad de los átomos para atraer electrones**. La escala de electronegatividad utiliza la **diferencia de electronegatividad** (ΔEN) para clasificar el tipo de enlace químico.
 
-::info-box{type="info" title="📐 Cálculo de Diferencia"}
-**Diferencia de electronegatividad (ΔEN):**
+::info-box{type="tip" title="💭 Fórmula clave"}
+**ΔEN = Electronegatividad mayor − Electronegatividad menor**
 
-ΔEN = EN (mayor) − EN (menor)
-
-Esta resta indica qué tan equitativamente comparten los electrones dos átomos enlazados.
+Esta resta indica **qué tan equitativamente se comparten los electrones**.
 ::
+
+### Exclusión del enlace metálico
+
+::info-box{type="warning" title="⚠️ Nota importante"}
+El **enlace metálico NO se incluye** en esta escala de electronegatividad.
+
+**Razón:** La escala se basa en la resta entre **dos átomos enlazados**. En los enlaces metálicos, **muchos átomos** comparten electrones de forma deslocalizada; no se trata de un par específico entre dos átomos.
+::
+
+### Clasificación de enlaces según ΔEN
+
+La clasificación se basa en valores clave: **0.4** y **1.7**
 
 ::comparison-card
 ---
-title: "Clasificación de Enlaces según ΔEN"
+title: "Clasificación por diferencia de electronegatividad"
 columns: 3
 items:
-  - title: "0 a 0.4"
-    description: "Covalente No Polar"
-    details: "Compartición equitativa. No hay polos eléctricos. Ejemplo: H₂ (ΔEN = 0)"
+  - title: "🟢 Covalente no polar"
+    description: "ΔEN: 0 a 0.4"
+    details: "Los electrones se comparten de forma equitativa. No se forman polos eléctricos. Ejemplo: H₂ (ΔEN = 2.20 − 2.20 = 0)"
     color: "success"
-  - title: "0.4 a 1.7"
-    description: "Covalente Polar"
-    details: "Compartición desigual. El más electronegativo atrae más. Ejemplo: H₂O (ΔEN = 1.4)"
+  - title: "🟡 Covalente polar"
+    description: "ΔEN: 0.4 a 1.7"
+    details: "Diferencia moderada. El átomo más electronegativo atrae más fuerte, generando polos parciales. Ejemplo: NH₃ (ΔEN = 3.04 − 2.20 = 0.84)"
     color: "warning"
-  - title: "> 1.7"
-    description: "Iónico"
-    details: "Transferencia completa. Se forman iones. Ejemplo: NaCl (ΔEN = 2.1)"
+  - title: "🔴 Iónico"
+    description: "ΔEN: Mayor a 1.7"
+    details: "Diferencia grande. No se comparten electrones, ocurre transferencia (robo). Se forman iones. Ejemplo: NaCl (ΔEN = 3.16 − 0.93 = 2.23)"
     color: "primary"
 ---
 ::
 
-## Propiedades periódicas
+::practice-exercise
+---
+title: "Práctica: cálculo de electronegatividad"
+instructions: "Calcule la diferencia de electronegatividad (ΔEN) para cada compuesto y determine el tipo de enlace químico formado."
+---
 
-https://youtu.be/0HSvEEy9aWk?si=Iu7PYtE_71Zla1SJ
-
-https://vt.tiktok.com/ZSSa4TAwn/
-
-Las **propiedades periódicas** son características de los elementos que varían de forma **predecible** a lo largo de la tabla periódica.
+**Datos de los elementos:**
 
 ::comparison-card
 ---
-title: "Propiedades Periódicas Principales"
-columns: 2
+columns: 4
 items:
-  - title: "📏 Radio Atómico"
-    description: "Tamaño del átomo (distancia núcleo-última capa)"
-    details: "↗️ Aumenta hacia ABAJO y hacia la IZQUIERDA. Más capas = mayor tamaño."
+  - title: "Elemento A"
+    description: "Electrones de valencia: 1"
+    details: "Electronegatividad: 0.82"
     color: "primary"
-  - title: "🧲 Electronegatividad"
-    description: "Capacidad para atraer electrones"
-    details: "↗️ Aumenta hacia ARRIBA y hacia la DERECHA. No metales > Metales."
+  - title: "Elemento D"
+    description: "Electrones de valencia: 2"
+    details: "Electronegatividad: 0.98"
     color: "secondary"
-  - title: "💚 Afinidad Electrónica"
-    description: "Energía liberada al ganar un electrón"
-    details: "↗️ Aumenta hacia ARRIBA y hacia la DERECHA. Similar a electronegatividad."
-    color: "accent"
-  - title: "⚡ Energía de Ionización"
-    description: "Energía necesaria para quitar un electrón"
-    details: "↗️ Aumenta hacia ARRIBA y hacia la DERECHA. Difícil quitar e⁻ a no metales."
+  - title: "Elemento X"
+    description: "Electrones de valencia: 6"
+    details: "Electronegatividad: 3.44"
+    color: "success"
+  - title: "Elemento Z"
+    description: "Electrones de valencia: 7"
+    details: "Electronegatividad: 3.16"
     color: "warning"
 ---
 ::
 
-::info-box{type="tip" title="💡 Resumen de Tendencias"}
-**Tendencias en la Tabla Periódica:**
+**Calcule para los siguientes compuestos:**
 
-- **Radio atómico:** ⬇️ hacia abajo, ⬅️ hacia izquierda
-- **Electronegatividad, Energía de Ionización y Afinidad Electrónica:** ⬆️ hacia arriba, ➡️ hacia derecha
+1. **AZ**: ¿Cuál es la ΔEN? ¿Qué tipo de enlace se forma?
+2. **DX**: ¿Cuál es la ΔEN? ¿Qué tipo de enlace se forma?
+3. **X₂**: ¿Cuál es la ΔEN? ¿Qué tipo de enlace se forma?
+4. **A₂**: ¿Cuál es la ΔEN? ¿Qué tipo de enlace se forma?
+5. **Z₂X**: ¿Cuál es la ΔEN entre Z y X? ¿Qué tipo de enlace se forma?
+
+::info-box{type="tip" title="💭 Recordatorio"}
+**Umbrales de clasificación:**
+- 0–0.4: Covalente no polar
+- 0.4–1.7: Covalente polar
+- >1.7: Iónico
+
+**Fórmula:** ΔEN = Electronegatividad mayor − Electronegatividad menor
 ::
+
+::
+
+## Tipos de enlace químico - comparativo
+
+https://youtu.be/qV4P3PJCiFE?si=2j9ZfCI5YMWzhzOm
+
+https://vt.tiktok.com/ZSSaXxCXs/
+
+El enlace químico es la **unión entre átomos para formar sustancias nuevas**, funcionando como el "pegamento" que mantiene unidos a los diferentes átomos.
+
+::comparison-card
+---
+title: "Comparación completa de enlaces químicos"
+columns: 3
+items:
+  - title: "🔋 Enlace iónico"
+    description: "Transferencia de electrones entre metal y no metal"
+    details: "Mecanismo: robo. ΔEN > 1.7. Forma catión (+) y anión (−). Ejemplos: NaCl, KCl. Propiedades: sólidos cristalinos, altos puntos de fusión/ebullición, alta solubilidad en agua, alta conductividad en solución o fundido"
+    color: "primary"
+  - title: "🤝 Enlace covalente"
+    description: "Compartimiento de electrones entre no metales"
+    details: "ΔEN: 0–1.7 (no polar: 0–0.4; polar: 0.4–1.7). No forma iones. Ejemplos: H₂O, H₂, NH₃. Propiedades: sólidos, líquidos o gases, bajos puntos de fusión/ebullición, baja solubilidad en agua, baja conductividad"
+    color: "secondary"
+  - title: "⚡ Enlace metálico"
+    description: "Mar de electrones deslocalizados entre metales"
+    details: "No aplica ΔEN (deslocalizado). Mar de electrones + cationes. Ejemplos: Cu, Al, aleaciones. Propiedades: sólidos, muy altos puntos de fusión/ebullición, insolubles en agua, muy alta conductividad eléctrica"
+    color: "accent"
+---
+::
+
+::practice-exercise
+---
+title: "Práctica: propiedades según tipo de enlace"
+instructions: "Analice cada par de átomos y determine el tipo de enlace, punto de fusión/ebullición y conductividad eléctrica en solución."
+---
+
+::comparison-card
+---
+columns: 2
+items:
+  - title: "Li y O"
+    description: "Litio y oxígeno"
+    details: "Tipo de enlace: iónico. Punto de fusión/ebullición: elevado. Conductor eléctrico en solución: sí"
+    color: "primary"
+  - title: "Ca y F"
+    description: "Calcio y flúor"
+    details: "Tipo de enlace: ___. Punto de fusión/ebullición: ___. Conductor eléctrico en solución: ___"
+    color: "secondary"
+  - title: "F y F"
+    description: "Flúor y flúor"
+    details: "Tipo de enlace: ___. Punto de fusión/ebullición: ___. Conductor eléctrico en solución: ___"
+    color: "success"
+  - title: "O y F"
+    description: "Oxígeno y flúor"
+    details: "Tipo de enlace: ___. Punto de fusión/ebullición: ___. Conductor eléctrico en solución: ___"
+    color: "warning"
+---
+::
+
+::info-box{type="tip" title="💡 Guía para resolver"}
+**Recuerde:**
+- **Metal + No metal** → Enlace Iónico (alto punto fusión, conductor en solución)
+- **No metal + No metal** → Enlace Covalente (bajo punto fusión, no conductor)
+- **Metal + Metal** → Enlace Metálico (muy alto punto fusión, alta conductividad)
+
+**Clasificación de elementos:**
+- Metales: Li, Ca
+- No metales: O, F
+::
+
+::
+
